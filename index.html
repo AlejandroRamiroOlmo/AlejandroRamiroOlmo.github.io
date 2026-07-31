@@ -1,21 +1,42 @@
 ---
-layout: home
+layout: single
 author_profile: true
+
+# 1. ESTO CREA EL BANNER DE COLOR SUPERIOR
+header:
+  overlay_color: "#1d3557" # Puedes cambiar este código HEX por el color que más te guste
+  title: "Diseño. Automatización. Innovación."
+  excerpt: "Portfolio de Ingeniería Mecánica y Electrónica"
+  actions:
+    - label: "Ir a Proyectos"
+      url: "/proyectos/"
+
+# 2. ESTO CREA LAS TARJETAS DE PROYECTOS DESTACADOS
+feature_row:
+  - image_path: /assets/images/proyecto-brazo.jpg
+    alt: "Brazo Robótico"
+    title: "🤖 Brazo Robótico Automatizado"
+    excerpt: "Diseño 3D y programación de un brazo robótico funcional mediante microcontroladores."
+    url: "/proyectos/"
+    btn_label: "Ver detalles"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/proyecto-brazo.jpg # Temporalmente usamos la misma foto
+    alt: "Diseño Electrónico"
+    title: "⚡ Sistemas y Control"
+    excerpt: "Explora mis desarrollos en circuitos, automatización y electrónica aplicada."
+    url: "/proyectos/"
+    btn_label: "Ver detalles"
+    btn_class: "btn--primary"
 ---
 
-<h1>👋 ¡Hola! Soy Alejandro</h1>
+# 👋 ¡Hola! Soy Alejandro
 
-<p>Bienvenido a mi portfolio personal. Actualmente soy estudiante del Doble Grado en Ingeniería Mecánica y Electrónica en la Universidad de Jaén.</p>
+Bienvenido a mi espacio digital. Soy estudiante de la Universidad de Jaén y un apasionado por la tecnología, buscando siempre conectar el mundo físico con el digital a través de soluciones ingenieriles. 
 
-<p>Me apasiona la tecnología, la automatización y el desarrollo de soluciones innovadoras que conecten el mundo físico con el digital.</p>
+Aquí documento mis avances, pruebas y prototipos.
 
-<p>En este espacio iré documentando mis proyectos, conocimientos y avances.</p>
+---
 
-<hr>
+## 🚀 Proyectos Destacados
 
-<h3>🔧 Tecnologías e Intereses</h3>
-<ul>
-  <li>Ingeniería Mecánica</li>
-  <li>Electrónica y Automatización</li>
-  <li>Desarrollo de Software</li>
-</ul>
+{% include feature_row %}
