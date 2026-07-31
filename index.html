@@ -1,17 +1,9 @@
 ---
 layout: single
-author_profile: true
+author_profile: false  # Apagamos el perfil lateral para meterlo en el banner
+title: ""              # Dejamos el título vacío para que no repita tu nombre
 
-# 1. ESTO CREA EL BANNER DE COLOR SUPERIOR
-header:
-  overlay_color: "#1d3557" # Puedes cambiar este código HEX por el color que más te guste
-  title: "Diseño. Automatización. Innovación."
-  excerpt: "Portfolio de Ingeniería Mecánica y Electrónica"
-  actions:
-    - label: "Ir a Proyectos"
-      url: "/proyectos/"
-
-# 2. ESTO CREA LAS TARJETAS DE PROYECTOS DESTACADOS
+# Mantenemos las tarjetas de proyectos destacados
 feature_row:
   - image_path: /assets/images/proyecto-brazo.jpg
     alt: "Brazo Robótico"
@@ -20,7 +12,7 @@ feature_row:
     url: "/proyectos/"
     btn_label: "Ver detalles"
     btn_class: "btn--primary"
-  - image_path: /assets/images/proyecto-brazo.jpg # Temporalmente usamos la misma foto
+  - image_path: /assets/images/proyecto-brazo.jpg
     alt: "Diseño Electrónico"
     title: "⚡ Sistemas y Control"
     excerpt: "Explora mis desarrollos en circuitos, automatización y electrónica aplicada."
@@ -29,11 +21,29 @@ feature_row:
     btn_class: "btn--primary"
 ---
 
-# 👋 ¡Hola! Soy Alejandro
+<!-- INICIO DEL BANNER PERSONALIZADO -->
+<div style="background-color: #1d3557; color: white; padding: 40px; border-radius: 10px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-top: -20px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+  
+  <!-- Parte Izquierda: Textos y Botón -->
+  <div style="flex: 1; min-width: 300px; margin-right: 20px;">
+    <h1 style="color: white; margin-top: 0; border-bottom: none;">Diseño. Automatización. Innovación.</h1>
+    <p style="font-size: 1.1em; color: #f1faee;">Bienvenido a mi espacio digital. Aquí documento mis soluciones ingenieriles conectando el mundo físico con el digital.</p>
+    <a href="/proyectos/" class="btn btn--success" style="margin-top: 15px;">Ir a Proyectos</a>
+  </div>
 
-Bienvenido a mi espacio digital. Soy estudiante de la Universidad de Jaén y un apasionado por la tecnología, buscando siempre conectar el mundo físico con el digital a través de soluciones ingenieriles. 
+  <!-- Parte Derecha: Tu Perfil -->
+  <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+    <img src="/assets/images/foto.jpg" alt="Alejandro" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid white; object-fit: cover;">
+    <h3 style="color: white; margin: 15px 0 5px 0; border-bottom: none;">Alejandro Ramiro</h3>
+    <p style="margin: 0; font-size: 0.9em; color: #a8dadc;">Estudiante de Ingeniería</p>
+    <p style="margin: 5px 0 0 0; font-size: 1.2em;">
+      <a href="mailto:alejandroramiroolmo@gmail.com" style="color: white; text-decoration: none;"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/AlejandroRamiroOlmo" style="color: white; text-decoration: none; margin-left: 10px;"><i class="fab fa-github"></i></a>
+    </p>
+  </div>
 
-Aquí documento mis avances, pruebas y prototipos.
+</div>
+<!-- FIN DEL BANNER PERSONALIZADO -->
 
 ---
 
