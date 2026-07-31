@@ -33,7 +33,7 @@ feature_row:
 
     <!-- Parte Derecha: Tu Perfil -->
     <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
-      <img src="/assets/images/foto.png" alt="Alejandro" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid white; object-fit: cover;">
+      <img src="/assets/images/presentacion.PNG" alt="Alejandro" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid white; object-fit: cover;">
       <h3 style="color: white; margin: 15px 0 5px 0; border-bottom: none;">Alejandro Ramiro</h3>
       <p style="margin: 0; font-size: 0.9em; color: #a8dadc;">Doble Grado en Ingeniería</p>
       <p style="margin: 5px 0 0 0; font-size: 1.2em;">
@@ -47,12 +47,12 @@ feature_row:
 <!-- FIN DEL BANNER -->
 
 
-<!-- SECCIÓN DE FORMACIÓN Y RESUMEN -->
-<div style="display: flex; flex-wrap: wrap; gap: 40px; margin-bottom: 50px;">
+<!-- DIVISIÓN VERTICAL: LÍNEA TEMPORAL (IZQ) Y PROYECTOS (DER) -->
+<div style="display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; margin-bottom: 50px;">
   
   <!-- Columna Izquierda: Línea de tiempo -->
-  <div style="flex: 1; min-width: 300px;">
-    <h2 style="margin-top: 0; border-bottom: 2px solid #f1faee; padding-bottom: 10px;">Trayectoria Académica</h2>
+  <div style="flex: 1; min-width: 300px; max-width: 400px;">
+    <h2 style="margin-top: 0; border-bottom: 2px solid #e5e5e5; padding-bottom: 10px;">Trayectoria Académica</h2>
     
     <div style="border-left: 3px solid #1d3557; padding-left: 20px; margin-left: 10px; margin-top: 20px;">
       <!-- Hito 1: Cuarto Año -->
@@ -71,27 +71,18 @@ feature_row:
     </div>
   </div>
 
-  <!-- Columna Derecha: Enfoque de Proyectos -->
-  <div style="flex: 1; min-width: 300px;">
-    <h2 style="margin-top: 0; border-bottom: 2px solid #f1faee; padding-bottom: 10px;">Enfoque de Trabajo</h2>
-    <p style="margin-top: 20px;">A lo largo de mi carrera he buscado aplicar la teoría en sistemas físicos reales. Mi objetivo es desarrollar proyectos completos abarcando tres pilares fundamentales:</p>
-    <ul style="line-height: 1.8;">
-      <li><strong>Mecánica:</strong> Diseño en CAD, análisis estructural y prototipado rápido.</li>
-      <li><strong>Electrónica:</strong> Diseño de circuitos, microcontroladores e instrumentación.</li>
-      <li><strong>Control:</strong> Programación de la lógica de funcionamiento e integración de sensores y actuadores.</li>
-    </ul>
+  <!-- Columna Derecha: Proyectos Destacados -->
+  <div style="flex: 2; min-width: 300px;">
+    <h2 style="margin-top: 0; border-bottom: 2px solid #e5e5e5; padding-bottom: 10px;">🚀 Proyectos Destacados</h2>
+    
+    <!-- Aquí inyectamos las tarjetas de proyectos definidas arriba -->
+    {% include feature_row %}
+
+    <!-- Botón para ir a ver más proyectos -->
+    <div style="text-align: right; margin-top: 10px;">
+      <a href="/proyectos/" class="btn btn--primary">Ver todos mis proyectos &rarr;</a>
+    </div>
   </div>
 
 </div>
-<!-- FIN SECCIÓN DE FORMACIÓN -->
-
----
-
-## 🚀 Proyectos Destacados
-
-{% include feature_row %}
-
-<!-- BOTÓN MOVIDO A LA ZONA DE PROYECTOS -->
-<div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
-  <a href="/proyectos/" class="btn btn--primary btn--large">Ver todos mis proyectos</a>
-</div>
+<!-- FIN DIVISIÓN VERTICAL -->
