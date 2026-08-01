@@ -5,40 +5,9 @@ title: ""
 ---
 
 <!-- ========================================== -->
-<!-- ESTILOS CSS GENERALES Y DE ANIMACIONES     -->
+<!-- ESTILOS CSS DE LAS TARJETAS Y ANIMACIONES  -->
 <!-- ========================================== -->
 <style>
-  /* --- FONDO GLOBAL DESDE LA RAÍZ (HTML y BODY) --- */
-  html, body {
-    background-color: #f4f7f9 !important; 
-    background-image: 
-      linear-gradient(#e4eaf0 1px, transparent 1px),
-      linear-gradient(90deg, #e4eaf0 1px, transparent 1px) !important;
-    background-size: 20px 20px !important;
-  }
-  
-  /* --- ANIQUILAR CUALQUIER FONDO BLANCO DE LA PLANTILLA --- */
-  /* Aquí incluimos todas las capas invisibles que usa Minimal Mistakes */
-  #page-wrapper,
-  .masthead,
-  .masthead__inner-wrap,
-  .masthead__menu,
-  .initial-content,
-  #main,
-  .page,
-  .page__inner-wrap,
-  .archive,
-  .splash {
-    background: transparent !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-  }
-
-  /* Mantener solo la fina línea separadora debajo del menú */
-  .masthead {
-    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
-  }
-
   /* --- TARJETA PCB (Izquierda) Y TARJETA MECÁNICA (Derecha) --- */
   .pcb-board, .mech-board {
     background-color: #021a30; 
@@ -76,6 +45,7 @@ title: ""
     box-sizing: border-box; transition: all 0.3s ease;
   }
 
+  /* Efectos interactivos PCB */
   .pcb-item:hover { border-left-color: #00ffcc; }
   .pcb-item:hover::before { background-color: #00ffcc; box-shadow: 0 0 10px #00ffcc; }
   .pcb-item:hover .pcb-pad {
@@ -86,7 +56,7 @@ title: ""
   .pcb-item:hover h4 { color: #ffffff; text-shadow: 0 0 8px #00ffcc; }
   .pcb-item p { margin: 5px 0 0 0; font-size: 0.95em; color: #bbe1fa; text-align: justify; }
 
-  /* Botones estilo Neón (comunes para ambas tarjetas oscuras) */
+  /* Botones estilo Neón */
   .btn-neon {
     display: inline-block; padding: 10px 20px; border: 2px solid #00ffcc;
     color: #00ffcc !important; text-decoration: none; border-radius: 5px;
@@ -94,18 +64,17 @@ title: ""
   }
   .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 15px #00ffcc; }
 
-  /* Engranajes (Adaptados al fondo oscuro) */
+  /* Engranajes de fondo */
   .gear-bg {
     position: absolute; color: #0f4c75; opacity: 0.3; z-index: 0; pointer-events: none; transform-origin: center center;
   }
 
-  /* --- TARJETAS DE PROYECTOS (Subtle Hover + Escáner Láser) --- */
+  /* --- TARJETAS DE PROYECTOS --- */
   .tech-card {
-    background: #06223d; /* Un azul apenas un poco más claro que el fondo */
+    background: #06223d;
     border-radius: 8px; border: 1px solid #0f4c75;
     display: flex; flex-direction: column; overflow: hidden;
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    /* Animación de levitación suave */
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   }
   
@@ -116,14 +85,12 @@ title: ""
   
   .tech-card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
 
-  /* El láser de escaneo */
   .tech-card-img-wrapper::after {
     content: ''; position: absolute; top: -10px; left: 0; width: 100%; height: 2px;
     background: #00ffcc; box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     z-index: 2; opacity: 0; transition: opacity 0.3s;
   }
   
-  /* Malla analítica sobre la foto */
   .tech-card-img-wrapper::before {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(rgba(0, 255, 204, 0.3) 1px, transparent 1px),
@@ -131,10 +98,9 @@ title: ""
     background-size: 15px 15px; z-index: 1; opacity: 0; transition: opacity 0.3s;
   }
 
-  /* Activación al pasar el ratón: Levitación, Brillo y Láser */
   .tech-card:hover { 
-    transform: translateY(-8px); /* Se eleva suavemente 8 píxeles */
-    box-shadow: 0 12px 25px rgba(0, 255, 204, 0.15); /* Resplandor cyan debajo */
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(0, 255, 204, 0.15); 
     border-color: #00ffcc; 
   }
   .tech-card:hover .tech-card-img-wrapper { border-bottom-color: #00ffcc; }
@@ -148,7 +114,15 @@ title: ""
     50% { top: 100%; }
     100% { top: 0; }
   }
+
+  /* Animación del cursor de la máquina de escribir */
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
 </style>
+
 
 <!-- ========================================== -->
 <!-- INICIO DEL BANNER ANIMADO                  -->
@@ -157,7 +131,12 @@ title: ""
   <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;"></div>
   <div style="max-width: 1280px; margin: 0 auto; padding: 20px 1em; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; position: relative; z-index: 1;">
     <div style="flex: 1; min-width: 300px; margin-right: 20px;">
-      <h1 style="color: white; margin-top: 0; border-bottom: none; min-height: 40px;">Ingeniería Mecánica y Electrónica</h1>
+      
+      <!-- Título con Máquina de Escribir -->
+      <h1 style="color: white; margin-top: 0; border-bottom: none; min-height: 40px;">
+        Ingeniería Mecánica y <span id="typewriter" style="color: #00ffcc;"></span><span id="cursor" style="animation: blink 1s infinite; color: #00ffcc;">|</span>
+      </h1>
+      
       <p style="font-size: 1.1em; color: #f1faee;">Buscando conectar la mecánica de precisión con el control electrónico. Aquí documento mis diseños, prototipos y desarrollos tecnológicos.</p>
     </div>
     <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px);">
@@ -206,7 +185,7 @@ title: ""
   <!-- COLUMNA DERECHA: SISTEMA MECÁNICO Y PROYECTOS -->
   <div class="mech-board" style="flex: 1 1 48%; min-width: 300px; display: flex; flex-direction: column; padding: 30px;">
     
-    <!-- Engranajes Gigantes (Color cyan/azul integrados en el fondo oscuro) -->
+    <!-- Engranajes Gigantes -->
     <i id="mech-gear-1" class="fas fa-cog gear-bg" style="font-size: 450px; top: -100px; left: -150px;"></i>
     <i id="mech-gear-2" class="fas fa-cog gear-bg" style="font-size: 300px; top: -50px; right: -100px;"></i>
     <i id="mech-gear-3" class="fas fa-cog gear-bg" style="font-size: 350px; bottom: -80px; right: -50px;"></i>
@@ -258,26 +237,65 @@ title: ""
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 <script>
-  // Inicializar Partículas del Banner
-  particlesJS("particles-js", {
-    "particles": {
-      "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-      "color": { "value": "#a8dadc" }, 
-      "shape": { "type": "circle" },
-      "opacity": { "value": 0.5, "random": false },
-      "size": { "value": 3, "random": true },
-      "line_linked": { "enable": true, "distance": 150, "color": "#a8dadc", "opacity": 0.4, "width": 1 },
-      "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-      "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
-    },
-    "retina_detect": true
+  // 1. Efecto Máquina de Escribir (Solo "Electrónica.")
+  const word = "Electrónica.";
+  let i = 0;
+  let isDeleting = false;
+  
+  function typeWriterEffect() {
+    const typewriterElement = document.getElementById('typewriter');
+    
+    if (!isDeleting && i <= word.length) {
+      // Escribiendo
+      typewriterElement.innerHTML = word.substring(0, i);
+      i++;
+      setTimeout(typeWriterEffect, 100); // Velocidad al escribir
+    } 
+    else if (isDeleting && i >= 0) {
+      // Borrando
+      typewriterElement.innerHTML = word.substring(0, i);
+      i--;
+      setTimeout(typeWriterEffect, 50); // Velocidad al borrar (más rápido)
+    } 
+    else if (i > word.length) {
+      // Pausa larga cuando la palabra está completa
+      isDeleting = true;
+      setTimeout(typeWriterEffect, 3000); // 3 segundos de pausa para que se lea bien
+    } 
+    else if (i < 0) {
+      // Pausa corta antes de volver a escribir
+      isDeleting = false;
+      i = 0;
+      setTimeout(typeWriterEffect, 500); // 0.5 segundos antes de reescribir
+    }
+  }
+
+  // 2. Inicializar animaciones al cargar
+  document.addEventListener("DOMContentLoaded", function() {
+    // Iniciar máquina de escribir
+    setTimeout(typeWriterEffect, 500);
+
+    // Iniciar Partículas del Banner
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#a8dadc" }, 
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#a8dadc", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
+      },
+      "retina_detect": true
+    });
   });
 
-  // Lógica de los Engranajes al hacer Scroll
+  // 3. Lógica de los Engranajes al hacer Scroll
   window.addEventListener('scroll', function() {
     let scrollPosition = window.scrollY;
     let gear1 = document.getElementById('mech-gear-1');

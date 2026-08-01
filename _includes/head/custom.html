@@ -1,11 +1,38 @@
 <!-- start custom head snippets -->
 
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
 <style>
-  /* Ocultar el copyright por defecto de Minimal Mistakes */
+  /* 1. Ocultar el copyright del footer */
   .page__footer-copyright {
     display: none !important;
+  }
+
+  /* 2. Forzar el fondo milimetrado en toda la web (Cuerpo entero) */
+  html, body {
+    background-color: #f4f7f9 !important; 
+    background-image: 
+      linear-gradient(#e4eaf0 1px, transparent 1px),
+      linear-gradient(90deg, #e4eaf0 1px, transparent 1px) !important;
+    background-size: 20px 20px !important;
+  }
+
+  /* 3. Hacer totalmente transparente la barra de navegación (Masthead) y los contenedores */
+  .masthead,
+  .masthead__inner-wrap,
+  #site-nav,
+  .initial-content,
+  #main,
+  .page,
+  .page__inner-wrap,
+  .archive,
+  .splash {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  /* 4. Mantener solo una fina línea bajo el menú para separarlo elegantemente */
+  .masthead {
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
   }
 </style>
 
