@@ -5,57 +5,150 @@ title: ""
 ---
 
 <!-- ========================================== -->
-<!-- ESTILOS CSS PARA ANIMACIONES (PCB)         -->
+<!-- ESTILOS CSS PARA ANIMACIONES (PCB Y MECH)  -->
 <!-- ========================================== -->
 <style>
-  /* Efecto Circuito Impreso (PCB) para la línea temporal */
+  /* --- TARJETA PCB (Izquierda) --- */
+  .pcb-board {
+    background-color: #021a30; /* Azul oscuro de la máscara de soldadura */
+    background-image: 
+      linear-gradient(rgba(79, 195, 247, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79, 195, 247, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Cuadrícula de la placa */
+    border: 2px solid #0f4c75;
+    border-radius: 12px;
+    color: #bbe1fa;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Pistas decorativas de fondo de la PCB */
+  .pcb-decor {
+    position: absolute;
+    background: #0f4c75;
+    z-index: 0;
+  }
+  .pcb-decor.pad {
+    background: transparent;
+    border: 3px solid #0f4c75;
+    border-radius: 50%;
+  }
+
+  /* Línea Temporal (Pistas principales) */
   .pcb-timeline {
+    position: relative;
+    z-index: 1;
     margin-top: 20px;
-    text-align: justify;
     padding-left: 10px;
   }
   .pcb-item {
     position: relative;
-    padding-bottom: 30px;
-    padding-left: 25px;
-    border-left: 4px solid #457b9d; /* Pista apagada */
-    transition: all 0.3s ease;
+    padding-bottom: 40px;
+    padding-left: 55px; /* Espacio para la pista horizontal */
+    border-left: 4px solid #0f4c75; /* Pista vertical inactiva */
+    transition: border-color 0.3s ease;
   }
-  /* Quitamos el borde al último elemento para que no cuelgue la pista */
   .pcb-item:last-child {
-    border-left: 4px solid transparent; 
+    border-left: 4px solid transparent;
   }
-  /* El nodo / punto de soldadura */
+  
+  /* Pista horizontal (derivación hacia el texto) */
   .pcb-item::before {
     content: '';
     position: absolute;
-    left: -12px;
-    top: 0;
-    width: 12px;
-    height: 12px;
-    background: #1d3557;
-    border: 4px solid #a8dadc;
-    border-radius: 50%;
+    top: 10px;
+    left: 0;
+    width: 30px;
+    height: 4px;
+    background-color: #0f4c75;
     transition: all 0.3s ease;
   }
-  /* Hover: La pista y el LED se encienden */
+  
+  /* Pad de soldadura (Vía) */
+  .pcb-item .pcb-pad {
+    position: absolute;
+    top: 2px;
+    left: 28px;
+    width: 20px;
+    height: 20px;
+    background-color: #021a30; /* Agujero pasante */
+    border: 4px solid #0f4c75; /* Cobre inactivo */
+    border-radius: 50%;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+  }
+
+  /* EFECTOS HOVER (Paso de corriente) */
   .pcb-item:hover {
-    border-left-color: #e63946;
+    border-left-color: #00ffcc; /* Iluminación cyan */
   }
   .pcb-item:hover::before {
-    background: #e63946;
-    border-color: #fff;
-    box-shadow: 0 0 12px #e63946; /* Brillo del LED */
+    background-color: #00ffcc;
+    box-shadow: 0 0 10px #00ffcc;
   }
+  .pcb-item:hover .pcb-pad {
+    border-color: #00ffcc;
+    background-color: #00ffcc; /* Rellena el agujero de luz */
+    box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
+  }
+  
+  /* Textos de la PCB */
   .pcb-item h4 {
-    transition: color 0.3s;
-    margin: 0; 
-    color: #1d3557;
+    margin: 0;
+    color: #3282b8;
+    transition: all 0.3s;
   }
   .pcb-item:hover h4 {
-    color: #e63946;
+    color: #ffffff;
+    text-shadow: 0 0 8px #00ffcc;
+  }
+  .pcb-item p {
+    margin: 5px 0 0 0;
+    font-size: 0.95em;
+    color: #bbe1fa;
+    text-align: justify;
+  }
+
+  /* Botón especial PCB */
+  .btn-pcb {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #00ffcc;
+    color: #00ffcc !important;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+    background: transparent;
+  }
+  .btn-pcb:hover {
+    background: #00ffcc;
+    color: #021a30 !important;
+    box-shadow: 0 0 15px #00ffcc;
+  }
+
+
+  /* --- TARJETA MECÁNICA (Derecha) --- */
+  .mech-board {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  
+  /* Estilo base para los engranajes gigantes */
+  .gear-bg {
+    position: absolute;
+    color: #1d3557;
+    opacity: 0.12; /* Muy visibles pero sin tapar el texto */
+    z-index: 0;
+    pointer-events: none;
+    transform-origin: center center;
   }
 </style>
+
 
 <!-- ========================================== -->
 <!-- INICIO DEL BANNER ANIMADO                  -->
@@ -97,71 +190,91 @@ title: ""
 <!-- ========================================== -->
 <div style="display: flex; flex-wrap: wrap; align-items: stretch; gap: 4%; margin-top: 40px; margin-bottom: 50px; max-width: 1280px; margin-left: auto; margin-right: auto; padding: 0 1em;">
   
-  <!-- Columna Izquierda: Línea de tiempo (Efecto PCB) -->
-  <div style="flex: 1 1 48%; min-width: 300px; display: flex; flex-direction: column; padding: 30px 10px;">
-    <h2 style="margin-top: 0; text-align: center; border-bottom: 2px solid #e5e5e5; padding-bottom: 10px;">Trayectoria Académica</h2>
+  <!-- COLUMNA IZQUIERDA: PLACA PCB (Electrónica) -->
+  <div class="pcb-board" style="flex: 1 1 48%; min-width: 300px; display: flex; flex-direction: column; padding: 30px;">
+    
+    <!-- Pistas decorativas para darle realismo a la placa base -->
+    <div class="pcb-decor" style="top: 0; right: 30px; width: 4px; height: 100px;"></div>
+    <div class="pcb-decor" style="top: 96px; right: 30px; width: 60px; height: 4px;"></div>
+    <div class="pcb-decor pad" style="top: 88px; right: 86px; width: 20px; height: 20px;"></div>
+    
+    <div class="pcb-decor" style="bottom: 0; left: 40px; width: 4px; height: 150px;"></div>
+    <div class="pcb-decor" style="bottom: 146px; left: 40px; width: 80px; height: 4px;"></div>
+    <div class="pcb-decor pad" style="bottom: 138px; left: 116px; width: 20px; height: 20px;"></div>
+
+    <h2 style="margin-top: 0; text-align: center; border-bottom: 2px solid #0f4c75; padding-bottom: 10px; color: #bbe1fa; position: relative; z-index: 1;">Trayectoria Académica</h2>
     
     <div class="pcb-timeline">
       
       <div class="pcb-item">
+        <div class="pcb-pad"></div>
         <h4>2026 - 2027: Último Año (Actualidad)</h4>
-        <p style="margin: 5px 0 0 0; font-size: 0.95em;">Finalización del Doble Grado. Desarrollo del Trabajo de Fin de Grado y consolidación de conocimientos aplicados a la industria.</p>
+        <p>Finalización del Doble Grado. Desarrollo del Trabajo de Fin de Grado y consolidación de conocimientos aplicados a la industria.</p>
       </div>
       
       <div class="pcb-item">
+        <div class="pcb-pad"></div>
         <h4>2025 - 2026: Especialización Mecánica (Erasmus+)</h4>
-        <p style="margin: 5px 0 0 0; font-size: 0.95em;">Estancia internacional en <strong>Politechnika Lubelska (Lublin, Polonia)</strong> centrada en la rama mecánica y trabajo en entornos internacionales.</p>
+        <p>Estancia internacional en <strong>Politechnika Lubelska (Lublin, Polonia)</strong> centrada en la rama mecánica y trabajo en entornos internacionales.</p>
       </div>
 
       <div class="pcb-item">
+        <div class="pcb-pad"></div>
         <h4>2024 - 2025: Especialización Electrónica</h4>
-        <p style="margin: 5px 0 0 0; font-size: 0.95em;">Enfoque profundo en la rama de electrónica dentro del plan de estudios de la Universidad de Jaén.</p>
+        <p>Enfoque profundo en la rama de electrónica dentro del plan de estudios de la Universidad de Jaén.</p>
       </div>
 
       <div class="pcb-item">
-        <h4 style="margin: 0; color: #1d3557;">2022 - 2024: Inicio y Rama Industrial</h4>
-        <p style="margin: 5px 0 0 0; font-size: 0.95em;">Comienzo del Doble Grado en la <strong>Universidad de Jaén</strong>. Adquisición de la base científica y especialización común a la rama industrial.</p>
+        <div class="pcb-pad"></div>
+        <h4>2022 - 2024: Inicio y Rama Industrial</h4>
+        <p>Comienzo del Doble Grado en la <strong>Universidad de Jaén</strong>. Adquisición de la base científica y especialización común a la rama industrial.</p>
       </div>
 
     </div>
 
-    <!-- Botón hacia "Sobre mí" -->
-    <div style="text-align: center; margin-top: auto; padding-top: 40px;">
-      <a href="/sobre-mi/" class="btn btn--primary">Conóceme un poco más &rarr;</a>
+    <div style="text-align: center; margin-top: auto; padding-top: 40px; position: relative; z-index: 1;">
+      <a href="/sobre-mi/" class="btn-pcb">Conóceme un poco más &rarr;</a>
     </div>
   </div>
 
-  <!-- Columna Derecha: Proyectos Destacados (Engranajes Reactivos) -->
-  <div style="flex: 1 1 48%; min-width: 300px; background-color: #f8f9fa; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eaeaea; position: relative; overflow: hidden; display: flex; flex-direction: column;">
+
+  <!-- COLUMNA DERECHA: SISTEMA MECÁNICO (Proyectos) -->
+  <div class="mech-board" style="flex: 1 1 48%; min-width: 300px; display: flex; flex-direction: column; padding: 30px;">
     
-    <!-- Elementos de fondo mecánicos -->
-    <i id="mech-gear-1" class="fas fa-cog" style="position: absolute; top: -40px; right: -40px; font-size: 180px; color: #1d3557; opacity: 0.05; z-index: 0; pointer-events: none;"></i>
-    <i id="mech-gear-2" class="fas fa-cog" style="position: absolute; top: 60px; right: 80px; font-size: 100px; color: #1d3557; opacity: 0.05; z-index: 0; pointer-events: none;"></i>
+    <!-- Sistema de Engranajes Gigantes -->
+    <!-- Engranaje 1: Centro-Izquierda -->
+    <i id="mech-gear-1" class="fas fa-cog gear-bg" style="font-size: 450px; top: -100px; left: -150px;"></i>
+    <!-- Engranaje 2: Superior Derecha -->
+    <i id="mech-gear-2" class="fas fa-cog gear-bg" style="font-size: 300px; top: -50px; right: -100px;"></i>
+    <!-- Engranaje 3: Inferior Derecha -->
+    <i id="mech-gear-3" class="fas fa-cog gear-bg" style="font-size: 350px; bottom: -80px; right: -50px;"></i>
 
     <!-- Contenido frontal -->
     <div style="position: relative; z-index: 1; display: flex; flex-direction: column; flex: 1;">
-      <h2 style="margin-top: 0; text-align: center; border-bottom: 2px solid #e5e5e5; padding-bottom: 10px;">🚀 Proyectos Destacados</h2>
+      <h2 style="margin-top: 0; text-align: center; border-bottom: 2px solid #dee2e6; padding-bottom: 10px; color: #1d3557;">🚀 Proyectos Destacados</h2>
       
       <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; flex: 1;">
+        
         <!-- Tarjeta Proyecto 1 -->
-        <div style="flex: 1 1 45%; min-width: 200px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eaeaea; transition: transform 0.3s ease;">
+        <div style="flex: 1 1 45%; min-width: 200px; background: rgba(255,255,255,0.95); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eaeaea;">
           <img src="/assets/images/proyecto-brazo.png" alt="Brazo Robótico" style="width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid #eaeaea;">
           <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
             <h4 style="margin: 0 0 10px 0; text-align: center; color: #1d3557;">🤖 Brazo Robótico</h4>
-            <p style="margin: 0 0 20px 0; font-size: 0.9em; text-align: justify; flex: 1;">Diseño 3D y programación de un brazo robótico funcional mediante microcontroladores.</p>
+            <p style="margin: 0 0 20px 0; font-size: 0.9em; text-align: justify; flex: 1; color: #495057;">Diseño 3D y programación de un brazo robótico funcional mediante microcontroladores.</p>
             <a href="/proyectos/" class="btn btn--info" style="display: block; text-align: center; margin-top: auto; width: 100%; box-sizing: border-box;">Ver detalles</a>
           </div>
         </div>
 
         <!-- Tarjeta Proyecto 2 -->
-        <div style="flex: 1 1 45%; min-width: 200px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eaeaea; transition: transform 0.3s ease;">
+        <div style="flex: 1 1 45%; min-width: 200px; background: rgba(255,255,255,0.95); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eaeaea;">
           <img src="/assets/images/proyecto-brazo.png" alt="Sistemas y Control" style="width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid #eaeaea;">
           <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
             <h4 style="margin: 0 0 10px 0; text-align: center; color: #1d3557;">⚡ Sistemas y Control</h4>
-            <p style="margin: 0 0 20px 0; font-size: 0.9em; text-align: justify; flex: 1;">Explora mis desarrollos en circuitos, automatización y electrónica aplicada.</p>
+            <p style="margin: 0 0 20px 0; font-size: 0.9em; text-align: justify; flex: 1; color: #495057;">Explora mis desarrollos en circuitos, automatización y electrónica aplicada.</p>
             <a href="/proyectos/" class="btn btn--info" style="display: block; text-align: center; margin-top: auto; width: 100%; box-sizing: border-box;">Ver detalles</a>
           </div>
         </div>
+
       </div>
 
       <div style="text-align: center; margin-top: auto; padding-top: 40px;">
@@ -177,12 +290,10 @@ title: ""
 <!-- ========================================== -->
 <!-- SCRIPTS (PARTÍCULAS Y ENGRANAJES)          -->
 <!-- ========================================== -->
-
-<!-- Librería Particles.js -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
 <script>
-  // 1. Configuración de la red electrónica del banner superior
+  // 1. Partículas del Banner Superior (Red de conexiones)
   particlesJS("particles-js", {
     "particles": {
       "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
@@ -201,21 +312,22 @@ title: ""
         "resize": true
       },
       "modes": {
-        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
-        "push": { "particles_nb": 3 }
+        "grab": { "distance": 140, "line_linked": { "opacity": 1 } }
       }
     },
     "retina_detect": true
   });
 
-  // 2. Lógica para los Engranajes Mecánicos Reactivos al Scroll
+  // 2. Lógica para la Transmisión de Engranajes Gigantes
   window.addEventListener('scroll', function() {
     let scrollPosition = window.scrollY;
     let gear1 = document.getElementById('mech-gear-1');
     let gear2 = document.getElementById('mech-gear-2');
+    let gear3 = document.getElementById('mech-gear-3');
     
-    // Giran a distinta velocidad y en sentido inverso para simular un mecanismo real
-    if (gear1) gear1.style.transform = 'rotate(' + (scrollPosition / 4) + 'deg)';
-    if (gear2) gear2.style.transform = 'rotate(' + (-scrollPosition / 3) + 'deg)'; 
+    // Giran a distinta velocidad y en sentido inverso para simular una relación de transmisión real
+    if (gear1) gear1.style.transform = 'rotate(' + (scrollPosition * 0.2) + 'deg)';
+    if (gear2) gear2.style.transform = 'rotate(' + (-scrollPosition * 0.25) + 'deg)'; 
+    if (gear3) gear3.style.transform = 'rotate(' + (scrollPosition * 0.18) + 'deg)'; 
   });
 </script>
