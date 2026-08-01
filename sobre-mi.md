@@ -9,16 +9,59 @@ author_profile: true
   /* ESTILOS DE LA PÁGINA "SOBRE MÍ"            */
   /* ========================================== */
 
-  /* 1. Presentación (Textos) */
-  .intro-text { 
-    font-size: 1.15em; 
-    line-height: 1.6; 
-    color: #495057; 
-    margin-bottom: 40px; 
-    text-align: justify; 
+  /* 1. Enmarcar el perfil de autor (Sidebar lateral) */
+  .sidebar {
+    background: white !important;
+    border: 1px solid #d5dce4 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+  }
+  .sidebar .author__avatar img {
+    border-radius: 50% !important;
+    border: 3px solid #0f4c75 !important;
+  }
+  .sidebar .author__name {
+    color: #1d3557 !important;
+    font-weight: bold !important;
+  }
+  .sidebar .author__bio {
+    color: #495057 !important;
+  }
+  .sidebar .author__urls.social-links {
+    border-top: 1px solid #eaeaea !important;
+    margin-top: 15px !important;
+    padding-top: 15px !important;
   }
 
-  /* 2. Trayectoria PCB adaptada a una sola columna */
+  /* 2. Presentación (Perfil Profesional) */
+  .intro-card {
+    background: white;
+    border: 1px solid #d5dce4;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  .intro-card h2 {
+    margin-top: 0;
+    color: #1d3557;
+    border-bottom: 2px solid #0f4c75;
+    padding-bottom: 10px;
+    font-size: 1.4em;
+  }
+  .intro-text { 
+    font-size: 1.1em; 
+    line-height: 1.6; 
+    color: #495057; 
+    margin: 0; 
+    text-align: justify; 
+  }
+  .intro-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 3. Trayectoria PCB adaptada a una sola columna */
   .pcb-board {
     background-color: #021a30; 
     background-image: 
@@ -50,7 +93,7 @@ author_profile: true
   .pcb-item ul { margin: 0; padding-left: 20px; color: #bbe1fa; font-size: 0.9em; }
   .pcb-item ul li { margin-bottom: 5px; }
 
-  /* 3. Panel de Idiomas y Soft Skills */
+  /* 4. Panel de Idiomas y Soft Skills */
   .skills-container { 
     display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; 
   }
@@ -65,12 +108,13 @@ author_profile: true
   
   /* Iconos de las Skills */
   .skill-list i { 
-    font-size: 1.2em; color: #00ffcc; background: #021a30; 
+    font-size: 1.1em; color: #00ffcc; background: #021a30; 
     width: 35px; height: 35px; display: flex; align-items: center; 
     justify-content: center; border-radius: 8px; margin-right: 15px; 
+    flex-shrink: 0;
   }
 
-  /* 4. Inventario Tecnológico (Tags) */
+  /* 5. Inventario Tecnológico (Tags) */
   .tech-stack-box { 
     background: #021a30; border-radius: 12px; padding: 30px; 
     text-align: center; border: 2px solid #0f4c75; 
@@ -92,9 +136,12 @@ author_profile: true
 </style>
 
 <!-- BLOQUE 1: PRESENTACIÓN -->
-<div class="intro-text">
-  <p>Soy <strong>Alejandro Ramiro</strong>, estudiante del Doble Grado en Ingeniería. Mi pasión siempre ha sido entender cómo funcionan las cosas en el mundo físico y cómo podemos darles "cerebro" para automatizarlas. </p>
-  <p>Actualmente me encuentro en mi último año, desarrollando mi Trabajo de Fin de Grado y preparándome para dar el salto definitivo a la industria. Busco conectar la mecánica de precisión con el control electrónico, aportando una visión completa que puentea el diseño físico y la lógica de programación.</p>
+<div class="intro-card">
+  <h2>Perfil Profesional</h2>
+  <div class="intro-text">
+    <p>Soy <strong>Alejandro Ramiro</strong>, estudiante del Doble Grado en Ingeniería. Mi pasión siempre ha sido entender cómo funcionan las cosas en el mundo físico y cómo podemos darles "cerebro" para automatizarlas.</p>
+    <p>Actualmente me encuentro en mi último año, desarrollando mi Trabajo de Fin de Grado y preparándome para dar el salto definitivo a la industria. Busco conectar la mecánica de precisión con el control electrónico, aportando una visión completa que puentea el diseño físico y la lógica de programación.</p>
+  </div>
 </div>
 
 <!-- BLOQUE 2: TRAYECTORIA ACADÉMICA (ESTILO PCB) -->
@@ -147,7 +194,7 @@ author_profile: true
   <div class="skill-box">
     <h3><i class="fas fa-globe-europe" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Idiomas</h3>
     <ul class="skill-list">
-      <li><i class="fas fa-certificate"></i> <strong>Inglés:</strong>&nbsp; Nivel C1 (Avanzado)</li>
+      <li><i class="fas fa-award"></i> <strong>Inglés:</strong>&nbsp; C1 (Avanzado)</li>
       <li><i class="fas fa-language"></i> <strong>Español:</strong>&nbsp; Nativo</li>
     </ul>
   </div>
