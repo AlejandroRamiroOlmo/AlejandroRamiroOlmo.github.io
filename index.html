@@ -4,31 +4,37 @@ author_profile: false
 title: ""
 ---
 
-<!-- INICIO DEL BANNER -->
-<div style="background-color: #1d3557; color: white; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: 0; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+<!-- INICIO DEL BANNER ANIMADO -->
+<div id="particles-banner" style="background-color: #1d3557; color: white; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: 0; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); overflow: hidden;">
   
-  <div style="max-width: 1280px; margin: 0 auto; padding: 60px 1em; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+  <!-- Contenedor de la red de partículas (Fondo) -->
+  <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;"></div>
+
+  <!-- Contenido del Banner (Frente) -->
+  <div style="max-width: 1280px; margin: 0 auto; padding: 60px 1em; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; position: relative; z-index: 1;">
     
-    <!-- Parte Izquierda: Textos orientados al Doble Grado -->
+    <!-- Parte Izquierda: Textos con efecto Máquina de Escribir -->
     <div style="flex: 1; min-width: 300px; margin-right: 20px;">
-      <h1 style="color: white; margin-top: 0; border-bottom: none;">Ingeniería Mecánica y Electrónica</h1>
+      <h1 style="color: white; margin-top: 0; border-bottom: none; min-height: 40px;">
+        Ingeniería <span id="typewriter" style="color: #a8dadc;"></span><span id="cursor" style="animation: blink 1s infinite;">|</span>
+      </h1>
       <p style="font-size: 1.1em; color: #f1faee;">Buscando conectar la mecánica de precisión con el control electrónico. Aquí documento mis diseños, prototipos y desarrollos tecnológicos.</p>
     </div>
 
     <!-- Parte Derecha: Tu Perfil -->
-    <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2);">
+    <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px);">
       <img src="/assets/images/foto.png" alt="Alejandro" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid white; object-fit: cover;">
       <h3 style="color: white; margin: 15px 0 5px 0; border-bottom: none;">Alejandro Ramiro</h3>
       <p style="margin: 0; font-size: 0.9em; color: #a8dadc;">Doble Grado en Ingeniería</p>
       <p style="margin: 5px 0 0 0; font-size: 1.2em;">
-        <a href="mailto:alejandroramiroolmo@gmail.com" style="color: white; text-decoration: none;"><i class="fas fa-envelope"></i></a>
-        <a href="https://github.com/AlejandroRamiroOlmo" style="color: white; text-decoration: none; margin-left: 10px;"><i class="fab fa-github"></i></a>
+        <a href="mailto:alejandroramiroolmo@gmail.com" style="color: white; text-decoration: none; transition: 0.3s;"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/AlejandroRamiroOlmo" style="color: white; text-decoration: none; margin-left: 10px; transition: 0.3s;"><i class="fab fa-github"></i></a>
       </p>
     </div>
 
   </div>
 </div>
-<!-- FIN DEL BANNER -->
+<!-- FIN DEL BANNER ANIMADO -->
 
 
 <!-- DIVISIÓN VERTICAL 50/50 -->
@@ -36,41 +42,33 @@ title: ""
   
   <!-- Columna Izquierda: Línea de tiempo -->
   <div style="flex: 1 1 48%; min-width: 300px; display: flex; flex-direction: column; padding: 30px 10px;">
-    
     <h2 style="margin-top: 0; text-align: center; border-bottom: 2px solid #e5e5e5; padding-bottom: 10px;">Trayectoria Académica</h2>
-    
     <div style="border-left: 3px solid #1d3557; padding-left: 20px; margin-left: 10px; margin-top: 20px; text-align: justify;">
       
-      <!-- Hito 5: Último Año -->
       <div style="position: relative; margin-bottom: 30px;">
         <div style="position: absolute; left: -29px; top: 4px; width: 15px; height: 15px; background: #e63946; border-radius: 50%;"></div>
         <h4 style="margin: 0; color: #1d3557;">2026 - 2027: Último Año (Actualidad)</h4>
         <p style="margin: 5px 0 0 0; font-size: 0.95em;">Finalización del Doble Grado. Desarrollo del Trabajo de Fin de Grado y consolidación de conocimientos aplicados a la industria.</p>
       </div>
       
-      <!-- Hito 4: Erasmus en Polonia -->
       <div style="position: relative; margin-bottom: 30px;">
         <div style="position: absolute; left: -29px; top: 4px; width: 15px; height: 15px; background: #457b9d; border-radius: 50%;"></div>
         <h4 style="margin: 0; color: #1d3557;">2025 - 2026: Especialización Mecánica (Erasmus+)</h4>
         <p style="margin: 5px 0 0 0; font-size: 0.95em;">Estancia internacional en <strong>Politechnika Lubelska (Lublin, Polonia)</strong> centrada en la rama mecánica y trabajo en entornos internacionales.</p>
       </div>
 
-      <!-- Hito 3: Rama Electrónica -->
       <div style="position: relative; margin-bottom: 30px;">
         <div style="position: absolute; left: -29px; top: 4px; width: 15px; height: 15px; background: #1d3557; border-radius: 50%;"></div>
         <h4 style="margin: 0; color: #1d3557;">2024 - 2025: Especialización Electrónica</h4>
         <p style="margin: 5px 0 0 0; font-size: 0.95em;">Enfoque profundo en la rama de electrónica dentro del plan de estudios de la Universidad de Jaén.</p>
       </div>
 
-      <!-- Hito 1 y 2: Comienzo y Rama Industrial -->
       <div style="position: relative;">
         <div style="position: absolute; left: -29px; top: 4px; width: 15px; height: 15px; background: #a8dadc; border-radius: 50%;"></div>
         <h4 style="margin: 0; color: #1d3557;">2022 - 2024: Inicio y Rama Industrial</h4>
         <p style="margin: 5px 0 0 0; font-size: 0.95em;">Comienzo del Doble Grado en la <strong>Universidad de Jaén</strong>. Adquisición de la base científica y especialización común a la rama industrial.</p>
       </div>
     </div>
-
-    <!-- Botón hacia "Sobre mí" (anclado al fondo) -->
     <div style="text-align: center; margin-top: auto; padding-top: 40px;">
       <a href="/sobre-mi/" class="btn btn--primary">Conóceme un poco más &rarr;</a>
     </div>
@@ -78,14 +76,11 @@ title: ""
 
   <!-- Columna Derecha: Proyectos Destacados -->
   <div style="flex: 1 1 48%; min-width: 300px; background-color: #f8f9fa; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eaeaea; display: flex; flex-direction: column;">
-    
     <h2 style="margin-top: 0; text-align: center; border-bottom: 2px solid #e5e5e5; padding-bottom: 10px;">🚀 Proyectos Destacados</h2>
-    
-    <!-- Tarjetas de Proyectos a Medida -->
     <div style="display: flex; gap: 20px; margin-top: 20px; flex-wrap: wrap; flex: 1;">
       
       <!-- Tarjeta Proyecto 1 -->
-      <div style="flex: 1 1 45%; min-width: 200px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eaeaea;">
+      <div style="flex: 1 1 45%; min-width: 200px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eaeaea; transition: transform 0.3s ease;">
         <img src="/assets/images/proyecto-brazo.png" alt="Brazo Robótico" style="width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid #eaeaea;">
         <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
           <h4 style="margin: 0 0 10px 0; text-align: center; color: #1d3557;">🤖 Brazo Robótico</h4>
@@ -95,7 +90,7 @@ title: ""
       </div>
 
       <!-- Tarjeta Proyecto 2 -->
-      <div style="flex: 1 1 45%; min-width: 200px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eaeaea;">
+      <div style="flex: 1 1 45%; min-width: 200px; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; flex-direction: column; overflow: hidden; border: 1px solid #eaeaea; transition: transform 0.3s ease;">
         <img src="/assets/images/proyecto-brazo.png" alt="Sistemas y Control" style="width: 100%; height: 140px; object-fit: cover; border-bottom: 1px solid #eaeaea;">
         <div style="padding: 20px; display: flex; flex-direction: column; flex: 1;">
           <h4 style="margin: 0 0 10px 0; text-align: center; color: #1d3557;">⚡ Sistemas y Control</h4>
@@ -105,8 +100,6 @@ title: ""
       </div>
 
     </div>
-
-    <!-- Botón para ir a ver más proyectos (anclado al fondo) -->
     <div style="text-align: center; margin-top: auto; padding-top: 40px;">
       <a href="/proyectos/" class="btn btn--primary">Ver todos mis proyectos &rarr;</a>
     </div>
@@ -114,3 +107,109 @@ title: ""
 
 </div>
 <!-- FIN DIVISIÓN VERTICAL -->
+
+
+<!-- ========================================== -->
+<!-- SCRIPTS PARA LAS ANIMACIONES (AL FINAL)    -->
+<!-- ========================================== -->
+
+<!-- Estilo para el parpadeo del cursor de la máquina de escribir -->
+<style>
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+</style>
+
+<!-- 1. Script para el efecto Máquina de Escribir -->
+<script>
+  const words = ["Mecánica.", "Electrónica.", "Robótica.", "de Control.", "Automatizada."];
+  let i = 0;
+  let timer;
+  
+  function typingEffect() {
+    let word = words[i].split("");
+    var loopTyping = function() {
+      if (word.length > 0) {
+        document.getElementById('typewriter').innerHTML += word.shift();
+      } else {
+        setTimeout(deletingEffect, 2000); // Espera 2 segundos antes de borrar
+        return false;
+      };
+      timer = setTimeout(loopTyping, 100); // Velocidad de escritura
+    };
+    loopTyping();
+  }
+
+  function deletingEffect() {
+    let word = words[i].split("");
+    var loopDeleting = function() {
+      if (word.length > 0) {
+        word.pop();
+        document.getElementById('typewriter').innerHTML = word.join("");
+      } else {
+        if (words.length > (i + 1)) {
+          i++;
+        } else {
+          i = 0; // Vuelve a empezar
+        }
+        setTimeout(typingEffect, 500);
+        return false;
+      };
+      timer = setTimeout(loopDeleting, 50); // Velocidad de borrado
+    };
+    loopDeleting();
+  }
+
+  // Iniciar el efecto al cargar la página
+  document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(typingEffect, 1000);
+  });
+</script>
+
+<!-- 2. Librería Particles.js para la red de nodos -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<!-- 3. Configuración de las partículas -->
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+      "color": { "value": "#a8dadc" }, // Color cian de tu paleta
+      "shape": { "type": "circle" },
+      "opacity": { "value": 0.5, "random": false },
+      "size": { "value": 3, "random": true },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#a8dadc",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2, // Movimiento suave
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": { "enable": false }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" }, // Al pasar el ratón, los nodos se conectan a él
+        "onclick": { "enable": true, "mode": "push" }, // Al hacer clic, genera más partículas
+        "resize": true
+      },
+      "modes": {
+        "grab": { "distance": 140, "line_linked": { "opacity": 1 } },
+        "push": { "particles_nb": 3 }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
