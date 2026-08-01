@@ -8,8 +8,8 @@ title: ""
 <!-- ESTILOS CSS GENERALES Y DE ANIMACIONES     -->
 <!-- ========================================== -->
 <style>
-  /* --- FONDO GLOBAL: PAPEL MILIMETRADO TÉCNICO --- */
-  body {
+  /* --- FONDO GLOBAL DESDE LA RAÍZ (HTML y BODY) --- */
+  html, body {
     background-color: #f4f7f9 !important; 
     background-image: 
       linear-gradient(#e4eaf0 1px, transparent 1px),
@@ -17,16 +17,26 @@ title: ""
     background-size: 20px 20px !important;
   }
   
-  /* --- FORZAR TRANSPARENCIA EN TODAS LAS CAPAS DE LA PLANTILLA --- */
-  /* Esto elimina el recuadro blanco del menú, del reader y del main */
-  .masthead, .initial-content, #main, .page, .page__inner-wrap, .archive, .splash {
+  /* --- ANIQUILAR CUALQUIER FONDO BLANCO DE LA PLANTILLA --- */
+  /* Aquí incluimos todas las capas invisibles que usa Minimal Mistakes */
+  #page-wrapper,
+  .masthead,
+  .masthead__inner-wrap,
+  .masthead__menu,
+  .initial-content,
+  #main,
+  .page,
+  .page__inner-wrap,
+  .archive,
+  .splash {
     background: transparent !important;
     background-color: transparent !important;
     box-shadow: none !important;
   }
 
+  /* Mantener solo la fina línea separadora debajo del menú */
   .masthead {
-    border-bottom: 1px solid rgba(0,0,0,0.05) !important; /* Mantiene una finísima línea separadora */
+    border-bottom: 1px solid rgba(0,0,0,0.05) !important;
   }
 
   /* --- TARJETA PCB (Izquierda) Y TARJETA MECÁNICA (Derecha) --- */
