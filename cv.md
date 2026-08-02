@@ -9,7 +9,32 @@ author_profile: true
   /* ESTILOS DE LA PÁGINA DE CV                 */
   /* ========================================== */
 
-  /* Contenedor principal de la tarjeta de descarga */
+  /* 1. Enmarcar el perfil de autor (Sidebar lateral) */
+  .sidebar {
+    background: white !important;
+    border: 1px solid #d5dce4 !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+  }
+  .sidebar .author__avatar img {
+    border-radius: 50% !important;
+    border: 3px solid #0f4c75 !important;
+  }
+  .sidebar .author__name {
+    color: #1d3557 !important;
+    font-weight: bold !important;
+  }
+  .sidebar .author__bio {
+    color: #495057 !important;
+  }
+  .sidebar .author__urls.social-links {
+    border-top: 1px solid #eaeaea !important;
+    margin-top: 15px !important;
+    padding-top: 15px !important;
+  }
+
+  /* 2. Tarjeta central de descarga */
   .cv-download-card {
     background-color: #021a30; 
     background-image: 
@@ -28,13 +53,6 @@ author_profile: true
     margin: 40px auto;
   }
 
-  /* Detalles técnicos decorativos en las esquinas */
-  .cv-card-decor {
-    position: absolute;
-    background: #0f4c75;
-  }
-
-  /* Icono central de documento técnico */
   .cv-icon-wrapper {
     font-size: 3.5em;
     color: #00ffcc;
@@ -42,7 +60,6 @@ author_profile: true
     text-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
   }
 
-  /* Títulos y textos descriptivos */
   .cv-download-card h2 {
     margin-top: 0;
     color: #ffffff;
@@ -61,7 +78,6 @@ author_profile: true
     margin-right: auto;
   }
 
-  /* Metadatos del documento (Versión y fecha) */
   .cv-meta {
     font-size: 0.85em;
     color: #3282b8;
@@ -70,7 +86,6 @@ author_profile: true
     text-transform: uppercase;
   }
 
-  /* Botón Neón de Descarga Principal */
   .btn-download-neon {
     display: inline-block;
     padding: 14px 30px;
@@ -96,7 +111,6 @@ author_profile: true
     margin-right: 8px;
   }
 
-  /* Enlace secundario (Abrir en pestaña nueva) */
   .cv-secondary-action {
     margin-top: 20px;
   }
@@ -117,7 +131,6 @@ author_profile: true
 <!-- TARJETA CENTRAL DE DESCARGA -->
 <div class="cv-download-card">
   
-  <!-- Icono de PDF Técnico -->
   <div class="cv-icon-wrapper">
     <i class="fas fa-file-pdf"></i>
   </div>
@@ -125,20 +138,18 @@ author_profile: true
   <h2>Currículum Vítae Oficial</h2>
   
   <div class="cv-meta">
-    Ref: CV_AlejandroRamiro_2026.pdf &bull; Actualizado 2026
+    Actualizado 2026
   </div>
 
   <p>
     ¿Necesitas una copia física o un documento formal para procesos de selección? Puedes descargar mi currículum completo directamente en formato PDF.
   </p>
 
-  <!-- Botón Principal de Descarga -->
-  <!-- (RECUERDA: Sube tu PDF a la carpeta /assets/pdf/ o cambia la ruta href por la tuya real) -->
+  <!-- Enlace de descarga -->
   <a href="/assets/pdf/cv-alejandro-ramiro.pdf" class="btn-download-neon" download>
     <i class="fas fa-download"></i> Descargar CV en PDF
   </a>
 
-  <!-- Enlace secundario para visualizar sin descargar obligatoriamente -->
   <div class="cv-secondary-action">
     <a href="/assets/pdf/cv-alejandro-ramiro.pdf" target="_blank">
       <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-right: 4px;"></i> Abrir documento en una nueva pestaña
