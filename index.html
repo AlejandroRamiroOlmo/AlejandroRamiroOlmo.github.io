@@ -8,143 +8,66 @@ title: ""
 <!-- ESTILOS CSS                                -->
 <!-- ========================================== -->
 <style>
-  /* --- TÍTULOS DE SECCIÓN (Mejorados y más técnicos) --- */
-  .section-header {
-    text-align: center;
-    margin-bottom: 60px; /* Mucho más espacio entre el título y las tarjetas */
-  }
-  
-  .section-title {
-    color: #1d3557;
-    font-size: 2.2em;
-    font-weight: 700;
-    margin: 0;
-    border-bottom: none;
-  }
+  /* --- TÍTULOS DE SECCIÓN --- */
+  .section-header { text-align: center; margin-bottom: 35px; }
+  .section-title { color: #1d3557; font-size: 2.2em; font-weight: 700; margin: 0; border-bottom: none; }
+  .section-title.dark-mode { color: #ffffff; }
+  .title-accent { width: 80px; height: 4px; background-color: #00ffcc; margin: 15px auto 0; border-radius: 2px; box-shadow: 0 0 10px rgba(0, 255, 204, 0.4); }
 
-  .section-title.dark-mode {
-    color: #ffffff;
-  }
-
-  /* Línea decorativa tipo circuito debajo del título */
-  .title-accent {
-    width: 80px;
-    height: 4px;
-    background-color: #00ffcc;
-    margin: 15px auto 0;
-    border-radius: 2px;
-    box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
-    position: relative;
-  }
-  
-  .title-accent::after {
-    content: '';
-    position: absolute;
-    right: -15px;
-    top: -2px;
-    width: 8px;
-    height: 8px;
-    background-color: #021a30;
-    border: 2px solid #00ffcc;
-    border-radius: 50%;
-  }
-
-  /* --- ESTILOS DE LOS PILARES --- */
-  .competence-section { 
-    padding: 20px 1em 80px 1em; /* Mucho más espacio por abajo antes de los proyectos */
-    max-width: 1280px; 
-    margin: 60px auto 0 auto; /* Separación clara del banner */
-  }
-  
-  .pillars-container { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 40px; /* Más espacio entre columnas */
-  }
-  
-  .pillar { 
-    background: #021a30; 
-    border: 2px solid #0f4c75; 
-    border-radius: 12px; 
-    padding: 40px 30px; 
-    text-align: center; 
-    transition: 0.3s; 
-  }
-  
-  .pillar:hover { 
-    border-color: #00ffcc; 
-    transform: translateY(-5px); 
-    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15); 
-  }
-  
-  .pillar i { font-size: 2.8em; color: #00ffcc; margin-bottom: 25px; }
+  /* --- ÁREAS DE COMPETENCIA Y TECH STACK --- */
+  .competence-section { padding: 10px 1em 50px 1em; max-width: 1280px; margin: 40px auto 0 auto; }
+  .pillars-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+  .pillar { background: #021a30; border: 2px solid #0f4c75; border-radius: 12px; padding: 35px 25px; text-align: center; transition: 0.3s; }
+  .pillar:hover { border-color: #00ffcc; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15); }
+  .pillar i { font-size: 2.8em; color: #00ffcc; margin-bottom: 20px; }
   .pillar h3 { color: #ffffff; margin-bottom: 10px; font-size: 1.4em; }
   .pillar ul { list-style: none; padding: 0; color: #bbe1fa; font-size: 1em; line-height: 1.8; }
+  
+  /* Banda de Tecnologías (Etiquetas) */
+  .tech-stack-band { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 40px; }
+  .tech-tag { background: rgba(0, 255, 204, 0.05); color: #00ffcc; border: 1px solid #00ffcc; padding: 6px 18px; border-radius: 20px; font-size: 0.85em; font-family: monospace; letter-spacing: 1px; transition: 0.3s; }
+  .tech-tag:hover { background: #00ffcc; color: #021a30; box-shadow: 0 0 10px rgba(0, 255, 204, 0.4); }
 
-  /* --- SECCIÓN PROYECTOS ANCHO COMPLETO --- */
-  .projects-section { 
-    background: #06182a; 
-    padding: 80px 20px; /* Respiro masivo arriba y abajo */
-    border-top: 1px solid #0f4c75; 
-    border-bottom: 1px solid #0f4c75; 
-  }
-  
-  .projects-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 40px; 
-    max-width: 1280px; 
-    margin: 0 auto; 
-  }
-  
-  .tech-card { 
-    background: #06223d; 
-    border-radius: 8px; 
-    border: 1px solid #0f4c75; 
-    overflow: hidden; 
-    transition: 0.3s; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3); 
-  }
-  
-  .tech-card-img-wrapper { height: 180px; overflow: hidden; border-bottom: 2px solid #0f4c75; }
-  .tech-card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-  .tech-card:hover { transform: translateY(-5px); border-color: #00ffcc; box-shadow: 0 12px 25px rgba(0, 255, 204, 0.15); }
+  /* --- PROYECTOS MINIMALISTAS --- */
+  .projects-section { background: #06182a; padding: 50px 20px; border-top: 1px solid #0f4c75; border-bottom: 1px solid #0f4c75; }
+  .minimal-projects-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  .minimal-project { background: #021a30; border-left: 3px solid #0f4c75; padding: 20px 25px; border-radius: 0 8px 8px 0; transition: 0.3s; display: flex; flex-direction: column; justify-content: center; }
+  .minimal-project:hover { border-left-color: #00ffcc; background: #06223d; transform: translateX(5px); }
+  .proj-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 10px; }
+  .proj-header h4 { margin: 0; color: #ffffff; font-size: 1.2em; border-bottom: none; }
+  .proj-tech { font-size: 0.85em; color: #00ffcc; font-family: monospace; }
+  .minimal-project p { margin: 0; color: #bbe1fa; font-size: 0.95em; }
 
-  /* Botones estilo Neón */
-  .btn-neon {
-    display: inline-block; padding: 12px 25px; border: 2px solid #00ffcc;
-    color: #00ffcc !important; text-decoration: none; border-radius: 5px;
-    font-weight: bold; transition: 0.3s; background: transparent; font-size: 1.1em;
-  }
+  /* --- SOBRE MÍ (RESUMEN) --- */
+  .about-brief-section { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+  .about-box { background: #ffffff; border: 1px solid #d5dce4; border-radius: 12px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
+  .about-icon { font-size: 4em; color: #1d3557; opacity: 0.8; }
+  .about-content { flex: 1; min-width: 300px; }
+  .about-content p { color: #495057; line-height: 1.7; font-size: 1.05em; margin-bottom: 20px; text-align: justify; }
+
+  /* --- BOTONES --- */
+  .btn-neon { display: inline-block; padding: 12px 25px; border: 2px solid #00ffcc; color: #00ffcc !important; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; background: transparent; font-size: 1em; }
   .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 15px #00ffcc; }
+  
+  .btn-dark { display: inline-block; padding: 12px 25px; border: 2px solid #1d3557; color: #1d3557 !important; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; font-size: 1em; }
+  .btn-dark:hover { background: #1d3557; color: #ffffff !important; }
 
-  /* Animación del cursor de la máquina de escribir */
-  @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0; }
-    100% { opacity: 1; }
-  }
+  @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
 </style>
 
 <!-- ========================================== -->
-<!-- INICIO DEL BANNER ANIMADO (Tamaño Original)-->
+<!-- BANNER ANIMADO                             -->
 <!-- ========================================== -->
 <div id="particles-banner" style="background-color: #1d3557; color: white; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-top: 0; box-shadow: 0 4px 15px rgba(0,0,0,0.2); overflow: hidden;">
   <div id="particles-js" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;"></div>
   <div style="max-width: 1280px; margin: 0 auto; padding: 40px 1em 50px 1em; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; position: relative; z-index: 1;">
     <div style="flex: 1; min-width: 300px; margin-right: 20px;">
-      
-      <!-- Título con Máquina de Escribir -->
       <h1 style="color: white; margin-top: 0; border-bottom: none; min-height: 40px;">
-        Ingeniería Mecánica y <span id="typewriter" style="color: #00ffcc;"></span><span id="cursor" style="animation: blink 1s infinite; color: #00ffcc;">|</span>
+        Ingeniería Mecánica y <span id="typewriter" style="color: #00ffcc;"></span><span style="animation: blink 1s infinite; color: #00ffcc;">|</span>
       </h1>
-      
       <p style="font-size: 1.1em; color: #f1faee; margin-bottom: 30px;">Buscando conectar la mecánica de precisión con el control electrónico. Aquí documento mis diseños, prototipos y desarrollos tecnológicos.</p>
-      
       <a href="/proyectos/" class="btn-neon">Ver Proyectos</a>
     </div>
-
-    <!-- Tarjeta de Autor Original -->
     <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); margin-top: 15px;">
       <img src="/assets/images/foto.png" alt="Alejandro" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid white; object-fit: cover;">
       <h3 style="color: white; margin: 15px 0 5px 0; border-bottom: none;">Alejandro Ramiro</h3>
@@ -156,143 +79,104 @@ title: ""
     </div>
   </div>
 </div>
-<!-- FIN DEL BANNER ANIMADO -->
 
 <!-- ========================================== -->
 <!-- 1. ÁREAS DE COMPETENCIA TÉCNICA            -->
 <!-- ========================================== -->
 <div class="competence-section">
-  
-  <!-- Nuevo diseño del título para integrarlo mejor -->
   <div class="section-header">
     <h2 class="section-title"><i class="fas fa-layer-group" style="color: #0f4c75; margin-right: 10px;"></i>Áreas de Competencia Técnica</h2>
     <div class="title-accent"></div>
   </div>
 
   <div class="pillars-container">
-    <div class="pillar">
-      <i class="fas fa-cogs"></i>
-      <h3>Mecánica</h3>
-      <ul>
-        <li>Modelado 3D (SolidWorks)</li>
-        <li>Análisis de ensamblajes</li>
-        <li>Normativas de diseño</li>
-      </ul>
-    </div>
-    <div class="pillar">
-      <i class="fas fa-microchip"></i>
-      <h3>Electrónica</h3>
-      <ul>
-        <li>Diseño de PCBs (KiCad)</li>
-        <li>Circuitos de control</li>
-        <li>Sensores y actuadores</li>
-      </ul>
-    </div>
-    <div class="pillar">
-      <i class="fas fa-code"></i>
-      <h3>Automatización</h3>
-      <ul>
-        <li>Algoritmos de control</li>
-        <li>Programación embebida</li>
-        <li>Automatización lógica</li>
-      </ul>
-    </div>
+    <div class="pillar"><i class="fas fa-cogs"></i><h3>Mecánica</h3><ul><li>Modelado 3D (SolidWorks)</li><li>Análisis de ensamblajes</li><li>Normativas de diseño</li></ul></div>
+    <div class="pillar"><i class="fas fa-microchip"></i><h3>Electrónica</h3><ul><li>Diseño de PCBs (KiCad)</li><li>Circuitos de control</li><li>Sensores y actuadores</li></ul></div>
+    <div class="pillar"><i class="fas fa-code"></i><h3>Automatización</h3><ul><li>Algoritmos de control</li><li>Programación embebida</li><li>Automatización lógica</li></ul></div>
+  </div>
+
+  <!-- Banda de Tecnologías (Tech Stack) -->
+  <div class="tech-stack-band">
+    <span class="tech-tag">SolidWorks</span>
+    <span class="tech-tag">KiCad</span>
+    <span class="tech-tag">Arduino</span>
+    <span class="tech-tag">C/C++</span>
+    <span class="tech-tag">Python</span>
   </div>
 </div>
 
 <!-- ========================================== -->
-<!-- 2. PROYECTOS DESTACADOS                    -->
+<!-- 2. PROYECTOS DESTACADOS (Minimalista)      -->
 <!-- ========================================== -->
 <div class="projects-section">
-  
   <div class="section-header">
     <h2 class="section-title dark-mode">🚀 Proyectos Destacados</h2>
     <div class="title-accent"></div>
   </div>
 
-  <div class="projects-grid">
-    <!-- Proyecto 1 -->
-    <div class="tech-card">
-      <div class="tech-card-img-wrapper">
-        <img src="/assets/images/proyecto-brazo.png" alt="Brazo Robótico">
+  <div class="minimal-projects-container">
+    <div class="minimal-project">
+      <div class="proj-header">
+        <h4>Brazo Robótico</h4>
+        <span class="proj-tech">SolidWorks / C++</span>
       </div>
-      <div style="padding: 25px;">
-        <h4 style="margin: 0 0 10px 0; color: #fff; font-size: 1.2em;">Brazo Robótico</h4>
-        <p style="font-size: 0.95em; color: #bbe1fa; margin-bottom: 0;">Diseño 3D y control mediante microcontroladores.</p>
-      </div>
+      <p>Diseño 3D integral, análisis de ensamblaje y control cinemático mediante microcontroladores.</p>
     </div>
-    <!-- Proyecto 2 -->
-    <div class="tech-card">
-      <div class="tech-card-img-wrapper">
-        <img src="/assets/images/proyecto-brazo.png" alt="Sistemas y Control">
+    
+    <div class="minimal-project">
+      <div class="proj-header">
+        <h4>Sistemas y Control</h4>
+        <span class="proj-tech">KiCad / Sensores</span>
       </div>
-      <div style="padding: 25px;">
-        <h4 style="margin: 0 0 10px 0; color: #fff; font-size: 1.2em;">Sistemas y Control</h4>
-        <p style="font-size: 0.95em; color: #bbe1fa; margin-bottom: 0;">Explora mis desarrollos en electrónica aplicada y automatización.</p>
-      </div>
+      <p>Desarrollo de circuitos impresos, integración de sensores y lógica de automatización aplicada.</p>
     </div>
   </div>
   
-  <div style="text-align: center; margin-top: 50px;">
+  <div style="text-align: center; margin-top: 35px;">
     <a href="/proyectos/" class="btn-neon">Ver todos mis proyectos &rarr;</a>
   </div>
 </div>
 
 <!-- ========================================== -->
-<!-- SCRIPTS (Con la configuración original)    -->
+<!-- 3. SOBRE MÍ (Resumen)                      -->
+<!-- ========================================== -->
+<div class="about-brief-section">
+  <div class="section-header">
+    <h2 class="section-title">Sobre Mí</h2>
+    <div class="title-accent" style="background-color: #1d3557; box-shadow: none;"></div>
+  </div>
+  
+  <div class="about-box">
+    <div class="about-icon">
+      <i class="fas fa-globe-europe"></i>
+    </div>
+    <div class="about-content">
+      <p>
+        Soy estudiante de último curso del <strong>Doble Grado en Ingeniería Mecánica y [...] en la Universidad de Jaén</strong>. Poseo un perfil marcadamente multidisciplinar, orientado a la resolución de problemas mediante la integración del hardware y el software.
+      </p>
+      <p>
+        Mi formación técnica se complementa con una estancia Erasmus en <strong>Politechnika Lubelska (Polonia)</strong>, experiencia que me ha aportado una sólida visión internacional, alta capacidad de adaptación y facilidad para colaborar en equipos de trabajo multiculturales e interdisciplinares.
+      </p>
+      <a href="/sobre-mi/" class="btn-dark">Conóceme un poco más &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- SCRIPTS                                    -->
 <!-- ========================================== -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  // 1. Efecto Máquina de Escribir
-  const word = "Electrónica.";
-  let i = 0;
-  let isDeleting = false;
-  
+  const word = "Electrónica."; let i = 0; let isDeleting = false;
   function typeWriterEffect() {
-    const typewriterElement = document.getElementById('typewriter');
-    
-    if (!isDeleting && i <= word.length) {
-      typewriterElement.innerHTML = word.substring(0, i);
-      i++;
-      setTimeout(typeWriterEffect, 100);
-    } 
-    else if (isDeleting && i >= 0) {
-      typewriterElement.innerHTML = word.substring(0, i);
-      i--;
-      setTimeout(typeWriterEffect, 50);
-    } 
-    else if (i > word.length) {
-      isDeleting = true;
-      setTimeout(typeWriterEffect, 3000);
-    } 
-    else if (i < 0) {
-      isDeleting = false;
-      i = 0;
-      setTimeout(typeWriterEffect, 500);
-    }
+    const el = document.getElementById('typewriter');
+    if (!isDeleting && i <= word.length) { el.innerHTML = word.substring(0, i); i++; setTimeout(typeWriterEffect, 100); } 
+    else if (isDeleting && i >= 0) { el.innerHTML = word.substring(0, i); i--; setTimeout(typeWriterEffect, 50); } 
+    else if (i > word.length) { isDeleting = true; setTimeout(typeWriterEffect, 3000); } 
+    else if (i < 0) { isDeleting = false; i = 0; setTimeout(typeWriterEffect, 500); }
   }
-
-  // 2. Inicializar animaciones al cargar
   document.addEventListener("DOMContentLoaded", function() {
     setTimeout(typeWriterEffect, 500);
-
-    // Partículas con la configuración sutil y elegante original
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#a8dadc" }, 
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5, "random": false },
-        "size": { "value": 3, "random": true },
-        "line_linked": { "enable": true, "distance": 150, "color": "#a8dadc", "opacity": 0.4, "width": 1 },
-        "move": { "enable": true, "speed": 2, "direction": "none", "out_mode": "out" }
-      },
-      "interactivity": {
-        "detect_on": "canvas",
-        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
-      },
-      "retina_detect": true
-    });
+    particlesJS("particles-js", { "particles": { "number": { "value": 60, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#a8dadc" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#a8dadc", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 2, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
   });
 </script>
