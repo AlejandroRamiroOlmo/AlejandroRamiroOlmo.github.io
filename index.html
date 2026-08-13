@@ -8,49 +8,51 @@ title: ""
 <!-- ESTILOS CSS                                -->
 <!-- ========================================== -->
 <style>
-  /* --- TÍTULOS DE SECCIÓN --- */
-  .section-header { text-align: center; margin-bottom: 35px; }
+  /* --- TÍTULOS DE SECCIÓN UNIFICADOS --- */
+  .section-header { text-align: center; margin: 60px 0 35px 0; }
   .section-title { color: #1d3557; font-size: 2.2em; font-weight: 700; margin: 0; border-bottom: none; }
-  .section-title.dark-mode { color: #ffffff; }
-  .title-accent { width: 80px; height: 4px; background-color: #00ffcc; margin: 15px auto 0; border-radius: 2px; box-shadow: 0 0 10px rgba(0, 255, 204, 0.4); }
+  /* Raya separadora azul oscuro (Reemplaza al verde fluorescente) */
+  .title-accent { width: 80px; height: 4px; background-color: #0f4c75; margin: 15px auto 0; border-radius: 2px; }
 
-  /* --- ÁREAS DE COMPETENCIA Y TECH STACK --- */
-  .competence-section { padding: 10px 1em 50px 1em; max-width: 1280px; margin: 40px auto 0 auto; }
+  /* --- ÁREAS DE COMPETENCIA TÉCNICA --- */
+  .competence-section { max-width: 1280px; margin: 40px auto 0 auto; padding: 0 20px; }
   .pillars-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
   .pillar { background: #021a30; border: 2px solid #0f4c75; border-radius: 12px; padding: 35px 25px; text-align: center; transition: 0.3s; }
-  .pillar:hover { border-color: #00ffcc; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15); }
-  .pillar i { font-size: 2.8em; color: #00ffcc; margin-bottom: 20px; }
+  .pillar:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(15, 76, 117, 0.3); }
+  .pillar i { font-size: 2.8em; color: #bbe1fa; margin-bottom: 20px; }
   .pillar h3 { color: #ffffff; margin-bottom: 10px; font-size: 1.4em; }
   .pillar ul { list-style: none; padding: 0; color: #bbe1fa; font-size: 1em; line-height: 1.8; }
   
-  /* Banda de Tecnologías (Etiquetas) */
+  /* Banda de Tecnologías Muy Visible */
   .tech-stack-band { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 40px; }
-  .tech-tag { background: rgba(0, 255, 204, 0.05); color: #00ffcc; border: 1px solid #00ffcc; padding: 6px 18px; border-radius: 20px; font-size: 0.85em; font-family: monospace; letter-spacing: 1px; transition: 0.3s; }
-  .tech-tag:hover { background: #00ffcc; color: #021a30; box-shadow: 0 0 10px rgba(0, 255, 204, 0.4); }
+  .tech-tag { background: #0f4c75; color: #ffffff; padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: bold; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .tech-tag:hover { background: #1d3557; transform: translateY(-2px); }
 
-  /* --- PROYECTOS MINIMALISTAS --- */
-  .projects-section { background: #06182a; padding: 50px 20px; border-top: 1px solid #0f4c75; border-bottom: 1px solid #0f4c75; }
-  .minimal-projects-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-  .minimal-project { background: #021a30; border-left: 3px solid #0f4c75; padding: 20px 25px; border-radius: 0 8px 8px 0; transition: 0.3s; display: flex; flex-direction: column; justify-content: center; }
-  .minimal-project:hover { border-left-color: #00ffcc; background: #06223d; transform: translateX(5px); }
-  .proj-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 10px; }
-  .proj-header h4 { margin: 0; color: #ffffff; font-size: 1.2em; border-bottom: none; }
-  .proj-tech { font-size: 0.85em; color: #00ffcc; font-family: monospace; }
-  .minimal-project p { margin: 0; color: #bbe1fa; font-size: 0.95em; }
-
-  /* --- SOBRE MÍ (RESUMEN) --- */
-  .about-brief-section { max-width: 900px; margin: 50px auto; padding: 0 20px; }
-  .about-box { background: #ffffff; border: 1px solid #d5dce4; border-radius: 12px; padding: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
-  .about-icon { font-size: 4em; color: #1d3557; opacity: 0.8; }
-  .about-content { flex: 1; min-width: 300px; }
-  .about-content p { color: #495057; line-height: 1.7; font-size: 1.05em; margin-bottom: 20px; text-align: justify; }
-
-  /* --- BOTONES --- */
-  .btn-neon { display: inline-block; padding: 12px 25px; border: 2px solid #00ffcc; color: #00ffcc !important; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; background: transparent; font-size: 1em; }
-  .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 15px #00ffcc; }
+  /* --- PROYECTOS (Imágenes con Hover) --- */
+  .projects-section { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
   
-  .btn-dark { display: inline-block; padding: 12px 25px; border: 2px solid #1d3557; color: #1d3557 !important; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; font-size: 1em; }
-  .btn-dark:hover { background: #1d3557; color: #ffffff !important; }
+  .project-card-img { position: relative; height: 280px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); cursor: pointer; }
+  .project-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  
+  /* Capa superpuesta que aparece al hacer hover */
+  .project-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(2, 26, 48, 0.9); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; padding: 30px; text-align: center; }
+  .project-card-img:hover img { transform: scale(1.05); }
+  .project-card-img:hover .project-overlay { opacity: 1; }
+  
+  .project-overlay h4 { color: #ffffff; font-size: 1.5em; margin: 0 0 10px 0; border-bottom: none; }
+  .project-overlay p { color: #bbe1fa; font-size: 1em; margin: 0; line-height: 1.5; }
+
+  /* --- SOBRE MÍ (Ancho completo, sin caja) --- */
+  .about-section { max-width: 1280px; margin: 0 auto 80px auto; padding: 0 20px; }
+  .about-content-wrapper { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; }
+  .about-text { flex: 1; min-width: 300px; color: #495057; font-size: 1.1em; line-height: 1.8; text-align: justify; }
+
+  /* --- BOTONES SOBRIOS --- */
+  .btn-primary { display: inline-block; padding: 12px 25px; border: 2px solid #0f4c75; color: #0f4c75; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; font-size: 1em; }
+  .btn-primary:hover { background: #0f4c75; color: #ffffff; }
+  .btn-white { border-color: #ffffff; color: #ffffff; }
+  .btn-white:hover { background: #ffffff; color: #1d3557; }
 
   @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
 </style>
@@ -63,10 +65,10 @@ title: ""
   <div style="max-width: 1280px; margin: 0 auto; padding: 40px 1em 50px 1em; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; position: relative; z-index: 1;">
     <div style="flex: 1; min-width: 300px; margin-right: 20px;">
       <h1 style="color: white; margin-top: 0; border-bottom: none; min-height: 40px;">
-        Ingeniería Mecánica y <span id="typewriter" style="color: #00ffcc;"></span><span style="animation: blink 1s infinite; color: #00ffcc;">|</span>
+        Ingeniería Mecánica y <span id="typewriter" style="color: #bbe1fa;"></span><span style="animation: blink 1s infinite; color: #bbe1fa;">|</span>
       </h1>
       <p style="font-size: 1.1em; color: #f1faee; margin-bottom: 30px;">Buscando conectar la mecánica de precisión con el control electrónico. Aquí documento mis diseños, prototipos y desarrollos tecnológicos.</p>
-      <a href="/proyectos/" class="btn-neon">Ver Proyectos</a>
+      <a href="/proyectos/" class="btn-primary btn-white">Ver Proyectos</a>
     </div>
     <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); margin-top: 15px;">
       <img src="/assets/images/foto.png" alt="Alejandro" style="width: 130px; height: 130px; border-radius: 50%; border: 4px solid white; object-fit: cover;">
@@ -85,14 +87,38 @@ title: ""
 <!-- ========================================== -->
 <div class="competence-section">
   <div class="section-header">
-    <h2 class="section-title"><i class="fas fa-layer-group" style="color: #0f4c75; margin-right: 10px;"></i>Áreas de Competencia Técnica</h2>
+    <h2 class="section-title">Áreas de Competencia Técnica</h2>
     <div class="title-accent"></div>
   </div>
 
   <div class="pillars-container">
-    <div class="pillar"><i class="fas fa-cogs"></i><h3>Mecánica</h3><ul><li>Modelado 3D (SolidWorks)</li><li>Análisis de ensamblajes</li><li>Normativas de diseño</li></ul></div>
-    <div class="pillar"><i class="fas fa-microchip"></i><h3>Electrónica</h3><ul><li>Diseño de PCBs (KiCad)</li><li>Circuitos de control</li><li>Sensores y actuadores</li></ul></div>
-    <div class="pillar"><i class="fas fa-code"></i><h3>Automatización</h3><ul><li>Algoritmos de control</li><li>Programación embebida</li><li>Automatización lógica</li></ul></div>
+    <div class="pillar">
+      <i class="fas fa-cogs"></i>
+      <h3>Mecánica</h3>
+      <ul>
+        <li>Modelado 3D (SolidWorks)</li>
+        <li>Análisis de ensamblajes</li>
+        <li>Normativas de diseño</li>
+      </ul>
+    </div>
+    <div class="pillar">
+      <i class="fas fa-microchip"></i>
+      <h3>Electrónica</h3>
+      <ul>
+        <li>Diseño de PCBs (KiCad)</li>
+        <li>Circuitos de control</li>
+        <li>Sensores y actuadores</li>
+      </ul>
+    </div>
+    <div class="pillar">
+      <i class="fas fa-code"></i>
+      <h3>Automatización</h3>
+      <ul>
+        <li>Algoritmos de control</li>
+        <li>Programación embebida</li>
+        <li>Automatización lógica</li>
+      </ul>
+    </div>
   </div>
 
   <!-- Banda de Tecnologías (Tech Stack) -->
@@ -106,58 +132,59 @@ title: ""
 </div>
 
 <!-- ========================================== -->
-<!-- 2. PROYECTOS DESTACADOS (Minimalista)      -->
+<!-- 2. PROYECTOS DESTACADOS                    -->
 <!-- ========================================== -->
 <div class="projects-section">
   <div class="section-header">
-    <h2 class="section-title dark-mode">🚀 Proyectos Destacados</h2>
+    <h2 class="section-title">Proyectos Destacados</h2>
     <div class="title-accent"></div>
   </div>
 
-  <div class="minimal-projects-container">
-    <div class="minimal-project">
-      <div class="proj-header">
+  <div class="projects-grid">
+    <!-- Proyecto 1 (Solo imagen. El texto sale al pasar el ratón) -->
+    <div class="project-card-img" onclick="location.href='/proyectos/';">
+      <img src="/assets/images/proyecto-brazo.png" alt="Brazo Robótico">
+      <div class="project-overlay">
         <h4>Brazo Robótico</h4>
-        <span class="proj-tech">SolidWorks / C++</span>
+        <p>Diseño 3D integral y control cinemático mediante microcontroladores (C++).</p>
       </div>
-      <p>Diseño 3D integral, análisis de ensamblaje y control cinemático mediante microcontroladores.</p>
     </div>
     
-    <div class="minimal-project">
-      <div class="proj-header">
+    <!-- Proyecto 2 -->
+    <div class="project-card-img" onclick="location.href='/proyectos/';">
+      <img src="/assets/images/proyecto-brazo.png" alt="Sistemas y Control">
+      <div class="project-overlay">
         <h4>Sistemas y Control</h4>
-        <span class="proj-tech">KiCad / Sensores</span>
+        <p>Desarrollo de circuitos impresos (KiCad) y lógica de automatización.</p>
       </div>
-      <p>Desarrollo de circuitos impresos, integración de sensores y lógica de automatización aplicada.</p>
     </div>
   </div>
   
-  <div style="text-align: center; margin-top: 35px;">
-    <a href="/proyectos/" class="btn-neon">Ver todos mis proyectos &rarr;</a>
+  <div style="text-align: center; margin-top: 40px;">
+    <a href="/proyectos/" class="btn-primary">Ver todos mis proyectos &rarr;</a>
   </div>
 </div>
 
 <!-- ========================================== -->
-<!-- 3. SOBRE MÍ (Resumen)                      -->
+<!-- 3. SOBRE MÍ                                -->
 <!-- ========================================== -->
-<div class="about-brief-section">
+<div class="about-section">
   <div class="section-header">
     <h2 class="section-title">Sobre Mí</h2>
-    <div class="title-accent" style="background-color: #1d3557; box-shadow: none;"></div>
+    <div class="title-accent"></div>
   </div>
   
-  <div class="about-box">
-    <div class="about-icon">
-      <i class="fas fa-globe-europe"></i>
-    </div>
-    <div class="about-content">
+  <div class="about-content-wrapper">
+    <div class="about-text">
       <p>
         Soy estudiante de último curso del <strong>Doble Grado en Ingeniería Mecánica y [...] en la Universidad de Jaén</strong>. Poseo un perfil marcadamente multidisciplinar, orientado a la resolución de problemas mediante la integración del hardware y el software.
       </p>
       <p>
         Mi formación técnica se complementa con una estancia Erasmus en <strong>Politechnika Lubelska (Polonia)</strong>, experiencia que me ha aportado una sólida visión internacional, alta capacidad de adaptación y facilidad para colaborar en equipos de trabajo multiculturales e interdisciplinares.
       </p>
-      <a href="/sobre-mi/" class="btn-dark">Conóceme un poco más &rarr;</a>
+      <div style="margin-top: 30px;">
+        <a href="/sobre-mi/" class="btn-primary">Conóceme un poco más &rarr;</a>
+      </div>
     </div>
   </div>
 </div>
