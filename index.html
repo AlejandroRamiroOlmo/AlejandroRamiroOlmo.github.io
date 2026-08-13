@@ -175,15 +175,14 @@ title: ""
     <div class="section-header" style="margin-top: 0;">
       <!-- Título claro para el fondo oscuro de la tarjeta -->
       <h2 class="section-title light-text">Proyectos Destacados</h2>
-      <div class="title-accent"></div>
     </div>
 
     <div class="projects-grid">
       <div class="project-card-img" onclick="location.href='/proyectos/';">
-        <img src="/assets/images/proyecto-brazo.png" alt="Brazo Robótico">
+        <img src="/assets/images/maquina.png" alt="Máquina Arcade">
         <div class="project-overlay">
-          <h4>Brazo Robótico</h4>
-          <p>Diseño 3D integral y control cinemático mediante microcontroladores.</p>
+          <h4>Máquina Arcade</h4>
+          <p>Diseño físico de máquina Arcade junto con desarrollo de software personalizado y tematizado </p>
         </div>
       </div>
       
@@ -211,7 +210,6 @@ title: ""
     
     <div class="section-header" style="margin-top: 0;">
       <h2 class="section-title light-text">Sobre Mí</h2>
-      <div class="title-accent"></div>
     </div>
     
     <div class="about-grid">
@@ -228,7 +226,7 @@ title: ""
         <li>
           <i class="fas fa-university"></i>
           <strong>Formación Académica</strong>
-          Doble Grado en Ingeniería Mecánica y [...] en la Universidad de Jaén.
+          Doble Grado en Ingeniería Mecánica y Electrónica Industrial en la Universidad de Jaén.
         </li>
         <li>
           <i class="fas fa-globe-europe"></i>
@@ -251,7 +249,7 @@ title: ""
 <!-- ========================================== -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  const word = "Electrónica."; let i = 0; let isDeleting = false;
+  const word = "Electrónica"; let i = 0; let isDeleting = false;
   function typeWriterEffect() {
     const el = document.getElementById('typewriter');
     if (!isDeleting && i <= word.length) { el.innerHTML = word.substring(0, i); i++; setTimeout(typeWriterEffect, 100); } 
