@@ -8,48 +8,47 @@ title: ""
 <!-- ESTILOS CSS                                -->
 <!-- ========================================== -->
 <style>
-  /* --- TÍTULOS DE SECCIÓN UNIFICADOS --- */
+  /* --- TÍTULOS DE SECCIÓN --- */
   .section-header { text-align: center; margin: 60px 0 35px 0; }
-  .section-title { color: #1d3557; font-size: 2.2em; font-weight: 700; margin: 0; border-bottom: none; }
+  .section-title { font-size: 2.2em; font-weight: 700; margin: 0; border-bottom: none; }
+  
+  /* Título oscuro para fondo blanco (Sección 1) y claro para tarjetas oscuras (Secciones 2 y 3) */
+  .section-title.dark-text { color: #1d3557; }
+  .section-title.light-text { color: #ffffff; }
+
+  /* Raya separadora azul oscuro */
   .title-accent { width: 80px; height: 4px; background-color: #0f4c75; margin: 15px auto 0; border-radius: 2px; }
 
-  /* --- ÁREAS DE COMPETENCIA TÉCNICA --- */
+  /* --- TARJETA CONTENEDORA GLOBAL (Para Secciones 2 y 3) --- */
+  .section-wrapper { max-width: 1280px; margin: 0 auto 60px auto; padding: 0 20px; }
+  .section-card {
+    background-color: #021a30;
+    border: 2px solid #0f4c75;
+    border-radius: 12px;
+    padding: 50px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+
+  /* --- 1. ÁREAS DE COMPETENCIA TÉCNICA --- */
   .competence-section { max-width: 1280px; margin: 40px auto 0 auto; padding: 0 20px; }
   .pillars-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
   .pillar { background: #021a30; border: 2px solid #0f4c75; border-radius: 12px; padding: 35px 25px; text-align: center; transition: 0.3s; }
-  
-  /* Retorno del efecto Neón al pasar el ratón */
   .pillar:hover { border-color: #00ffcc; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15); }
-  
-  /* Retorno del color Cyan a los iconos */
   .pillar i { font-size: 2.8em; color: #00ffcc; margin-bottom: 20px; }
-  
   .pillar h3 { color: #ffffff; margin-bottom: 10px; font-size: 1.4em; }
   .pillar ul { list-style: none; padding: 0; color: #bbe1fa; font-size: 1em; line-height: 1.8; }
   
-  /* Banda de Tecnologías (Fondo oscuro, borde cyan para visibilidad) */
-  .tech-stack-band { 
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; 
-    margin-top: 40px; 
-    margin-bottom: 80px; /* Aumento drástico del margen inferior para separar de los proyectos */
-  }
-  .tech-tag { 
-    background: #021a30; color: #ffffff; border: 1px solid #00ffcc; 
-    padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: bold; 
-    letter-spacing: 1px; transition: 0.3s; box-shadow: 0 2px 8px rgba(0, 255, 204, 0.1); 
-  }
+  /* Banda de Tecnologías */
+  .tech-stack-band { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 40px; margin-bottom: 80px; }
+  .tech-tag { background: #021a30; color: #ffffff; border: 1px solid #00ffcc; padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: bold; letter-spacing: 1px; transition: 0.3s; }
   .tech-tag:hover { background: #00ffcc; color: #021a30; }
 
-  /* --- PROYECTOS (Imágenes con Hover) --- */
-  .projects-section { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; }
-  
+  /* --- 2. PROYECTOS (Imágenes con Hover) --- */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
   .project-card-img { position: relative; height: 280px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
   .project-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
   
-  /* Capa superpuesta oscura */
   .project-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(2, 26, 48, 0.9); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; padding: 30px; text-align: center; }
-  
   .project-card-img:hover { border-color: #00ffcc; box-shadow: 0 10px 25px rgba(0, 255, 204, 0.2); }
   .project-card-img:hover img { transform: scale(1.05); }
   .project-card-img:hover .project-overlay { opacity: 1; }
@@ -57,23 +56,40 @@ title: ""
   .project-overlay h4 { color: #ffffff; font-size: 1.5em; margin: 0 0 10px 0; border-bottom: none; }
   .project-overlay p { color: #bbe1fa; font-size: 1em; margin: 0; line-height: 1.5; }
 
-  /* --- SOBRE MÍ ESQUEMATIZADO --- */
-  .about-section { max-width: 1280px; margin: 80px auto 100px auto; padding: 0 20px; }
-  .about-grid { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; margin-top: 30px; }
+  /* --- 3. SOBRE MÍ (Adaptado a fondo oscuro) --- */
+  .about-grid { display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; margin-top: 10px; }
+  .about-intro { flex: 1; min-width: 300px; color: #bbe1fa; font-size: 1.1em; line-height: 1.8; text-align: justify; }
   
-  .about-intro { flex: 1; min-width: 300px; color: #495057; font-size: 1.1em; line-height: 1.8; text-align: justify; }
-  
-  /* Lista esquematizada */
   .about-list { flex: 1; min-width: 300px; list-style: none; padding: 0; margin: 0; }
-  .about-list li { position: relative; padding-left: 40px; margin-bottom: 25px; color: #1d3557; font-size: 1.05em; line-height: 1.5; }
-  .about-list li i { position: absolute; left: 0; top: 2px; color: #00ffcc; font-size: 1.5em; background: #021a30; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; padding: 5px; }
-  .about-list li strong { display: block; color: #1d3557; font-size: 1.1em; margin-bottom: 3px; }
+  .about-list li { position: relative; padding-left: 50px; margin-bottom: 25px; color: #bbe1fa; font-size: 1.05em; line-height: 1.5; }
+  .about-list li i { position: absolute; left: 0; top: 0; color: #00ffcc; font-size: 1.4em; background: #0f4c75; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .about-list li strong { display: block; color: #ffffff; font-size: 1.1em; margin-bottom: 5px; }
 
-  /* --- BOTONES NEÓN (Restaurados) --- */
-  .btn-neon { display: inline-block; padding: 12px 25px; border: 2px solid #00ffcc; color: #00ffcc !important; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; font-size: 1em; background: transparent; }
-  .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 15px #00ffcc; }
+  /* --- BOTONES NEÓN (Con fondo Azul Oscuro) --- */
+  .btn-neon { 
+    display: inline-block; 
+    padding: 12px 25px; 
+    border: 2px solid #00ffcc; 
+    color: #00ffcc !important; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    font-size: 1em; 
+    background: #021a30; /* Fondo azul oscuro del tema */
+  }
+  .btn-neon:hover { 
+    background: #00ffcc; 
+    color: #021a30 !important; 
+    box-shadow: 0 0 15px #00ffcc; 
+  }
 
   @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+  
+  /* Ajuste responsivo para el padding de las tarjetas grandes */
+  @media (max-width: 768px) {
+    .section-card { padding: 30px 20px; }
+  }
 </style>
 
 <!-- ========================================== -->
@@ -88,7 +104,6 @@ title: ""
       </h1>
       <p style="font-size: 1.1em; color: #f1faee; margin-bottom: 30px;">Buscando conectar la mecánica de precisión con el control electrónico. Aquí documento mis diseños, prototipos y desarrollos tecnológicos.</p>
       
-      <!-- Botón Neón restaurado -->
       <a href="/proyectos/" class="btn-neon">Ver Proyectos</a>
     </div>
     <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); margin-top: 15px;">
@@ -107,8 +122,9 @@ title: ""
 <!-- 1. ÁREAS DE COMPETENCIA TÉCNICA            -->
 <!-- ========================================== -->
 <div class="competence-section">
-  <div class="section-header">
-    <h2 class="section-title">Áreas de Competencia Técnica</h2>
+  <div class="section-header" style="margin-top: 20px;">
+    <!-- Título oscuro para el fondo claro -->
+    <h2 class="section-title dark-text">Áreas de Competencia Técnica</h2>
     <div class="title-accent"></div>
   </div>
 
@@ -142,7 +158,6 @@ title: ""
     </div>
   </div>
 
-  <!-- Banda de Tecnologías (Sin Arduino, visible y espaciada) -->
   <div class="tech-stack-band">
     <span class="tech-tag">SolidWorks</span>
     <span class="tech-tag">KiCad</span>
@@ -152,79 +167,82 @@ title: ""
 </div>
 
 <!-- ========================================== -->
-<!-- 2. PROYECTOS DESTACADOS                    -->
+<!-- 2. PROYECTOS DESTACADOS (En Tarjeta)       -->
 <!-- ========================================== -->
-<div class="projects-section">
-  <div class="section-header">
-    <h2 class="section-title">Proyectos Destacados</h2>
-    <div class="title-accent"></div>
-  </div>
+<div class="section-wrapper">
+  <div class="section-card">
+    
+    <div class="section-header" style="margin-top: 0;">
+      <!-- Título claro para el fondo oscuro de la tarjeta -->
+      <h2 class="section-title light-text">Proyectos Destacados</h2>
+      <div class="title-accent"></div>
+    </div>
 
-  <div class="projects-grid">
-    <!-- Proyecto 1 (Imagen con Hover Cyan) -->
-    <div class="project-card-img" onclick="location.href='/proyectos/';">
-      <img src="/assets/images/proyecto-brazo.png" alt="Brazo Robótico">
-      <div class="project-overlay">
-        <h4>Brazo Robótico</h4>
-        <p>Diseño 3D integral y control cinemático mediante microcontroladores.</p>
+    <div class="projects-grid">
+      <div class="project-card-img" onclick="location.href='/proyectos/';">
+        <img src="/assets/images/proyecto-brazo.png" alt="Brazo Robótico">
+        <div class="project-overlay">
+          <h4>Brazo Robótico</h4>
+          <p>Diseño 3D integral y control cinemático mediante microcontroladores.</p>
+        </div>
+      </div>
+      
+      <div class="project-card-img" onclick="location.href='/proyectos/';">
+        <img src="/assets/images/proyecto-brazo.png" alt="Sistemas y Control">
+        <div class="project-overlay">
+          <h4>Sistemas y Control</h4>
+          <p>Desarrollo de circuitos impresos (KiCad) y lógica de automatización.</p>
+        </div>
       </div>
     </div>
     
-    <!-- Proyecto 2 -->
-    <div class="project-card-img" onclick="location.href='/proyectos/';">
-      <img src="/assets/images/proyecto-brazo.png" alt="Sistemas y Control">
-      <div class="project-overlay">
-        <h4>Sistemas y Control</h4>
-        <p>Desarrollo de circuitos impresos (KiCad) y lógica de automatización.</p>
-      </div>
+    <div style="text-align: center; margin-top: 50px;">
+      <a href="/proyectos/" class="btn-neon">Ver todos mis proyectos &rarr;</a>
     </div>
-  </div>
-  
-  <div style="text-align: center; margin-top: 50px;">
-    <!-- Botón Neón restaurado -->
-    <a href="/proyectos/" class="btn-neon">Ver todos mis proyectos &rarr;</a>
+
   </div>
 </div>
 
 <!-- ========================================== -->
-<!-- 3. SOBRE MÍ (Esquematizado)                -->
+<!-- 3. SOBRE MÍ (En Tarjeta)                   -->
 <!-- ========================================== -->
-<div class="about-section">
-  <div class="section-header">
-    <h2 class="section-title">Sobre Mí</h2>
-    <div class="title-accent"></div>
-  </div>
-  
-  <div class="about-grid">
-    <!-- Texto introductorio a la izquierda -->
-    <div class="about-intro">
-      <p>
-        Soy estudiante de último curso con un perfil marcadamente multidisciplinar. Mi objetivo profesional se centra en la resolución de problemas industriales complejos mediante la integración eficiente del diseño físico (hardware) y la inteligencia de control (software).
-      </p>
-      <div style="margin-top: 30px;">
-        <!-- Botón Neón restaurado -->
-        <a href="/sobre-mi/" class="btn-neon">Conóceme un poco más &rarr;</a>
+<div class="section-wrapper">
+  <div class="section-card">
+    
+    <div class="section-header" style="margin-top: 0;">
+      <h2 class="section-title light-text">Sobre Mí</h2>
+      <div class="title-accent"></div>
+    </div>
+    
+    <div class="about-grid">
+      <div class="about-intro">
+        <p>
+          Soy estudiante de último curso con un perfil marcadamente multidisciplinar. Mi objetivo profesional se centra en la resolución de problemas industriales complejos mediante la integración eficiente del diseño físico (hardware) y la inteligencia de control (software).
+        </p>
+        <div style="margin-top: 30px;">
+          <a href="/sobre-mi/" class="btn-neon">Conóceme un poco más &rarr;</a>
+        </div>
       </div>
+
+      <ul class="about-list">
+        <li>
+          <i class="fas fa-university"></i>
+          <strong>Formación Académica</strong>
+          Doble Grado en Ingeniería Mecánica y [...] en la Universidad de Jaén.
+        </li>
+        <li>
+          <i class="fas fa-globe-europe"></i>
+          <strong>Visión Internacional</strong>
+          Estancia Erasmus en Politechnika Lubelska (Polonia), desarrollando adaptabilidad en equipos multiculturales.
+        </li>
+        <li>
+          <i class="fas fa-bullseye"></i>
+          <strong>Enfoque Profesional</strong>
+          Desarrollo de prototipos funcionales, desde el CAD 3D hasta la implementación del firmware de control.
+        </li>
+      </ul>
     </div>
 
-    <!-- Puntos clave a la derecha -->
-    <ul class="about-list">
-      <li>
-        <i class="fas fa-university"></i>
-        <strong>Formación Académica</strong>
-        Doble Grado en Ingeniería Mecánica y [...] en la Universidad de Jaén.
-      </li>
-      <li>
-        <i class="fas fa-globe-europe"></i>
-        <strong>Visión Internacional</strong>
-        Estancia Erasmus en Politechnika Lubelska (Polonia), desarrollando adaptabilidad en equipos multiculturales.
-      </li>
-      <li>
-        <i class="fas fa-bullseye"></i>
-        <strong>Enfoque Profesional</strong>
-        Desarrollo de prototipos funcionales, desde el CAD 3D hasta la implementación del firmware de control.
-      </li>
-    </ul>
   </div>
 </div>
 
@@ -233,8 +251,7 @@ title: ""
 <!-- ========================================== -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  // Efecto máquina de escribir (Color Cyan original)
-  const word = "Electrónica"; let i = 0; let isDeleting = false;
+  const word = "Electrónica."; let i = 0; let isDeleting = false;
   function typeWriterEffect() {
     const el = document.getElementById('typewriter');
     if (!isDeleting && i <= word.length) { el.innerHTML = word.substring(0, i); i++; setTimeout(typeWriterEffect, 100); } 
