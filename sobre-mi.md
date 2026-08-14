@@ -4,11 +4,10 @@ title: "Sobre mí"
 author_profile: true
 ---
 
+<!-- ========================================== -->
+<!-- ESTILOS CSS DE LA PÁGINA "SOBRE MÍ"        -->
+<!-- ========================================== -->
 <style>
-  /* ========================================== */
-  /* ESTILOS DE LA PÁGINA "SOBRE MÍ"            */
-  /* ========================================== */
-
   /* 1. Enmarcar el perfil de autor (Sidebar lateral) */
   .sidebar {
     background: white !important;
@@ -34,7 +33,7 @@ author_profile: true
     padding-top: 15px !important;
   }
 
-  /* 2. Presentación (Perfil Profesional) */
+  /* 2. Presentación y Tarjetas Base */
   .intro-card {
     background: white;
     border: 1px solid #d5dce4;
@@ -104,14 +103,14 @@ author_profile: true
   }
   .skill-box h3 { margin-top: 0; color: #1d3557; border-bottom: 2px solid #0f4c75; padding-bottom: 10px; }
   .skill-list { list-style: none; padding: 0; margin: 0; }
-  .skill-list li { margin-bottom: 15px; display: flex; align-items: center; font-size: 1.05em; color: #495057; }
+  .skill-list li { margin-bottom: 15px; display: flex; align-items: flex-start; font-size: 1.05em; color: #495057; }
   
   /* Iconos de las Skills */
   .skill-list i { 
     font-size: 1.1em; color: #00ffcc; background: #021a30; 
     width: 35px; height: 35px; display: flex; align-items: center; 
     justify-content: center; border-radius: 8px; margin-right: 15px; 
-    flex-shrink: 0;
+    flex-shrink: 0; margin-top: 3px;
   }
 
   /* 5. Inventario Tecnológico (Tags) */
@@ -135,7 +134,9 @@ author_profile: true
   }
 </style>
 
-<!-- BLOQUE 1: PRESENTACIÓN -->
+<!-- ========================================== -->
+<!-- BLOQUE 1: PRESENTACIÓN                     -->
+<!-- ========================================== -->
 <div class="intro-card">
   <h2>Perfil Profesional</h2>
   <div class="intro-text">
@@ -144,7 +145,27 @@ author_profile: true
   </div>
 </div>
 
-<!-- BLOQUE 2: TRAYECTORIA ACADÉMICA (ESTILO PCB) -->
+<!-- ========================================== -->
+<!-- BLOQUE 1.5: DOCENCIA Y COMUNICACIÓN        -->
+<!-- ========================================== -->
+<div class="intro-card" style="border-left: 4px solid #00ffcc;">
+  <h2 style="border-bottom: none; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+    <i class="fas fa-chalkboard-teacher" style="color: #00ffcc; background: #021a30; padding: 8px; border-radius: 8px; font-size: 0.8em;"></i> 
+    Docencia y Comunicación Técnica
+  </h2>
+  <div class="intro-text">
+    <p>
+      Durante mi etapa universitaria, he compaginado mi formación con la impartición de clases particulares de <strong>Física, Matemáticas y Robótica</strong>. Más allá de la enseñanza académica, esta experiencia ha forjado una de mis competencias profesionales más valiosas: la capacidad de comunicación.
+    </p>
+    <p>
+      La docencia me ha entrenado para desgranar problemas complejos, estructurar la información y transmitir conceptos altamente técnicos de forma clara y accesible, adaptándome siempre al nivel de quien me escucha. Estoy convencido de que en el sector industrial actual, <strong>saber diseñar un sistema eficiente es tan importante como saber explicarlo, documentarlo y defenderlo</strong> ante un equipo de trabajo o un cliente.
+    </p>
+  </div>
+</div>
+
+<!-- ========================================== -->
+<!-- BLOQUE 2: TRAYECTORIA ACADÉMICA            -->
+<!-- ========================================== -->
 <div class="pcb-board">
   <h2 style="margin-top: 0; color: #bbe1fa; text-align: center; border-bottom: 1px solid #0f4c75; padding-bottom: 15px;">Trayectoria Académica</h2>
   <div class="pcb-timeline">
@@ -188,29 +209,34 @@ author_profile: true
   </div>
 </div>
 
-<!-- BLOQUE 3: IDIOMAS Y SOFT SKILLS -->
+<!-- ========================================== -->
+<!-- BLOQUE 3: IDIOMAS, DOCENCIA Y SOFT SKILLS  -->
+<!-- ========================================== -->
 <div class="skills-container">
-  <!-- Caja Izquierda: Idiomas -->
+  <!-- Caja Izquierda: Comunicación -->
   <div class="skill-box">
-    <h3><i class="fas fa-globe-europe" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Idiomas</h3>
+    <h3><i class="fas fa-comment-dots" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Comunicación y Docencia</h3>
     <ul class="skill-list">
-      <li><i class="fas fa-award"></i> <strong>Inglés:</strong>&nbsp; C1 (Avanzado)</li>
-      <li><i class="fas fa-language"></i> <strong>Español:</strong>&nbsp; Nativo</li>
+      <li><i class="fas fa-award"></i> <span><strong>Inglés (C1):</strong>&nbsp; Competencia profesional completa y técnica.</span></li>
+      <li><i class="fas fa-language"></i> <span><strong>Español:</strong>&nbsp; Nativo.</span></li>
+      <li><i class="fas fa-chalkboard-teacher"></i> <span><strong>Mentoría STEM:</strong>&nbsp; Experiencia impartiendo clases particulares, desarrollando capacidad para simplificar conceptos complejos.</span></li>
     </ul>
   </div>
 
-  <!-- Caja Derecha: Soft Skills -->
+  <!-- Caja Derecha: Aptitudes Transversales -->
   <div class="skill-box">
-    <h3><i class="fas fa-users-cog" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Soft Skills</h3>
+    <h3><i class="fas fa-users-cog" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Aptitudes Transversales</h3>
     <ul class="skill-list">
-      <li><i class="fas fa-tools"></i> Resolución de problemas</li>
-      <li><i class="fas fa-exchange-alt"></i> Adaptabilidad internacional</li>
-      <li><i class="fas fa-project-diagram"></i> Enfoque multidisciplinar</li>
+      <li><i class="fas fa-tools"></i> <span><strong>Resolución de problemas:</strong> Enfoque analítico y práctico.</span></li>
+      <li><i class="fas fa-exchange-alt"></i> <span><strong>Adaptabilidad:</strong> Comodidad en entornos internacionales y equipos multiculturales.</span></li>
+      <li><i class="fas fa-project-diagram"></i> <span><strong>Visión Global:</strong> Capacidad para entender el ciclo de vida completo del producto (Mecánica + Electrónica).</span></li>
     </ul>
   </div>
 </div>
 
-<!-- BLOQUE 4: STACK TECNOLÓGICO -->
+<!-- ========================================== -->
+<!-- BLOQUE 4: STACK TECNOLÓGICO                -->
+<!-- ========================================== -->
 <div class="tech-stack-box">
   <h3>Herramientas y Tecnologías</h3>
   <p style="color: #bbe1fa; margin-bottom: 0; font-size: 0.95em;">Software y entornos de desarrollo con los que me formo y trabajo actualmente:</p>
