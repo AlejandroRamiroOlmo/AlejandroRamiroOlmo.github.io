@@ -9,7 +9,7 @@ classes: wide
 <!-- ESTILOS CSS DE LA PÁGINA "SOBRE MÍ"        -->
 <!-- ========================================== -->
 <style>
-  /* 1. Enmarcar el perfil de autor (Sidebar lateral) */
+  /* 1. Sidebar de autor */
   .sidebar {
     background: white !important;
     border: 1px solid #d5dce4 !important;
@@ -17,143 +17,110 @@ classes: wide
     padding: 20px !important;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
   }
-  .sidebar .author__avatar img {
-    border-radius: 50% !important;
-    border: 3px solid #0f4c75 !important;
-  }
-  .sidebar .author__name {
-    color: #1d3557 !important;
-    font-weight: bold !important;
-  }
-  .sidebar .author__bio {
-    color: #495057 !important;
-  }
-  .sidebar .author__urls.social-links {
-    border-top: 1px solid #eaeaea !important;
-    margin-top: 15px !important;
-    padding-top: 15px !important;
-  }
+  .sidebar .author__avatar img { border-radius: 50% !important; border: 3px solid #0f4c75 !important; }
+  .sidebar .author__name { color: #1d3557 !important; font-weight: bold !important; }
+  .sidebar .author__bio { color: #495057 !important; }
+  .sidebar .author__urls.social-links { border-top: 1px solid #eaeaea !important; margin-top: 15px !important; padding-top: 15px !important; }
 
-  /* 2. Presentación y Tarjetas Base */
+  /* 2. Tarjetas base */
   .intro-card {
-    background: white;
-    border: 1px solid #d5dce4;
-    border-radius: 12px;
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background: white; border: 1px solid #d5dce4; border-radius: 12px;
+    padding: 30px; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   }
-  .intro-card h2 {
-    margin-top: 0;
-    color: #1d3557;
-    border-bottom: 2px solid #0f4c75;
-    padding-bottom: 10px;
-    font-size: 1.4em;
-  }
-  .intro-text {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #495057;
-    margin: 0;
-    text-align: justify;
-  }
-  .intro-text p:last-child {
-    margin-bottom: 0;
-  }
+  .intro-card h2 { margin-top: 0; color: #1d3557; border-bottom: 2px solid #0f4c75; padding-bottom: 10px; font-size: 1.4em; }
+  .intro-text { font-size: 1.1em; line-height: 1.6; color: #495057; margin: 0; text-align: justify; }
+  .intro-text p:last-child { margin-bottom: 0; }
 
-  /* 3. Trayectoria PCB adaptada a una sola columna */
+  /* 3. Franja de cifras destacadas */
+  .stats-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px; }
+  .stat-card {
+    background: #021a30; border: 2px solid #0f4c75; border-radius: 12px;
+    padding: 26px 18px; text-align: center; transition: 0.3s;
+  }
+  .stat-card:hover { border-color: #00ffcc; box-shadow: 0 10px 25px rgba(0,255,204,0.2); transform: translateY(-4px); }
+  .stat-card i { font-size: 2em; color: #00ffcc; display: block; margin-bottom: 10px; }
+  .stat-number { font-size: 1.5em; font-weight: 800; color: #ffffff; margin-bottom: 6px; line-height: 1.1; }
+  .stat-label { font-size: 0.82em; color: #bbe1fa; line-height: 1.4; }
+
+  /* 4. Bloque Docencia con número circular */
+  .docencia-header { display: flex; align-items: center; gap: 20px; margin-bottom: 15px; flex-wrap: wrap; }
+  .docencia-number {
+    flex-shrink: 0; background: #021a30; border: 3px solid #00ffcc; color: #00ffcc;
+    font-weight: 800; font-size: 1.6em; width: 80px; height: 80px; border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    line-height: 1; box-shadow: 0 0 15px rgba(0,255,204,0.25);
+  }
+  .docencia-number span { font-size: 0.38em; font-weight: 600; color: #bbe1fa; margin-top: 4px; }
+  .docencia-header h2 { margin: 0; border-bottom: none; padding-bottom: 0; flex: 1; min-width: 200px; }
+
+  /* 5. Trayectoria PCB */
   .pcb-board {
     background-color: #021a30;
     background-image:
       linear-gradient(rgba(79, 195, 247, 0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(79, 195, 247, 0.05) 1px, transparent 1px);
     background-size: 20px 20px;
-    border: 2px solid #0f4c75;
-    border-radius: 12px;
-    color: #bbe1fa;
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 2px solid #0f4c75; border-radius: 12px; color: #bbe1fa;
+    padding: 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
-
-  /* Franja de imágenes de universidad */
-  .uni-strip { display: flex; gap: 15px; margin-bottom: 30px; }
-  .uni-strip img {
-    flex: 1;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    border: 2px solid #0f4c75;
-    transition: 0.3s;
-  }
-  .uni-strip img:hover { border-color: #00ffcc; box-shadow: 0 0 15px rgba(0,255,204,0.3); }
-  .uni-strip figure { flex: 1; margin: 0; position: relative; }
-  .uni-strip figcaption {
-    position: absolute; bottom: 8px; left: 12px; right: 12px;
-    color: #f1faee; font-size: 0.8em; text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-  }
-
   .pcb-timeline { position: relative; z-index: 1; margin-top: 10px; padding-left: 10px; }
   .pcb-item { position: relative; padding-bottom: 30px; padding-left: 45px; border-left: 3px solid #0f4c75; transition: border-color 0.3s ease; }
   .pcb-item:last-child { border-left: 3px solid transparent; padding-bottom: 0; }
-
   .pcb-item::before { content: ''; position: absolute; top: 10px; left: 0; width: 25px; height: 3px; background-color: #0f4c75; transition: all 0.3s ease; }
   .pcb-pad { position: absolute; top: 3px; left: 22px; width: 16px; height: 16px; background-color: #021a30; border: 3px solid #0f4c75; border-radius: 50%; transition: all 0.3s ease; }
-
   .pcb-item:hover { border-left-color: #00ffcc; }
   .pcb-item:hover::before { background-color: #00ffcc; box-shadow: 0 0 10px #00ffcc; }
   .pcb-item:hover .pcb-pad { border-color: #00ffcc; background-color: #00ffcc; box-shadow: 0 0 15px #00ffcc; }
-
-  .pcb-item h4 { margin: 0 0 5px 0; color: #3282b8; transition: all 0.3s; font-size: 1.1em; }
+  .pcb-item h4 { margin: 0 0 5px 0; color: #3282b8; transition: all 0.3s; font-size: 1.1em; display: inline-block; }
   .pcb-item:hover h4 { color: #ffffff; text-shadow: 0 0 8px #00ffcc; }
-
   .pcb-item ul { margin: 0; padding-left: 20px; color: #bbe1fa; font-size: 0.9em; }
   .pcb-item ul li { margin-bottom: 5px; }
 
-  /* 4. Panel de Idiomas y Soft Skills */
-  .skills-container {
-    display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;
+  /* Badge de duración en cada hito */
+  .pcb-duration {
+    display: inline-block; background: rgba(0,255,204,0.08); border: 1px solid #00ffcc;
+    color: #00ffcc; font-size: 0.72em; font-weight: 600; padding: 2px 10px;
+    border-radius: 12px; margin-left: 10px; vertical-align: middle;
   }
+
+  /* 6. Panel de Idiomas y Soft Skills */
+  .skills-container { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; }
   .skill-box {
     flex: 1; min-width: 250px; background: rgba(255,255,255,0.8);
-    border: 1px solid #d5dce4; border-radius: 12px; padding: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #d5dce4; border-radius: 12px; padding: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   }
   .skill-box h3 { margin-top: 0; color: #1d3557; border-bottom: 2px solid #0f4c75; padding-bottom: 10px; }
   .skill-list { list-style: none; padding: 0; margin: 0; }
   .skill-list li { margin-bottom: 15px; display: flex; align-items: flex-start; font-size: 1.05em; color: #495057; }
-
-  /* Iconos de las Skills */
   .skill-list i {
-    font-size: 1.1em; color: #00ffcc; background: #021a30;
-    width: 35px; height: 35px; display: flex; align-items: center;
-    justify-content: center; border-radius: 8px; margin-right: 15px;
-    flex-shrink: 0; margin-top: 3px;
+    font-size: 1.1em; color: #00ffcc; background: #021a30; width: 35px; height: 35px;
+    display: flex; align-items: center; justify-content: center; border-radius: 8px;
+    margin-right: 15px; flex-shrink: 0; margin-top: 3px;
   }
 
-  /* 5. Inventario Tecnológico (Tags) */
-  .tech-stack-box {
-    background: #021a30; border-radius: 12px; padding: 30px;
-    text-align: center; border: 2px solid #0f4c75;
+  /* Insignia circular de idioma (C1) */
+  .lang-badge-row { display: flex; align-items: center; gap: 15px; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #eaeaea; }
+  .lang-badge {
+    flex-shrink: 0; width: 58px; height: 58px; border-radius: 50%; background: #021a30;
+    border: 3px solid #00ffcc; color: #00ffcc; font-weight: 800; font-size: 1.15em;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 0 12px rgba(0,255,204,0.3);
   }
+  .lang-badge-info strong { display: block; color: #1d3557; font-size: 1.05em; }
+  .lang-badge-info span { color: #6c757d; font-size: 0.85em; }
+
+  /* 7. Inventario Tecnológico (Tags) */
+  .tech-stack-box { background: #021a30; border-radius: 12px; padding: 30px; text-align: center; border: 2px solid #0f4c75; }
   .tech-stack-box h3 { color: #bbe1fa; margin-top: 0; margin-bottom: 10px; }
   .tech-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
-
-  /* Etiquetas Neon */
   .tech-tag {
-    background: transparent; border: 2px solid #00ffcc; color: #00ffcc;
-    padding: 10px 20px; border-radius: 30px; font-weight: bold;
-    font-size: 1em; display: flex; align-items: center; gap: 10px;
-    transition: all 0.3s; cursor: default;
+    background: transparent; border: 2px solid #00ffcc; color: #00ffcc; padding: 10px 20px;
+    border-radius: 30px; font-weight: bold; font-size: 1em; display: flex; align-items: center;
+    gap: 10px; transition: all 0.3s; cursor: default;
   }
-  .tech-tag:hover {
-    background: #00ffcc; color: #021a30; box-shadow: 0 0 15px #00ffcc;
-    transform: translateY(-3px);
-  }
+  .tech-tag:hover { background: #00ffcc; color: #021a30; box-shadow: 0 0 15px #00ffcc; transform: translateY(-3px); }
 
   @media (max-width: 600px) {
-    .uni-strip { flex-direction: column; }
-    .uni-strip img { height: 160px; }
+    .docencia-header { flex-direction: column; text-align: center; }
   }
 </style>
 
@@ -169,13 +136,34 @@ classes: wide
 </div>
 
 <!-- ========================================== -->
+<!-- FRANJA DE CIFRAS DESTACADAS                -->
+<!-- ========================================== -->
+<div class="stats-strip">
+  <div class="stat-card">
+    <i class="fas fa-graduation-cap"></i>
+    <div class="stat-number">4º Año</div>
+    <div class="stat-label">Doble Grado en curso</div>
+  </div>
+  <div class="stat-card">
+    <i class="fas fa-layer-group"></i>
+    <div class="stat-number">2</div>
+    <div class="stat-label">Especializaciones: Mecánica y Electrónica</div>
+  </div>
+  <div class="stat-card">
+    <i class="fas fa-plane-departure"></i>
+    <div class="stat-number">1</div>
+    <div class="stat-label">Estancia Erasmus+ en Polonia</div>
+  </div>
+</div>
+
+<!-- ========================================== -->
 <!-- BLOQUE 1.5: DOCENCIA Y COMUNICACIÓN        -->
 <!-- ========================================== -->
 <div class="intro-card">
-  <h2>
-    <i class="fas fa-chalkboard-teacher" style="color: #0f4c75; margin-right: 10px;"></i>
-    Docencia y Comunicación Técnica
-  </h2>
+  <div class="docencia-header">
+    <div class="docencia-number">3+<span>AÑOS</span></div>
+    <h2><i class="fas fa-chalkboard-teacher" style="color: #0f4c75; margin-right: 10px;"></i> Docencia y Comunicación Técnica</h2>
+  </div>
   <div class="intro-text">
     <p>
       Durante mi etapa universitaria, he compaginado mi formación con la impartición de clases particulares de <strong>Física, Matemáticas y Tecnología</strong>. Más allá de la enseñanza académica, esta experiencia ha forjado una de mis competencias profesionales más valiosas: la capacidad de comunicación.
@@ -192,23 +180,11 @@ classes: wide
 <div class="pcb-board">
   <h2 style="margin-top: 0; color: #bbe1fa; text-align: center; border-bottom: 1px solid #0f4c75; padding-bottom: 15px;">Trayectoria Académica</h2>
 
-  <!-- Franja de imágenes: contexto visual rápido de dónde ha estudiado -->
-  <div class="uni-strip">
-    <figure>
-      <img src="/assets/images/uja-campus.jpg" alt="Campus de la Universidad de Jaén">
-      <figcaption>Universidad de Jaén</figcaption>
-    </figure>
-    <figure>
-      <img src="/assets/images/lubelska-campus.jpg" alt="Campus de la Politechnika Lubelska">
-      <figcaption>Politechnika Lubelska, Polonia</figcaption>
-    </figure>
-  </div>
-
   <div class="pcb-timeline">
 
     <div class="pcb-item">
       <div class="pcb-pad"></div>
-      <h4>2026 - 2027: Último Año e Industria (Actualidad)</h4>
+      <h4>2026 - 2027: Último Año e Industria (Actualidad)</h4><span class="pcb-duration">1 año</span>
       <ul>
         <li>Desarrollo del Trabajo de Fin de Grado (TFG).</li>
         <li>Consolidación de conocimientos y transición hacia el sector profesional.</li>
@@ -217,7 +193,7 @@ classes: wide
 
     <div class="pcb-item">
       <div class="pcb-pad"></div>
-      <h4>2025 - 2026: Especialización Mecánica (Erasmus+)</h4>
+      <h4>2025 - 2026: Especialización Mecánica (Erasmus+)</h4><span class="pcb-duration">1 año</span>
       <ul>
         <li>Estancia en la <strong>Politechnika Lubelska</strong> (Lublin, Polonia).</li>
         <li>Inmersión en un entorno internacional con docencia íntegramente en inglés.</li>
@@ -227,7 +203,7 @@ classes: wide
 
     <div class="pcb-item">
       <div class="pcb-pad"></div>
-      <h4>2024 - 2025: Especialización Electrónica</h4>
+      <h4>2024 - 2025: Especialización Electrónica</h4><span class="pcb-duration">1 año</span>
       <ul>
         <li>Profundización en la rama de electrónica dentro del plan de estudios de la Universidad de Jaén.</li>
       </ul>
@@ -235,7 +211,7 @@ classes: wide
 
     <div class="pcb-item">
       <div class="pcb-pad"></div>
-      <h4>2022 - 2024: Inicio y Base Científica</h4>
+      <h4>2022 - 2024: Inicio y Base Científica</h4><span class="pcb-duration">2 años</span>
       <ul>
         <li>Comienzo del Doble Grado en la <strong>Universidad de Jaén</strong>.</li>
         <li>Adquisición de la base matemática, física y especialización común a la rama industrial.</li>
@@ -252,8 +228,16 @@ classes: wide
   <!-- Caja Izquierda: Comunicación -->
   <div class="skill-box">
     <h3><i class="fas fa-comment-dots" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Comunicación y Docencia</h3>
+
+    <div class="lang-badge-row">
+      <div class="lang-badge">C1</div>
+      <div class="lang-badge-info">
+        <strong>Inglés</strong>
+        <span>Nivel avanzado</span>
+      </div>
+    </div>
+
     <ul class="skill-list">
-      <li><i class="fas fa-award"></i> <span><strong>Inglés (C1):</strong></span></li>
       <li><i class="fas fa-language"></i> <span><strong>Español:</strong>&nbsp; Nativo.</span></li>
       <li><i class="fas fa-chalkboard-teacher"></i> <span><strong>Docencia:</strong>&nbsp; Experiencia impartiendo clases particulares.</span></li>
     </ul>
