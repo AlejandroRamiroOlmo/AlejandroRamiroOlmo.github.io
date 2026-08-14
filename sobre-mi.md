@@ -98,6 +98,15 @@ classes: wide
     margin-right: 15px; flex-shrink: 0; margin-top: 3px;
   }
 
+  /* Aptitudes Transversales desarrolladas */
+  .aptitud-list { display: flex; flex-direction: column; gap: 18px; }
+  .aptitud-item h4 { margin: 0 0 6px 0; color: #1d3557; font-size: 1.02em; display: flex; align-items: center; gap: 10px; }
+  .aptitud-item h4 i {
+    color: #00ffcc; background: #021a30; width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 0.85em; flex-shrink: 0;
+  }
+  .aptitud-item p { margin: 0; color: #495057; font-size: 0.92em; line-height: 1.5; padding-left: 42px; }
+
   /* Insignia circular de idioma (C1) */
   .lang-badge-row { display: flex; align-items: center; gap: 15px; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #eaeaea; }
   .lang-badge {
@@ -141,7 +150,7 @@ classes: wide
 <div class="stats-strip">
   <div class="stat-card">
     <i class="fas fa-graduation-cap"></i>
-    <div class="stat-number">4º Año</div>
+    <div class="stat-number">5º Año</div>
     <div class="stat-label">Doble Grado en curso</div>
   </div>
   <div class="stat-card">
@@ -227,7 +236,7 @@ classes: wide
 <div class="skills-container">
   <!-- Caja Izquierda: Comunicación -->
   <div class="skill-box">
-    <h3><i class="fas fa-comment-dots" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Comunicación y Docencia</h3>
+    <h3><i class="fas fa-comment-dots" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Comunicación</h3>
 
     <div class="lang-badge-row">
       <div class="lang-badge">C1</div>
@@ -239,18 +248,26 @@ classes: wide
 
     <ul class="skill-list">
       <li><i class="fas fa-language"></i> <span><strong>Español:</strong>&nbsp; Nativo.</span></li>
-      <li><i class="fas fa-chalkboard-teacher"></i> <span><strong>Docencia:</strong>&nbsp; Experiencia impartiendo clases particulares.</span></li>
     </ul>
   </div>
 
-  <!-- Caja Derecha: Aptitudes Transversales -->
+  <!-- Caja Derecha: Aptitudes Transversales (mismas que en Inicio, desarrolladas) -->
   <div class="skill-box">
     <h3><i class="fas fa-users-cog" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Aptitudes Transversales</h3>
-    <ul class="skill-list">
-      <li><i class="fas fa-tools"></i> <span><strong>Resolución de problemas:</strong> Enfoque analítico y práctico.</span></li>
-      <li><i class="fas fa-exchange-alt"></i> <span><strong>Adaptabilidad:</strong> Comodidad en entornos internacionales y equipos multiculturales.</span></li>
-      <li><i class="fas fa-project-diagram"></i> <span><strong>Visión Global:</strong> Capacidad para entender el ciclo de vida completo del producto (Mecánica + Electrónica).</span></li>
-    </ul>
+    <div class="aptitud-list">
+      <div class="aptitud-item">
+        <h4><i class="fas fa-users"></i> Liderazgo y Comunicación</h4>
+        <p>He coordinado equipos en proyectos universitarios que combinan diseño mecánico y electrónico. Mi experiencia como profesor particular refuerza mi capacidad de explicar conceptos técnicos con claridad a audiencias no especializadas.</p>
+      </div>
+      <div class="aptitud-item">
+        <h4><i class="fas fa-tools"></i> Resolución de Problemas</h4>
+        <p>Afronto los problemas de ingeniería con un enfoque analítico: identifico la causa raíz antes de proponer soluciones, iterando entre diseño, simulación y prototipado hasta validar el resultado.</p>
+      </div>
+      <div class="aptitud-item">
+        <h4><i class="fas fa-exchange-alt"></i> Adaptabilidad y Trabajo en Equipo</h4>
+        <p>La estancia Erasmus+ en Polonia me enfrentó a un entorno de trabajo internacional, donde aprendí a adaptar mi forma de comunicar y colaborar según el contexto del equipo.</p>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -262,7 +279,7 @@ classes: wide
   <p style="color: #bbe1fa; margin-bottom: 0; font-size: 0.95em;">Software y entornos de desarrollo con los que me formo y trabajo actualmente:</p>
   <div class="tech-tags">
     <div class="tech-tag"><i class="fas fa-cube"></i> SolidWorks</div>
-    <div class="tech-tag"><i class="fas fa-microchip"></i> Arduino</div>
+    <div class="tech-tag"><i class="fas fa-microchip"></i> C/C++</div>
     <div class="tech-tag"><i class="fab fa-python"></i> Python</div>
     <div class="tech-tag"><i class="fas fa-bolt"></i> KiCad</div>
   </div>
