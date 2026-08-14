@@ -118,7 +118,6 @@ author:
   avatar           : "/assets/images/presentacion.PNG"
   #bio              : ""
   location         : "Jaén, España"
-  # email            : "alejandroramiroolmo@gmail.com"   <--- PON EL # AQUÍ
   links:
     - label: "Email"
       icon: "fas fa-fw fa-square-envelope"
@@ -135,6 +134,8 @@ footer:
       url: "https://github.com/AlejandroRamiroOlmo"
   since: "2024"
 
+
+favicon          : "/favicon.ico"
 
 # Reading Files
 include:
