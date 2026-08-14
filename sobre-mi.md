@@ -2,6 +2,7 @@
 layout: single
 title: "Sobre mí"
 author_profile: true
+classes: wide
 ---
 
 <!-- ========================================== -->
@@ -148,17 +149,17 @@ author_profile: true
 <!-- ========================================== -->
 <!-- BLOQUE 1.5: DOCENCIA Y COMUNICACIÓN        -->
 <!-- ========================================== -->
-<div class="intro-card" style="border-left: 4px solid #00ffcc;">
-  <h2 style="border-bottom: none; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-    <i class="fas fa-chalkboard-teacher" style="color: #00ffcc; background: #021a30; padding: 8px; border-radius: 8px; font-size: 0.8em;"></i> 
+<div class="intro-card">
+  <h2>
+    <i class="fas fa-chalkboard-teacher" style="color: #0f4c75; margin-right: 10px;"></i> 
     Docencia y Comunicación Técnica
   </h2>
   <div class="intro-text">
     <p>
-      Durante mi etapa universitaria, he compaginado mi formación con la impartición de clases particulares de <strong>Física, Matemáticas y Robótica</strong>. Más allá de la enseñanza académica, esta experiencia ha forjado una de mis competencias profesionales más valiosas: la capacidad de comunicación.
+      Durante mi etapa universitaria, he compaginado mi formación con la impartición de clases particulares de <strong>Física, Matemáticas y Tecnología</strong>. Más allá de la enseñanza académica, esta experiencia ha forjado una de mis competencias profesionales más valiosas: la capacidad de comunicación.
     </p>
     <p>
-      La docencia me ha entrenado para desgranar problemas complejos, estructurar la información y transmitir conceptos altamente técnicos de forma clara y accesible, adaptándome siempre al nivel de quien me escucha. Estoy convencido de que en el sector industrial actual, <strong>saber diseñar un sistema eficiente es tan importante como saber explicarlo, documentarlo y defenderlo</strong> ante un equipo de trabajo o un cliente.
+      La docencia me ha enseñado a estructurar la información y transmitir conceptos técnicos de forma clara y accesible. Estoy convencido de que en el sector industrial actual, <strong>saber diseñar un sistema eficiente es tan importante como saber explicarlo, documentarlo y defenderlo</strong> ante un equipo de trabajo o un cliente.
     </p>
   </div>
 </div>
@@ -217,9 +218,9 @@ author_profile: true
   <div class="skill-box">
     <h3><i class="fas fa-comment-dots" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Comunicación y Docencia</h3>
     <ul class="skill-list">
-      <li><i class="fas fa-award"></i> <span><strong>Inglés (C1):</strong>&nbsp; Competencia profesional completa y técnica.</span></li>
+      <li><i class="fas fa-award"></i> <span><strong>Inglés (C1):</strong></span></li>
       <li><i class="fas fa-language"></i> <span><strong>Español:</strong>&nbsp; Nativo.</span></li>
-      <li><i class="fas fa-chalkboard-teacher"></i> <span><strong>Mentoría STEM:</strong>&nbsp; Experiencia impartiendo clases particulares, desarrollando capacidad para simplificar conceptos complejos.</span></li>
+      <li><i class="fas fa-chalkboard-teacher"></i> <span><strong>Docencia:</strong>&nbsp; Experiencia impartiendo clases particulares.</span></li>
     </ul>
   </div>
 
