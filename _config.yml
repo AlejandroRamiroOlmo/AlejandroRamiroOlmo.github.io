@@ -19,13 +19,14 @@ locale                   : "es-ES"
 direction                : # "ltr" (default), "rtl" # set the direction of the page
 title                    : "Portfolio | Alejandro Ramiro Olmo"
 title_separator          : "-"
+favicon                  : "/favicon.ico"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Alejandro Ramiro Olmo"
 description              : "Estudiante del Doble Grado en Ingeniería Mecánica y Electrónica en la Universidad de Jaén. Apasionado por la tecnología, la automatización y el desarrollo de soluciones innovadoras."
 url                      : "https://AlejandroRamiroOlmo.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "AlejandroRamiroOlmo/AlejandroRamiroOlmo.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"no qu
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : # true, false (default)
@@ -135,7 +136,7 @@ footer:
   since: "2024"
 
 
-favicon          : "/favicon.ico"
+
 
 # Reading Files
 include:
