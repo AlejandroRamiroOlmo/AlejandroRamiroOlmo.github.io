@@ -11,15 +11,34 @@ title: ""
   .section-wrapper { max-width: 1280px; margin: 0 auto 60px auto; padding: 0 20px; }
 
   /* --- FRANJA DE CIFRAS DESTACADAS --- */
-  .stats-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .stats-strip { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
   .stat-card {
     background: #021a30; border: 2px solid #0f4c75; border-radius: 12px;
-    padding: 28px 20px; text-align: center; transition: 0.3s;
+    padding: 28px 40px; text-align: center; transition: 0.3s;
   }
   .stat-card:hover { border-color: #00ffcc; box-shadow: 0 10px 25px rgba(0,255,204,0.2); transform: translateY(-4px); }
   .stat-card i { font-size: 2.2em; color: #00ffcc; display: block; margin-bottom: 12px; }
-  .stat-number { font-size: 1.5em; font-weight: 800; color: #ffffff; margin-bottom: 6px; line-height: 1.1; }
-  .stat-label { font-size: 0.85em; color: #bbe1fa; line-height: 1.4; }
+  .stat-number { font-size: 1.8em; font-weight: 800; color: #ffffff; margin-bottom: 6px; line-height: 1.1; }
+  .stat-label { font-size: 0.9em; color: #bbe1fa; line-height: 1.4; }
+
+  /* --- ANIMACIÓN DEL TÍTULO --- */
+  @keyframes glowPulse {
+    0%, 100% { text-shadow: 0 0 10px rgba(0,255,204,0.8), 0 0 20px rgba(0,255,204,0.4), 0 0 30px rgba(0,255,204,0.2); }
+    50% { text-shadow: 0 0 20px rgba(0,255,204,1), 0 0 40px rgba(0,255,204,0.6), 0 0 60px rgba(0,255,204,0.3); }
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animated-title {
+    animation: slideDown 0.8s ease-out, glowPulse 2s ease-in-out infinite;
+    color: #ffffff;
+    font-size: 3.5em;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
 
   /* --- GRID DE PROYECTOS --- */
   .projects-full-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 35px; }
@@ -48,18 +67,18 @@ title: ""
   }
   .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 15px #00ffcc; }
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
+    .animated-title { font-size: 2.5em; }
     .project-full-img { height: 180px; }
   }
 </style>
 
 <!-- ========================================== -->
-<!-- CABECERA                                   -->
+<!-- CABECERA CON TÍTULO ANIMADO                -->
 <!-- ========================================== -->
-<div style="background-color: #1d3557; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; padding: 60px 1em; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+<div style="background: linear-gradient(135deg, #1d3557 0%, #021a30 100%); width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; padding: 80px 1em; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
   <div style="max-width: 1280px; margin: 0 auto; text-align: center;">
-    <h1 style="color: #ffffff; border-bottom: none; margin-top: 0;">Proyectos</h1>
-    <p style="color: #f1faee; font-size: 1.1em; max-width: 700px; margin: 0 auto;">Diseño mecánico, electrónica y automatización industrial aplicados a casos reales — documentando el proceso completo, de la idea al prototipo funcional.</p>
+    <h1 class="animated-title" style="margin-top: 0; border-bottom: none;">⚡ PROYECTOS ⚡</h1>
   </div>
 </div>
 
@@ -72,16 +91,6 @@ title: ""
       <i class="fas fa-cogs"></i>
       <div class="stat-number">2</div>
       <div class="stat-label">Proyectos documentados</div>
-    </div>
-    <div class="stat-card">
-      <i class="fas fa-layer-group"></i>
-      <div class="stat-number">2</div>
-      <div class="stat-label">Áreas: Mecánica y Electrónica</div>
-    </div>
-    <div class="stat-card">
-      <i class="fas fa-tools"></i>
-      <div class="stat-number">4+</div>
-      <div class="stat-label">Herramientas aplicadas</div>
     </div>
   </div>
 </div>
@@ -121,8 +130,4 @@ title: ""
     </div>
 
   </div>
-</div> 
-
-<!-- ========================================== -->
-<!--prueba              -->
-<!-- ========================================== -->
+</div>
