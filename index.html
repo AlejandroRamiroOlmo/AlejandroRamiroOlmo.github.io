@@ -74,16 +74,21 @@ title: ""
   .teaser-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
   .teaser-tag { background: transparent; border: 1.5px solid #00ffcc; color: #00ffcc; padding: 6px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600; }
 
-  .teaser-collage { position: relative; width: 320px; height: 250px; flex-shrink: 0; }
+  .teaser-collage { position: relative; width: 320px; height: 250px; flex-shrink: 0; overflow: visible; }
   .teaser-collage img {
     position: absolute; width: 240px; height: 175px; object-fit: cover;
     border-radius: 12px; border: 3px solid #0f4c75; box-shadow: 0 10px 25px rgba(0,0,0,0.45);
-    transition: 0.35s ease;
+    transition: transform 0.6s ease, box-shadow 0.4s ease;
+    cursor: pointer;
   }
   .teaser-collage img:nth-child(1) { top: 0; left: 0; transform: rotate(-7deg); z-index: 1; }
   .teaser-collage img:nth-child(2) { bottom: 0; right: 0; transform: rotate(6deg); z-index: 2; border-color: #00ffcc; }
-  .projects-teaser:hover .teaser-collage img:nth-child(1) { transform: rotate(-11deg) translate(-8px, -6px); }
-  .projects-teaser:hover .teaser-collage img:nth-child(2) { transform: rotate(9deg) translate(8px, 6px); }
+
+  /* Ciclo automático: la imagen "en turno" pasa suavemente al frente */
+  .teaser-collage img.is-front { z-index: 5; transform: scale(1.06) rotate(0deg) translateY(-8px); box-shadow: 0 16px 32px rgba(0,0,0,0.5); }
+
+  /* Hover: la imagen bajo el cursor se agranda por encima de todas, pausando el ciclo */
+  .teaser-collage img:hover { z-index: 10 !important; transform: scale(1.22) rotate(0deg) !important; box-shadow: 0 20px 45px rgba(0,0,0,0.55), 0 0 25px rgba(0,255,204,0.4) !important; }
 
   /* --- TARJETAS CTA (CV / CONTACTO) --- */
   .cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
@@ -245,7 +250,7 @@ title: ""
       </div>
       <a href="/proyectos/" class="btn-neon">Ver todos los proyectos &rarr;</a>
     </div>
-    <div class="teaser-collage">
+    <div class="teaser-collage" id="projects-collage">
       <img src="/assets/images/maquina.png" alt="Máquina Arcade">
       <img src="/assets/images/Automatizacion.png" alt="Estación Industrial">
     </div>
@@ -289,5 +294,30 @@ title: ""
   document.addEventListener("DOMContentLoaded", function() {
     setTimeout(typeWriterEffect, 500);
     particlesJS("particles-js", { "particles": { "number": { "value": 60, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#a8dadc" }, "shape": { "type": "circle" }, "opacity": { "value": 0.5 }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#a8dadc", "opacity": 0.4, "width": 1 }, "move": { "enable": true, "speed": 2, "out_mode": "out" } }, "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } }, "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } } }, "retina_detect": true });
+  });
+
+  // Ciclo automático del abanico de proyectos: rota cuál imagen está al frente
+  document.addEventListener("DOMContentLoaded", function () {
+    const collage = document.getElementById("projects-collage");
+    if (!collage) return;
+    const imgs = collage.querySelectorAll("img");
+    if (imgs.length < 2) return;
+
+    let current = 0;
+    let autoplay = true;
+
+    function bringToFront() {
+      if (!autoplay) return;
+      imgs.forEach(function (img) { img.classList.remove("is-front"); });
+      imgs[current].classList.add("is-front");
+      current = (current + 1) % imgs.length;
+    }
+
+    bringToFront();
+    setInterval(bringToFront, 2600);
+
+    // Pausa el ciclo mientras el usuario está mirando el abanico de cerca
+    collage.addEventListener("mouseenter", function () { autoplay = false; });
+    collage.addEventListener("mouseleave", function () { autoplay = true; });
   });
 </script>
