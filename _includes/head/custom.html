@@ -6,16 +6,16 @@
     display: none !important;
   }
 
-  /* 2. Forzar el fondo milimetrado en toda la web (Cuerpo entero) */
+  /* 2. Forzar el fondo milimetrado en toda la web */
   html, body {
-    background-color: #f4f7f9 !important; 
-    background-image: 
+    background-color: #f4f7f9 !important;
+    background-image:
       linear-gradient(#e4eaf0 1px, transparent 1px),
       linear-gradient(90deg, #e4eaf0 1px, transparent 1px) !important;
     background-size: 20px 20px !important;
   }
 
-  /* 3. Hacer totalmente transparente la barra de navegación (Masthead) y los contenedores */
+  /* 3. Hacer transparentes la navegación y los contenedores */
   .masthead,
   .masthead__inner-wrap,
   #site-nav,
@@ -30,19 +30,13 @@
     box-shadow: none !important;
   }
 
-  /* 4. Mantener solo una fina línea bajo el menú para separarlo elegantemente */
+  /* 4. Línea bajo el menú */
   .masthead {
     border-bottom: 1px solid rgba(0,0,0,0.05) !important;
   }
 </style>
 
-<!-- start custom head snippets -->
-
-<style>
-  /* tu CSS actual */
-</style>
-
-
-<!-- end custom head snippets -->
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
 
 <!-- end custom head snippets -->
