@@ -10,7 +10,7 @@ title: ""
 <style>
   .section-wrapper { max-width: 1280px; margin: 0 auto 60px auto; padding: 0 20px; }
 
-  /* --- ANIMACIÓN BLUEPRINT (PLANO TÉCNICO) --- */
+  /* --- 1. ANIMACIÓN BLUEPRINT (TÍTULO) --- */
   @keyframes blueprintReveal {
     0% { 
       color: transparent; 
@@ -33,7 +33,7 @@ title: ""
   }
 
   .animated-title {
-    animation: blueprintReveal 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation: blueprintReveal 2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     font-size: 3.5em;
     font-weight: 900;
     letter-spacing: 4px;
@@ -41,7 +41,12 @@ title: ""
     border-bottom: none;
   }
 
-  /* --- PÍLDORA DE ESTADÍSTICAS EN EL BANNER --- */
+  /* --- 2. ANIMACIÓN DE LA PÍLDORA --- */
+  @keyframes fadeInPill {
+    0%, 70% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
   .stats-pill {
     display: inline-flex;
     align-items: center;
@@ -54,19 +59,10 @@ title: ""
     color: #bbe1fa;
     backdrop-filter: blur(4px);
     animation: fadeInPill 2.5s ease-in forwards;
-    opacity: 0;
+    opacity: 0; /* Oculto hasta que toque su turno */
   }
   
-  .stats-pill .highlight {
-    color: #00ffcc;
-    font-weight: 800;
-    font-size: 1.1em;
-  }
-
-  @keyframes fadeInPill {
-    0%, 60% { opacity: 0; transform: translateY(10px); }
-    100% { opacity: 1; transform: translateY(0); }
-  }
+  .stats-pill .highlight { color: #00ffcc; font-weight: 800; font-size: 1.1em; }
 
   /* --- BANNER PRINCIPAL --- */
   .hero-banner {
@@ -84,26 +80,41 @@ title: ""
     border-bottom: 1px solid rgba(0, 255, 204, 0.1);
   }
 
-  /* --- GRID DE PROYECTOS --- */
+  /* --- 3. ANIMACIÓN DE LAS TARJETAS (CASCADA) --- */
+  @keyframes cardSlideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   .projects-full-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 35px; }
+  
   .project-full-card {
     background: #021a30; border: 2px solid #0f4c75; border-radius: 14px;
     overflow: hidden; transition: 0.3s; display: flex; flex-direction: column;
+    opacity: 0; /* Oculto al inicio */
+    animation: cardSlideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   }
+  
+  /* Retrasos para que entren de una en una DESPUÉS del banner */
+  .project-full-card:nth-child(1) { animation-delay: 2.2s; }
+  .project-full-card:nth-child(2) { animation-delay: 2.4s; }
+  .project-full-card:nth-child(3) { animation-delay: 2.6s; } /* Preparado por si añades más */
+
   .project-full-card:hover { border-color: #00ffcc; box-shadow: 0 15px 35px rgba(0,255,204,0.15); transform: translateY(-6px); }
   .project-full-img { width: 100%; height: 220px; object-fit: cover; display: block; }
   .project-full-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
   .project-full-body h3 { color: #fff; margin: 0 0 10px 0; border-bottom: none; font-size: 1.35em; }
   .project-full-body p { color: #bbe1fa; font-size: 0.95em; line-height: 1.6; margin-bottom: 18px; flex: 1; }
+  
   .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
   .project-tag {
     background: transparent; border: 1.5px solid #00ffcc; color: #00ffcc;
     padding: 6px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600;
     display: inline-flex; align-items: center; gap: 6px;
   }
-  .project-full-body .btn-neon { align-self: flex-start; }
-
+  
   /* --- BOTÓN NEÓN --- */
+  .project-full-body .btn-neon { align-self: flex-start; }
   .btn-neon {
     display: inline-block; padding: 12px 25px; border: 2px solid #00ffcc;
     color: #00ffcc !important; text-decoration: none; border-radius: 5px;
@@ -135,6 +146,7 @@ title: ""
 <div class="section-wrapper">
   <div class="projects-full-grid">
 
+    <!-- Tarjeta 1 -->
     <div class="project-full-card">
       <img src="/assets/images/maquina.png" alt="Máquina Arcade" class="project-full-img">
       <div class="project-full-body">
@@ -149,6 +161,7 @@ title: ""
       </div>
     </div>
 
+    <!-- Tarjeta 2 -->
     <div class="project-full-card">
       <img src="/assets/images/Automatizacion.png" alt="Estación Industrial" class="project-full-img">
       <div class="project-full-body">
