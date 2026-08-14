@@ -12,9 +12,9 @@
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-  if (window.enable_copy_code_button) {
+  {% if site.enable_copy_code_button -%}
     window.enable_copy_code_button = true;
-  }
+  {%- endif %}
 </script>
 
 <!-- For all browsers -->
@@ -27,7 +27,3 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% endif %}
-
-<!-- FAVICON FORZADO MANUALMENTE -->
-<link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
-<link rel="shortcut icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
