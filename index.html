@@ -74,15 +74,20 @@ title: ""
   .teaser-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
   .teaser-tag { background: transparent; border: 1.5px solid #00ffcc; color: #00ffcc; padding: 6px 14px; border-radius: 20px; font-size: 0.82em; font-weight: 600; }
 
-  .teaser-collage { position: relative; width: 320px; height: 250px; flex-shrink: 0; overflow: visible; }
+/* Contenedor un poco más amplio para dar espacio a las fotos grandes */
+  .teaser-collage { position: relative; width: 340px; height: 260px; flex-shrink: 0; overflow: visible; }
+  
+  /* Fotos más grandes (pasamos de 240x175 a 260x190) */
   .teaser-collage img {
-    position: absolute; width: 240px; height: 175px; object-fit: cover;
+    position: absolute; width: 260px; height: 190px; object-fit: cover;
     border-radius: 12px; border: 3px solid #0f4c75; box-shadow: 0 10px 25px rgba(0,0,0,0.45);
     transition: transform 0.6s ease, box-shadow 0.4s ease;
     cursor: pointer;
   }
-  .teaser-collage img:nth-child(1) { top: 0; left: 0; transform: rotate(-7deg); z-index: 1; }
-  .teaser-collage img:nth-child(2) { bottom: 0; right: 0; transform: rotate(6deg); z-index: 2; border-color: #00ffcc; }
+  
+  /* Posiciones más centradas y con inclinación más suave */
+  .teaser-collage img:nth-child(1) { top: 15px; left: 20px; transform: rotate(-4deg); z-index: 1; }
+  .teaser-collage img:nth-child(2) { bottom: 15px; right: 20px; transform: rotate(5deg); z-index: 2; border-color: #00ffcc; }
 
   /* Ciclo automático: la imagen "en turno" pasa suavemente al frente */
   .teaser-collage img.is-front { z-index: 5; transform: scale(1.06) rotate(0deg) translateY(-8px); box-shadow: 0 16px 32px rgba(0,0,0,0.5); }
