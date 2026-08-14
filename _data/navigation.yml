@@ -1,6 +1,6 @@
 # main links
 main:
-  -titile: "Inicio"
+  - title: "Inicio"
     url: /
   - title: "Proyectos"
     url: /proyectos/
