@@ -1,95 +1,27 @@
-<!-- ========================================== -->
-<!-- ESTILOS DEL FOOTER PERSONALIZADO           -->
-<!-- ========================================== -->
-<style>
-  .custom-footer {
-    background-color: #011121; /* El tono más oscuro para cerrar la web */
-    border-top: 3px solid #0f4c75;
-    padding: 40px 20px 20px 20px;
-    font-family: inherit;
-    color: #bbe1fa;
-    margin-top: auto;
-  }
-  
-  .footer-grid {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
+{% assign locale = include.locale | default: site.locale %}
+{% unless site.atom_feed.hide %}
+  {% assign show_atom = true %}
+{% endunless %}
+{% if site.footer.links or show_atom %}
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    {% if site.data.ui-text[locale].follow_label %}
+      <li><strong>{{ site.data.ui-text[locale].follow_label }}</strong></li>
+    {% endif %}
 
-  .footer-brand { text-align: left; }
-  .footer-brand h4 { margin: 0 0 5px 0; color: #ffffff; font-size: 1.4em; border-bottom: none; }
-  .footer-brand p { margin: 0; font-size: 0.95em; color: #a8dadc; }
+    {% if site.footer.links %}
+      {% for link in site.footer.links %}
+        {% if link.label and link.url %}
+          <li><a href="{{ link.url }}" rel="nofollow noopener noreferrer{% if link.rel %} {{ link.rel }}{% endif %}"><i class="{{ link.icon | default: 'fas fa-link' }}" aria-hidden="true"></i> {{ link.label | escape_once | strip }}</a></li>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
 
-  .footer-socials { display: flex; gap: 20px; }
-  .footer-socials a {
-    color: #bbe1fa;
-    font-size: 1.6em;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #021a30;
-    border: 1px solid #0f4c75;
-    text-decoration: none;
-  }
-  .footer-socials a:hover {
-    color: #021a30;
-    background: #00ffcc;
-    border-color: #00ffcc;
-    box-shadow: 0 0 15px #00ffcc;
-    transform: translateY(-5px);
-  }
-
-  .footer-bottom {
-    max-width: 1280px;
-    margin: 30px auto 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(15, 76, 117, 0.4);
-    text-align: center;
-    font-size: 0.85em;
-    color: #6c7a89;
-  }
-  
-  .footer-bottom span { color: #00ffcc; font-weight: bold; }
-
-  @media (max-width: 600px) {
-    .footer-grid { flex-direction: column; text-align: center; }
-    .footer-brand { text-align: center; }
-  }
-</style>
-
-<!-- ========================================== -->
-<!-- ESTRUCTURA DEL FOOTER                      -->
-<!-- ========================================== -->
-<div class="custom-footer">
-  <div class="footer-grid">
-    
-    <!-- Info de Marca -->
-    <div class="footer-brand">
-      <h4>Alejandro Ramiro Olmo</h4>
-      <p>Ingeniero Mecánico y Electrónico</p>
-    </div>
-
-    <!-- Enlaces Sociales -->
-    <div class="footer-socials">
-      <a href="mailto:alejandroramiroolmo@gmail.com" title="Enviar Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://github.com/AlejandroRamiroOlmo" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <!-- Puedes descomentar el siguiente enlace cuando tengas tu LinkedIn preparado -->
-      <!-- <a href="https://linkedin.com/in/tu-perfil" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a> -->
-    </div>
-
-  </div>
-
-  <!-- Copyright y Frase -->
-  <div class="footer-bottom">
-    &copy; 2026 Alejandro Ramiro. Construido combinando <span>diseño físico</span> y <span>código</span>.
-  </div>
+    {% unless site.atom_feed.hide %}
+      <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"><i class="fas fa-fw fa-square-rss" aria-hidden="true"></i> {{ site.data.ui-text[locale].feed_label | default: "Feed" }}</a></li>
+    {% endunless %}
+  </ul>
 </div>
+{% endif %}
+
+<div class="page__footer-copyright">&copy; {% assign site_time = site.time | date: '%Y' %}{% if site.footer.since and site_time != site.footer.since %}{{ site.footer.since }} - {% endif %}{{ site_time }} <a href="{{ site.copyright_url | default: site.url }}">{{ site.copyright | default: site.title | escape_once | strip }}</a>. {{ site.data.ui-text[locale].powered_by | default: "Powered by" }} <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
