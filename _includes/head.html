@@ -1,29 +1,55 @@
-{% assign locale = include.locale | default: site.locale %}
-<meta charset="utf-8">
+<!-- ========================================== -->
+<!-- CSS PERSONALIZADO (BARRA DE NAVEGACIÓN)    -->
+<!-- ========================================== -->
+<style>
+  /* 1. Fondo de la barra principal */
+  .masthead {
+    background-color: #011121 !important; /* Azul muy oscuro casi negro */
+    border-bottom: 2px solid #0f4c75 !important; /* Línea separadora azul marino */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+  }
 
-{% include seo.html locale=locale %}
+  /* 2. Título de la web (Tu Nombre / Inicio) */
+  .masthead .site-title {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  .masthead .site-title:hover {
+    color: #00ffcc !important;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+  }
 
-{% unless site.atom_feed.hide %}
-  <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
-{% endunless %}
+  /* 3. Enlaces del menú (Proyectos, CV, Sobre Mí...) */
+  .masthead .site-nav ul li a {
+    color: #bbe1fa !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+  }
+  .masthead .site-nav ul li a:hover {
+    color: #00ffcc !important;
+    text-shadow: 0 0 10px rgba(0, 255, 204, 0.4) !important;
+  }
 
-{%- comment %} https://docs.google.com/presentation/d/1rmxwWa9P6_xHqonmh5ONXRS-jPc5XKbnv99Rjkhe04s/present {% endcomment -%}
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  /* 4. Botón del menú en vista Móvil (El icono de las 3 rayitas) */
+  .greedy-nav button.nav-selector,
+  .greedy-nav button.toggle {
+    color: #00ffcc !important;
+  }
 
-<script>
-  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
-  {% if site.enable_copy_code_button -%}
-    window.enable_copy_code_button = true;
-  {%- endif %}
-</script>
-
-<!-- For all browsers -->
-<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
-
-{% if site.head_scripts %}
-  {% for script in site.head_scripts %}
-    <script src="{{ script | relative_url }}"></script>
-  {% endfor %}
-{% endif %}
+  /* 5. Menú desplegable en Móvil */
+  .greedy-nav .hidden-links {
+    background-color: #021a30 !important;
+    border: 1px solid #0f4c75 !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  }
+  .greedy-nav .hidden-links a {
+    color: #bbe1fa !important;
+  }
+  .greedy-nav .hidden-links a:hover {
+    background-color: #0f4c75 !important; /* Fondo al pasar el ratón en móvil */
+    color: #00ffcc !important;
+  }
+</style>
