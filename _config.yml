@@ -115,11 +115,10 @@ analytics:
 # Site Author
 author:
   name             : "Alejandro Ramiro Olmo"
-  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Aquí podrás escribir tu biografía corta más adelante, contando un poco sobre tu visión profesional e intereses."
+  avatar           : "/assets/images/presentacion.PNG"
+  #bio              : ""
   location         : "Jaén, España"
-  email            : "alejandroramiroolmo@gmail.com"
-  # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
+  # email            : "alejandroramiroolmo@gmail.com"   <--- PON EL # AQUÍ
   links:
     - label: "Email"
       icon: "fas fa-fw fa-square-envelope"
@@ -127,9 +126,6 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/AlejandroRamiroOlmo"
-    # - label: "LinkedIn"
-    #   icon: "fab fa-fw fa-linkedin"
-    #   url: "https://linkedin.com/in/tu-perfil"
 
 # Site Footer
 footer:

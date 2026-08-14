@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "Inicio"
+    url: /
   - title: "Proyectos"
     url: /proyectos/
   - title: "CV"
