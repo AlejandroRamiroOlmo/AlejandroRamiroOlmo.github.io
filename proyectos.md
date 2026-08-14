@@ -10,34 +10,78 @@ title: ""
 <style>
   .section-wrapper { max-width: 1280px; margin: 0 auto 60px auto; padding: 0 20px; }
 
-  /* --- FRANJA DE CIFRAS DESTACADAS --- */
-  .stats-strip { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-  .stat-card {
-    background: #021a30; border: 2px solid #0f4c75; border-radius: 12px;
-    padding: 28px 40px; text-align: center; transition: 0.3s;
-  }
-  .stat-card:hover { border-color: #00ffcc; box-shadow: 0 10px 25px rgba(0,255,204,0.2); transform: translateY(-4px); }
-  .stat-card i { font-size: 2.2em; color: #00ffcc; display: block; margin-bottom: 12px; }
-  .stat-number { font-size: 1.8em; font-weight: 800; color: #ffffff; margin-bottom: 6px; line-height: 1.1; }
-  .stat-label { font-size: 0.9em; color: #bbe1fa; line-height: 1.4; }
-
-  /* --- ANIMACIÓN DEL TÍTULO --- */
-  @keyframes glowPulse {
-    0%, 100% { text-shadow: 0 0 10px rgba(0,255,204,0.8), 0 0 20px rgba(0,255,204,0.4), 0 0 30px rgba(0,255,204,0.2); }
-    50% { text-shadow: 0 0 20px rgba(0,255,204,1), 0 0 40px rgba(0,255,204,0.6), 0 0 60px rgba(0,255,204,0.3); }
-  }
-  
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* --- ANIMACIÓN BLUEPRINT (PLANO TÉCNICO) --- */
+  @keyframes blueprintReveal {
+    0% { 
+      color: transparent; 
+      -webkit-text-stroke: 1px #00ffcc; 
+      opacity: 0; 
+      transform: translateY(10px) scale(0.98); 
+    }
+    40% { 
+      color: transparent; 
+      -webkit-text-stroke: 1.5px #00ffcc; 
+      opacity: 1; 
+      transform: translateY(0) scale(1); 
+      text-shadow: none;
+    }
+    100% { 
+      color: #ffffff; 
+      -webkit-text-stroke: 0px transparent; 
+      text-shadow: 0 0 15px rgba(0, 255, 204, 0.4); 
+    }
   }
 
   .animated-title {
-    animation: slideDown 0.8s ease-out, glowPulse 2s ease-in-out infinite;
-    color: #ffffff;
+    animation: blueprintReveal 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     font-size: 3.5em;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 0 0 15px 0;
+    border-bottom: none;
+  }
+
+  /* --- PÍLDORA DE ESTADÍSTICAS EN EL BANNER --- */
+  .stats-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(2, 26, 48, 0.6);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-size: 0.9em;
+    color: #bbe1fa;
+    backdrop-filter: blur(4px);
+    animation: fadeInPill 2.5s ease-in forwards;
+    opacity: 0;
+  }
+  
+  .stats-pill .highlight {
+    color: #00ffcc;
     font-weight: 800;
-    letter-spacing: 2px;
+    font-size: 1.1em;
+  }
+
+  @keyframes fadeInPill {
+    0%, 60% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* --- BANNER PRINCIPAL --- */
+  .hero-banner {
+    background: linear-gradient(135deg, #1d3557 0%, #021a30 100%);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    padding: 70px 1em;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 255, 204, 0.1);
   }
 
   /* --- GRID DE PROYECTOS --- */
@@ -74,23 +118,13 @@ title: ""
 </style>
 
 <!-- ========================================== -->
-<!-- CABECERA CON TÍTULO ANIMADO                -->
+<!-- CABECERA CON TÍTULO ANIMADO Y PÍLDORA      -->
 <!-- ========================================== -->
-<div style="background: linear-gradient(135deg, #1d3557 0%, #021a30 100%); width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; padding: 80px 1em; margin-bottom: 40px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-  <div style="max-width: 1280px; margin: 0 auto; text-align: center;">
-    <h1 class="animated-title" style="margin-top: 0; border-bottom: none;">⚡ PROYECTOS ⚡</h1>
-  </div>
-</div>
-
-<!-- ========================================== -->
-<!-- FRANJA DE CIFRAS DESTACADAS                -->
-<!-- ========================================== -->
-<div class="section-wrapper">
-  <div class="stats-strip">
-    <div class="stat-card">
-      <i class="fas fa-cogs"></i>
-      <div class="stat-number">2</div>
-      <div class="stat-label">Proyectos documentados</div>
+<div class="hero-banner">
+  <div style="max-width: 1280px; margin: 0 auto;">
+    <h1 class="animated-title">PROYECTOS</h1>
+    <div class="stats-pill">
+      <span class="highlight">2</span> Proyectos documentados
     </div>
   </div>
 </div>
