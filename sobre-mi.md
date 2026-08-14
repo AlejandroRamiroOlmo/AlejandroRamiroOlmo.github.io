@@ -107,16 +107,6 @@ classes: wide
   }
   .aptitud-item p { margin: 0; color: #495057; font-size: 0.92em; line-height: 1.5; padding-left: 42px; }
 
-  /* Insignia circular de idioma (C1) */
-  .lang-badge-row { display: flex; align-items: center; gap: 15px; margin-bottom: 22px; padding-bottom: 18px; border-bottom: 1px solid #eaeaea; }
-  .lang-badge {
-    flex-shrink: 0; width: 58px; height: 58px; border-radius: 50%; background: #021a30;
-    border: 3px solid #00ffcc; color: #00ffcc; font-weight: 800; font-size: 1.15em;
-    display: flex; align-items: center; justify-content: center; box-shadow: 0 0 12px rgba(0,255,204,0.3);
-  }
-  .lang-badge-info strong { display: block; color: #1d3557; font-size: 1.05em; }
-  .lang-badge-info span { color: #6c757d; font-size: 0.85em; }
-
   /* 7. Inventario Tecnológico (Tags) */
   .tech-stack-box { background: #021a30; border-radius: 12px; padding: 30px; text-align: center; border: 2px solid #0f4c75; }
   .tech-stack-box h3 { color: #bbe1fa; margin-top: 0; margin-bottom: 10px; }
@@ -236,17 +226,10 @@ classes: wide
 <div class="skills-container">
   <!-- Caja Izquierda: Comunicación -->
   <div class="skill-box">
-    <h3><i class="fas fa-comment-dots" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Comunicación</h3>
-
-    <div class="lang-badge-row">
-      <div class="lang-badge">C1</div>
-      <div class="lang-badge-info">
-        <strong>Inglés</strong>
-        <span>Nivel avanzado</span>
-      </div>
-    </div>
+    <h3><i class="fas fa-comment-dots" style="color: #0f4c75; font-size: 1em; background: transparent; width: auto; height: auto; margin:0;"></i> Idiomas</h3>
 
     <ul class="skill-list">
+      <li><i class="fas fa-award"></i> <span><strong>Inglés:</strong>&nbsp; Nivel avanzado (C1).</span></li>
       <li><i class="fas fa-language"></i> <span><strong>Español:</strong>&nbsp; Nativo.</span></li>
     </ul>
   </div>
@@ -257,11 +240,11 @@ classes: wide
     <div class="aptitud-list">
       <div class="aptitud-item">
         <h4><i class="fas fa-users"></i> Liderazgo y Comunicación</h4>
-        <p>He coordinado equipos en proyectos universitarios que combinan diseño mecánico y electrónico. Mi experiencia como profesor particular refuerza mi capacidad de explicar conceptos técnicos con claridad a audiencias no especializadas.</p>
+        <p>Mi experiencia como profesor particular ha reforzado mi comunicación técnica y mi capacidad para liderar y coordinar equipos.</p>
       </div>
       <div class="aptitud-item">
         <h4><i class="fas fa-tools"></i> Resolución de Problemas</h4>
-        <p>Afronto los problemas de ingeniería con un enfoque analítico: identifico la causa raíz antes de proponer soluciones, iterando entre diseño, simulación y prototipado hasta validar el resultado.</p>
+        <p>Afronto los problemas de ingeniería con un enfoque analítico: identifico la causa raíz antes de proponer soluciones.</p>
       </div>
       <div class="aptitud-item">
         <h4><i class="fas fa-exchange-alt"></i> Adaptabilidad y Trabajo en Equipo</h4>
