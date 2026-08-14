@@ -29,48 +29,69 @@ title: ""
   /* --- 1. PERFIL EJECUTIVO (Fusión Sobre Mí + Competencias) --- */
   .profile-grid { display: flex; flex-wrap: wrap; gap: 50px; margin-top: 20px; }
   .profile-col { flex: 1; min-width: 320px; }
-  
+
   /* Textos de la izquierda */
   .about-intro { color: #bbe1fa; font-size: 1.1em; line-height: 1.8; text-align: justify; margin-bottom: 30px; }
-  .about-list { list-style: none; padding: 0; margin: 0 0 30px 0; }
-  .about-list li { position: relative; padding-left: 50px; margin-bottom: 25px; color: #bbe1fa; font-size: 1.05em; line-height: 1.5; }
-  .about-list li i { position: absolute; left: 0; top: 0; color: #00ffcc; font-size: 1.4em; background: #0f4c75; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
-  .about-list li strong { display: block; color: #ffffff; font-size: 1.1em; margin-bottom: 5px; }
 
-  /* Barras de progreso de la derecha */
+  /* --- Barras de progreso de la derecha --- */
   .skill-group { margin-bottom: 35px; }
   .skill-group h4 { color: #00ffcc; font-size: 1em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 1px solid rgba(15, 76, 117, 0.5); padding-bottom: 5px; }
   .skill-item { margin-bottom: 15px; }
   .skill-name { color: #ffffff; font-size: 0.95em; margin-bottom: 8px; font-weight: bold; }
-  
+
   /* Pista (Track) y Relleno (Fill) de la barra */
   .skill-bar-track { background-color: #011121; height: 6px; border-radius: 3px; overflow: hidden; border: 1px solid #0f4c75; position: relative; }
   .skill-bar-fill { background-color: #00ffcc; height: 100%; border-radius: 3px; box-shadow: 0 0 10px rgba(0, 255, 204, 0.6); }
 
-  /* --- 2. PROYECTOS (Imágenes con Hover) --- */
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-  .project-card-img { position: relative; height: 280px; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
-  .project-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
-  
-  .project-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(2, 26, 48, 0.9); display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease; padding: 30px; text-align: center; }
-  .project-card-img:hover { border-color: #00ffcc; box-shadow: 0 10px 25px rgba(0, 255, 204, 0.2); }
-  .project-card-img:hover img { transform: scale(1.05); }
-  .project-card-img:hover .project-overlay { opacity: 1; }
-  
-  .project-overlay h4 { color: #ffffff; font-size: 1.5em; margin: 0 0 10px 0; border-bottom: none; }
-  .project-overlay p { color: #bbe1fa; font-size: 1em; margin: 0; line-height: 1.5; }
+  /* --- 2. TEASER DE PROYECTOS --- */
+  .projects-teaser {
+    background: #011121;
+    border: 2px solid #0f4c75;
+    border-radius: 12px;
+    padding: 45px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .teaser-text h3 { color: #fff; margin: 0 0 12px 0; font-size: 1.6em; border-bottom: none; }
+  .teaser-text p { color: #bbe1fa; max-width: 520px; margin-bottom: 22px; line-height: 1.6; }
+  .teaser-icons { display: flex; gap: 25px; font-size: 2.8em; color: #0f4c75; transition: 0.3s; }
+  .teaser-icons i:hover { color: #00ffcc; text-shadow: 0 0 15px rgba(0,255,204,0.5); }
+
+  /* --- 3. TARJETAS CTA (CV / CONTACTO) --- */
+  .cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+  .cta-card {
+    background: #021a30;
+    border: 2px solid #0f4c75;
+    border-radius: 12px;
+    padding: 35px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s;
+    display: block;
+  }
+  .cta-card:hover { border-color: #00ffcc; box-shadow: 0 10px 25px rgba(0,255,204,0.2); transform: translateY(-4px); }
+  .cta-card i { font-size: 2.2em; color: #00ffcc; margin-bottom: 15px; }
+  .cta-card h4 { color: #ffffff; margin: 0 0 8px 0; border-bottom: none; font-size: 1.2em; }
+  .cta-card p { color: #bbe1fa; margin: 0; font-size: 0.95em; }
 
   /* --- BOTONES NEÓN --- */
-  .btn-neon { 
-    display: inline-block; padding: 12px 25px; border: 2px solid #00ffcc; 
-    color: #00ffcc !important; text-decoration: none; border-radius: 5px; 
-    font-weight: bold; transition: 0.3s; font-size: 1em; background: #021a30; 
+  .btn-neon {
+    display: inline-block; padding: 12px 25px; border: 2px solid #00ffcc;
+    color: #00ffcc !important; text-decoration: none; border-radius: 5px;
+    font-weight: bold; transition: 0.3s; font-size: 1em; background: #021a30;
   }
   .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 15px #00ffcc; }
 
   @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
-  
-  @media (max-width: 768px) { .section-card { padding: 30px 20px; } }
+
+  @media (max-width: 768px) {
+    .section-card { padding: 30px 20px; }
+    .projects-teaser { padding: 30px 25px; text-align: center; justify-content: center; }
+    .teaser-text p { max-width: 100%; }
+  }
 </style>
 
 <!-- ========================================== -->
@@ -84,7 +105,7 @@ title: ""
         Ingeniería Mecánica y <span id="typewriter" style="color: #00ffcc;"></span><span style="animation: blink 1s infinite; color: #00ffcc;">|</span>
       </h1>
       <p style="font-size: 1.1em; color: #f1faee; margin-bottom: 30px;">Aquí documento mis diseños, prototipos y desarrollos tecnológicos, siempre buscando conectar lo físico con lo digital.</p>
-      
+
       <a href="/proyectos/" class="btn-neon">Ver Proyectos</a>
     </div>
     <div style="text-align: center; min-width: 220px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(5px); margin-top: 15px;">
@@ -100,70 +121,52 @@ title: ""
 </div>
 
 <!-- ========================================== -->
-<!-- 1. PERFIL EJECUTIVO (Fusión)               -->
+<!-- 1. PERFIL EJECUTIVO (Fusión, versión reducida) -->
 <!-- ========================================== -->
 <div class="section-wrapper">
   <div class="section-card">
-    
+
     <div class="section-header" style="margin-top: 0;">
       <h2 class="section-title light-text">Perfil y Competencias</h2>
     </div>
-    
+
     <div class="profile-grid">
-      <!-- Columna Izquierda: Sobre Mí -->
+      <!-- Columna Izquierda: Sobre Mí (resumen ejecutivo, sin duplicar "Sobre mí") -->
       <div class="profile-col">
         <div class="about-intro">
           <p>
-            Estudiante de último curso del Doble Grado en Ingeniería Mecánica y Electrónica en la Universidad de Jaén. Transformo conceptos en soluciones funcionales, desde el diseño y modelado 3D hasta la integración y programación del sistema, trabajando de forma colaborativa para abordar cada proyecto desde distintas perspectivas.
+            Estudiante de último curso del Doble Grado en Ingeniería Mecánica y Electrónica en la Universidad de Jaén. Transformo conceptos en soluciones funcionales, desde el diseño y modelado 3D hasta la integración y programación del sistema.
           </p>
           <p>
-            La enseñanza también forma parte de mi experiencia, con tres años como profesor particular de materias tecnológicas para alumnos de bachillerato.
+            Perfil integrador: desarrollo simultáneo de diseño mecánico e industrial y control de hardware, con experiencia internacional y capacidad para comunicar conceptos técnicos con claridad.
           </p>
         </div>
 
-        <ul class="about-list">
-          <li>
-            <i class="fas fa-microchip"></i>
-            <strong>Perfil Integrador</strong>
-            Desarrollo simultáneo de diseño mecánico e industrial y control de hardware.
-          </li>
-          <li>
-            <i class="fas fa-globe-europe"></i>
-            <strong>Visión Internacional</strong>
-            Estancia en Politechnika Lubelska (Polonia) y competencias desarrolladas en Inglés (C1).
-          </li>
-          <li>
-            <i class="fas fa-users"></i>
-            <strong>Comunicación Técnica</strong>
-            Habilidad para desglosar y transmitir conceptos complejos de ingeniería a públicos diversos.
-          </li>
-        </ul>
-        
         <a href="/sobre-mi/" class="btn-neon">Conóceme un poco más &rarr;</a>
       </div>
 
       <!-- Columna Derecha: Barras de Skills -->
       <div class="profile-col">
-        
+
         <!-- Grupo 1: Hard Skills -->
         <div class="skill-group">
           <h4>Hard Skills</h4>
-          
+
           <div class="skill-item">
             <div class="skill-name">Diseño Mecánico y CAD (SolidWorks)</div>
             <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 75%;"></div></div>
           </div>
-          
+
           <div class="skill-item">
             <div class="skill-name">Electrónica y Diseño de PCBs (KiCad)</div>
             <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 80%;"></div></div>
           </div>
-          
+
           <div class="skill-item">
             <div class="skill-name">Automatización Industrial (PLCs / SCL)</div>
             <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 80%;"></div></div>
           </div>
-          
+
           <div class="skill-item">
             <div class="skill-name">Programación Embebida (C/C++, Python)</div>
             <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
@@ -173,17 +176,17 @@ title: ""
         <!-- Grupo 2: Soft Skills -->
         <div class="skill-group">
           <h4>Soft Skills</h4>
-          
+
           <div class="skill-item">
             <div class="skill-name">Liderazgo y Comunicación</div>
             <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 95%;"></div></div>
           </div>
-          
+
           <div class="skill-item">
             <div class="skill-name">Resolución de Problemas</div>
             <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
           </div>
-          
+
           <div class="skill-item">
             <div class="skill-name">Adaptabilidad y Trabajo Multicultural</div>
             <div class="skill-bar-track"><div class="skill-bar-fill" style="width: 90%;"></div></div>
@@ -197,37 +200,41 @@ title: ""
 </div>
 
 <!-- ========================================== -->
-<!-- 2. PROYECTOS DESTACADOS                    -->
+<!-- 2. TEASER DE PROYECTOS                     -->
 <!-- ========================================== -->
 <div class="section-wrapper">
-  <div class="section-card">
-    
-    <div class="section-header" style="margin-top: 0;">
-      <h2 class="section-title light-text">Proyectos Destacados</h2>
+  <div class="projects-teaser">
+    <div class="teaser-text">
+      <h3>Explora mis proyectos</h3>
+      <p>Diseño mecánico, electrónica y automatización industrial aplicados a casos reales — desde una máquina Arcade hasta estaciones de control con PLC. Voy ampliando esta sección a medida que documento cada proyecto en detalle.</p>
+      <a href="/proyectos/" class="btn-neon">Ver todos los proyectos &rarr;</a>
     </div>
+    <div class="teaser-icons">
+      <i class="fas fa-cogs"></i>
+      <i class="fas fa-microchip"></i>
+      <i class="fas fa-industry"></i>
+    </div>
+  </div>
+</div>
 
-    <div class="projects-grid">
-      <div class="project-card-img" onclick="location.href='/proyectos/';">
-        <img src="/assets/images/maquina.png" alt="Máquina Arcade">
-        <div class="project-overlay">
-          <h4>Máquina Arcade</h4>
-          <p>Diseño físico de máquina Arcade junto con desarrollo de software personalizado y tematizado.</p>
-        </div>
-      </div>
-      
-      <div class="project-card-img" onclick="location.href='/proyectos/';">
-        <img src="/assets/images/Automatizacion.png" alt="Estación Industrial">
-        <div class="project-overlay">
-          <h4>Estación Industrial</h4>
-          <p>Programación de PLC Siemens para automatizar un proceso industrial en lenguaje SCL.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div style="text-align: center; margin-top: 50px;">
-      <a href="/proyectos/" class="btn-neon">Ver todos mis proyectos &rarr;</a>
-    </div>
-
+<!-- ========================================== -->
+<!-- 3. TARJETAS CTA: CV Y CONTACTO             -->
+<!-- ========================================== -->
+<div class="section-wrapper">
+  <div class="section-header" style="margin-top: 0;">
+    <h2 class="section-title" style="color: #1d3557;">¿Hablamos?</h2>
+  </div>
+  <div class="cta-grid">
+    <a href="/cv/" class="cta-card">
+      <i class="fas fa-file-alt"></i>
+      <h4>Mi CV</h4>
+      <p>Consulta el currículum completo con el detalle de mi formación, competencias y experiencia.</p>
+    </a>
+    <a href="/contacto/" class="cta-card">
+      <i class="fas fa-paper-plane"></i>
+      <h4>Contacto</h4>
+      <p>Escríbeme o conecta conmigo — estoy abierto a nuevas oportunidades y colaboraciones.</p>
+    </a>
   </div>
 </div>
 
@@ -239,9 +246,9 @@ title: ""
   const word = "Electrónica"; let i = 0; let isDeleting = false;
   function typeWriterEffect() {
     const el = document.getElementById('typewriter');
-    if (!isDeleting && i <= word.length) { el.innerHTML = word.substring(0, i); i++; setTimeout(typeWriterEffect, 100); } 
-    else if (isDeleting && i >= 0) { el.innerHTML = word.substring(0, i); i--; setTimeout(typeWriterEffect, 50); } 
-    else if (i > word.length) { isDeleting = true; setTimeout(typeWriterEffect, 3000); } 
+    if (!isDeleting && i <= word.length) { el.innerHTML = word.substring(0, i); i++; setTimeout(typeWriterEffect, 100); }
+    else if (isDeleting && i >= 0) { el.innerHTML = word.substring(0, i); i--; setTimeout(typeWriterEffect, 50); }
+    else if (i > word.length) { isDeleting = true; setTimeout(typeWriterEffect, 3000); }
     else if (i < 0) { isDeleting = false; i = 0; setTimeout(typeWriterEffect, 500); }
   }
   document.addEventListener("DOMContentLoaded", function() {

@@ -50,12 +50,12 @@ classes: wide
     padding-bottom: 10px;
     font-size: 1.4em;
   }
-  .intro-text { 
-    font-size: 1.1em; 
-    line-height: 1.6; 
-    color: #495057; 
-    margin: 0; 
-    text-align: justify; 
+  .intro-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #495057;
+    margin: 0;
+    text-align: justify;
   }
   .intro-text p:last-child {
     margin-bottom: 0;
@@ -63,75 +63,97 @@ classes: wide
 
   /* 3. Trayectoria PCB adaptada a una sola columna */
   .pcb-board {
-    background-color: #021a30; 
-    background-image: 
+    background-color: #021a30;
+    background-image:
       linear-gradient(rgba(79, 195, 247, 0.05) 1px, transparent 1px),
       linear-gradient(90deg, rgba(79, 195, 247, 0.05) 1px, transparent 1px);
-    background-size: 20px 20px; 
-    border: 2px solid #0f4c75; 
-    border-radius: 12px; 
-    color: #bbe1fa; 
-    padding: 30px; 
+    background-size: 20px 20px;
+    border: 2px solid #0f4c75;
+    border-radius: 12px;
+    color: #bbe1fa;
+    padding: 30px;
     margin-bottom: 40px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   }
-  
+
+  /* Franja de imágenes de universidad */
+  .uni-strip { display: flex; gap: 15px; margin-bottom: 30px; }
+  .uni-strip img {
+    flex: 1;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #0f4c75;
+    transition: 0.3s;
+  }
+  .uni-strip img:hover { border-color: #00ffcc; box-shadow: 0 0 15px rgba(0,255,204,0.3); }
+  .uni-strip figure { flex: 1; margin: 0; position: relative; }
+  .uni-strip figcaption {
+    position: absolute; bottom: 8px; left: 12px; right: 12px;
+    color: #f1faee; font-size: 0.8em; text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  }
+
   .pcb-timeline { position: relative; z-index: 1; margin-top: 10px; padding-left: 10px; }
   .pcb-item { position: relative; padding-bottom: 30px; padding-left: 45px; border-left: 3px solid #0f4c75; transition: border-color 0.3s ease; }
   .pcb-item:last-child { border-left: 3px solid transparent; padding-bottom: 0; }
-  
+
   .pcb-item::before { content: ''; position: absolute; top: 10px; left: 0; width: 25px; height: 3px; background-color: #0f4c75; transition: all 0.3s ease; }
   .pcb-pad { position: absolute; top: 3px; left: 22px; width: 16px; height: 16px; background-color: #021a30; border: 3px solid #0f4c75; border-radius: 50%; transition: all 0.3s ease; }
-  
+
   .pcb-item:hover { border-left-color: #00ffcc; }
   .pcb-item:hover::before { background-color: #00ffcc; box-shadow: 0 0 10px #00ffcc; }
   .pcb-item:hover .pcb-pad { border-color: #00ffcc; background-color: #00ffcc; box-shadow: 0 0 15px #00ffcc; }
-  
+
   .pcb-item h4 { margin: 0 0 5px 0; color: #3282b8; transition: all 0.3s; font-size: 1.1em; }
   .pcb-item:hover h4 { color: #ffffff; text-shadow: 0 0 8px #00ffcc; }
-  
+
   .pcb-item ul { margin: 0; padding-left: 20px; color: #bbe1fa; font-size: 0.9em; }
   .pcb-item ul li { margin-bottom: 5px; }
 
   /* 4. Panel de Idiomas y Soft Skills */
-  .skills-container { 
-    display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px; 
+  .skills-container {
+    display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 40px;
   }
-  .skill-box { 
-    flex: 1; min-width: 250px; background: rgba(255,255,255,0.8); 
-    border: 1px solid #d5dce4; border-radius: 12px; padding: 25px; 
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+  .skill-box {
+    flex: 1; min-width: 250px; background: rgba(255,255,255,0.8);
+    border: 1px solid #d5dce4; border-radius: 12px; padding: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   }
   .skill-box h3 { margin-top: 0; color: #1d3557; border-bottom: 2px solid #0f4c75; padding-bottom: 10px; }
   .skill-list { list-style: none; padding: 0; margin: 0; }
   .skill-list li { margin-bottom: 15px; display: flex; align-items: flex-start; font-size: 1.05em; color: #495057; }
-  
+
   /* Iconos de las Skills */
-  .skill-list i { 
-    font-size: 1.1em; color: #00ffcc; background: #021a30; 
-    width: 35px; height: 35px; display: flex; align-items: center; 
-    justify-content: center; border-radius: 8px; margin-right: 15px; 
+  .skill-list i {
+    font-size: 1.1em; color: #00ffcc; background: #021a30;
+    width: 35px; height: 35px; display: flex; align-items: center;
+    justify-content: center; border-radius: 8px; margin-right: 15px;
     flex-shrink: 0; margin-top: 3px;
   }
 
   /* 5. Inventario Tecnológico (Tags) */
-  .tech-stack-box { 
-    background: #021a30; border-radius: 12px; padding: 30px; 
-    text-align: center; border: 2px solid #0f4c75; 
+  .tech-stack-box {
+    background: #021a30; border-radius: 12px; padding: 30px;
+    text-align: center; border: 2px solid #0f4c75;
   }
   .tech-stack-box h3 { color: #bbe1fa; margin-top: 0; margin-bottom: 10px; }
   .tech-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
-  
+
   /* Etiquetas Neon */
-  .tech-tag { 
-    background: transparent; border: 2px solid #00ffcc; color: #00ffcc; 
-    padding: 10px 20px; border-radius: 30px; font-weight: bold; 
-    font-size: 1em; display: flex; align-items: center; gap: 10px; 
+  .tech-tag {
+    background: transparent; border: 2px solid #00ffcc; color: #00ffcc;
+    padding: 10px 20px; border-radius: 30px; font-weight: bold;
+    font-size: 1em; display: flex; align-items: center; gap: 10px;
     transition: all 0.3s; cursor: default;
   }
-  .tech-tag:hover { 
-    background: #00ffcc; color: #021a30; box-shadow: 0 0 15px #00ffcc; 
-    transform: translateY(-3px); 
+  .tech-tag:hover {
+    background: #00ffcc; color: #021a30; box-shadow: 0 0 15px #00ffcc;
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 600px) {
+    .uni-strip { flex-direction: column; }
+    .uni-strip img { height: 160px; }
   }
 </style>
 
@@ -151,7 +173,7 @@ classes: wide
 <!-- ========================================== -->
 <div class="intro-card">
   <h2>
-    <i class="fas fa-chalkboard-teacher" style="color: #0f4c75; margin-right: 10px;"></i> 
+    <i class="fas fa-chalkboard-teacher" style="color: #0f4c75; margin-right: 10px;"></i>
     Docencia y Comunicación Técnica
   </h2>
   <div class="intro-text">
@@ -169,8 +191,21 @@ classes: wide
 <!-- ========================================== -->
 <div class="pcb-board">
   <h2 style="margin-top: 0; color: #bbe1fa; text-align: center; border-bottom: 1px solid #0f4c75; padding-bottom: 15px;">Trayectoria Académica</h2>
+
+  <!-- Franja de imágenes: contexto visual rápido de dónde ha estudiado -->
+  <div class="uni-strip">
+    <figure>
+      <img src="/assets/images/uja-campus.jpg" alt="Campus de la Universidad de Jaén">
+      <figcaption>Universidad de Jaén</figcaption>
+    </figure>
+    <figure>
+      <img src="/assets/images/lubelska-campus.jpg" alt="Campus de la Politechnika Lubelska">
+      <figcaption>Politechnika Lubelska, Polonia</figcaption>
+    </figure>
+  </div>
+
   <div class="pcb-timeline">
-    
+
     <div class="pcb-item">
       <div class="pcb-pad"></div>
       <h4>2026 - 2027: Último Año e Industria (Actualidad)</h4>
@@ -179,7 +214,7 @@ classes: wide
         <li>Consolidación de conocimientos y transición hacia el sector profesional.</li>
       </ul>
     </div>
-    
+
     <div class="pcb-item">
       <div class="pcb-pad"></div>
       <h4>2025 - 2026: Especialización Mecánica (Erasmus+)</h4>
