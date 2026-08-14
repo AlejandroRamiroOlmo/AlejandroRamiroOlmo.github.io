@@ -22,7 +22,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Alejandro Ramiro Olmo"
 description              : "Estudiante del Doble Grado en Ingeniería Mecánica y Electrónica en la Universidad de Jaén. Apasionado por la tecnología, la automatización y el desarrollo de soluciones innovadoras."
-url                      : "https://AlejandroRamiroOlmo.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://alejandroaamiroolmo.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "AlejandroRamiroOlmo/AlejandroRamiroOlmo.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"no qu
