@@ -19,7 +19,6 @@ locale                   : "es-ES"
 direction                : # "ltr" (default), "rtl" # set the direction of the page
 title                    : "Portfolio | Alejandro Ramiro Olmo"
 title_separator          : "-"
-favicon                  : "/assets/images/favicon.png"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Alejandro Ramiro Olmo"
 description              : "Estudiante del Doble Grado en Ingeniería Mecánica y Electrónica en la Universidad de Jaén. Apasionado por la tecnología, la automatización y el desarrollo de soluciones innovadoras."
