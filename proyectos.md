@@ -49,15 +49,11 @@ title: ""
   
   .stats-pill .highlight { color: #00ffcc; font-weight: 800; font-size: 1.1em; }
 
-  /* --- 3. NUEVO EFECTO DE FONDO FLUIDO (AURAS + GRID) --- */
+  /* --- 3. NUEVO EFECTO DE FONDO FLUIDO (AURAS SIN GRID) --- */
   .hero-banner {
     position: relative;
-    /* Fondo base muy oscuro con cuadrícula técnica tenue */
+    /* Fondo base muy oscuro, liso y elegante */
     background-color: #021220;
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
     overflow: hidden; /* Para que las luces no se salgan */
     
     width: 100vw;
@@ -77,7 +73,7 @@ title: ""
     content: "";
     position: absolute;
     top: -50%; left: -10%; width: 60%; height: 200%;
-    background: radial-gradient(circle, rgba(15, 76, 117, 0.4) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(15, 76, 117, 0.5) 0%, transparent 60%);
     animation: floatAura1 12s infinite alternate ease-in-out;
     pointer-events: none;
     z-index: 0;
@@ -88,7 +84,7 @@ title: ""
     content: "";
     position: absolute;
     bottom: -50%; right: -10%; width: 50%; height: 200%;
-    background: radial-gradient(circle, rgba(0, 255, 204, 0.08) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.1) 0%, transparent 60%);
     animation: floatAura2 15s infinite alternate-reverse ease-in-out;
     pointer-events: none;
     z-index: 0;
