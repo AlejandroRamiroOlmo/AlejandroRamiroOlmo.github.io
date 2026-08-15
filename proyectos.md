@@ -49,30 +49,68 @@ title: ""
   
   .stats-pill .highlight { color: #00ffcc; font-weight: 800; font-size: 1.1em; }
 
-  /* --- 3. ANIMACIÓN DEL FONDO DEL BANNER (GRADIENTE DINÁMICO) --- */
-  @keyframes gradientPulse {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
+  /* --- 3. NUEVO EFECTO DE FONDO FLUIDO (AURAS + GRID) --- */
   .hero-banner {
-    /* Gradiente con múltiples tonos de azul tech que se mezclan */
-    background: linear-gradient(-45deg, #021a30, #1d3557, #0f4c75, #052a4a);
-    background-size: 400% 400%; /* Hacemos el fondo gigante para poder moverlo */
-    animation: gradientPulse 15s ease infinite; /* Animación lenta de 15 segundos */
+    position: relative;
+    /* Fondo base muy oscuro con cuadrícula técnica tenue */
+    background-color: #021220;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    overflow: hidden; /* Para que las luces no se salgan */
     
     width: 100vw;
-    position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
     padding: 60px 1em;
     margin-bottom: 50px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     text-align: center;
     border-bottom: 1px solid rgba(0, 255, 204, 0.1);
+  }
+
+  /* Foco de luz 1: Azul Profundo */
+  .hero-banner::before {
+    content: "";
+    position: absolute;
+    top: -50%; left: -10%; width: 60%; height: 200%;
+    background: radial-gradient(circle, rgba(15, 76, 117, 0.4) 0%, transparent 60%);
+    animation: floatAura1 12s infinite alternate ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Foco de luz 2: Cian Tecnológico */
+  .hero-banner::after {
+    content: "";
+    position: absolute;
+    bottom: -50%; right: -10%; width: 50%; height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.08) 0%, transparent 60%);
+    animation: floatAura2 15s infinite alternate-reverse ease-in-out;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Animaciones 100% fluidas aceleradas por GPU */
+  @keyframes floatAura1 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(20%, 10%) scale(1.2); }
+  }
+
+  @keyframes floatAura2 {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-20%, -10%) scale(1.3); }
+  }
+
+  /* Contenedor del contenido para que quede por encima de las luces */
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1280px; 
+    margin: 0 auto;
   }
 
   /* --- 4. ANIMACIÓN Y FORMATO DE LAS TARJETAS --- */
@@ -133,7 +171,7 @@ title: ""
 <!-- CABECERA CON TÍTULO ANIMADO Y PÍLDORA      -->
 <!-- ========================================== -->
 <div class="hero-banner">
-  <div style="max-width: 1280px; margin: 0 auto;">
+  <div class="hero-content">
     <h1 class="animated-title">PROYECTOS</h1>
     <div class="stats-pill">
       <span class="highlight">2</span> Proyectos documentados
