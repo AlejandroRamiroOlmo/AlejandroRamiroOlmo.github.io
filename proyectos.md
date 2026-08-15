@@ -168,7 +168,7 @@ title: ""
 <!-- ========================================== -->
 <div class="hero-banner">
   <div class="hero-content">
-    <h1 class="animated-title">PROYECTOS</h1>
+    <h1 class="animated-title">Conoce mi Trabajo</h1>
     <div class="stats-pill">
       <span class="highlight">2</span> Proyectos documentados
     </div>
