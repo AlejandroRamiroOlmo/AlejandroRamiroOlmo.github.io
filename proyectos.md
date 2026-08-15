@@ -18,7 +18,7 @@ title: ""
 
   .animated-title {
     animation: titleFadeIn 0.6s ease-out forwards;
-    font-size: 2.4em; /* Tamaño más discreto y profesional */
+    font-size: 2.4em; 
     font-weight: 700;
     letter-spacing: 3px;
     color: #ffffff;
@@ -43,15 +43,25 @@ title: ""
     font-size: 0.85em;
     color: #bbe1fa;
     backdrop-filter: blur(4px);
-    opacity: 0; /* Oculto hasta que toque su turno */
-    animation: fadeInPill 0.5s ease-out 0.3s forwards; /* Entra casi justo después del título */
+    opacity: 0; 
+    animation: fadeInPill 0.5s ease-out 0.3s forwards; 
   }
   
   .stats-pill .highlight { color: #00ffcc; font-weight: 800; font-size: 1.1em; }
 
-  /* --- BANNER PRINCIPAL --- */
+  /* --- 3. ANIMACIÓN DEL FONDO DEL BANNER (GRADIENTE DINÁMICO) --- */
+  @keyframes gradientPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
   .hero-banner {
-    background: linear-gradient(135deg, #1d3557 0%, #021a30 100%);
+    /* Gradiente con múltiples tonos de azul tech que se mezclan */
+    background: linear-gradient(-45deg, #021a30, #1d3557, #0f4c75, #052a4a);
+    background-size: 400% 400%; /* Hacemos el fondo gigante para poder moverlo */
+    animation: gradientPulse 15s ease infinite; /* Animación lenta de 15 segundos */
+    
     width: 100vw;
     position: relative;
     left: 50%;
@@ -65,23 +75,21 @@ title: ""
     border-bottom: 1px solid rgba(0, 255, 204, 0.1);
   }
 
-  /* --- 3. ANIMACIÓN Y FORMATO DE LAS TARJETAS (MÁS CUADRADAS Y RÁPIDAS) --- */
+  /* --- 4. ANIMACIÓN Y FORMATO DE LAS TARJETAS --- */
   @keyframes cardSlideUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Grid ajustado para favorecer un formato de tarjeta más equilibrado */
   .projects-full-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
   
   .project-full-card {
     background: #021a30; border: 2px solid #0f4c75; border-radius: 14px;
     overflow: hidden; transition: 0.3s; display: flex; flex-direction: column;
-    opacity: 0; /* Oculto al inicio */
+    opacity: 0; 
     animation: cardSlideUp 0.5s ease-out forwards;
   }
   
-  /* Retrasos reducidos para que entren rápido de una en una */
   .project-full-card:nth-child(1) { animation-delay: 0.5s; }
   .project-full-card:nth-child(2) { animation-delay: 0.65s; }
   .project-full-card:nth-child(3) { animation-delay: 0.8s; } 
@@ -91,7 +99,7 @@ title: ""
   /* Imagen cuadrada */
   .project-full-img { 
     width: 100%; 
-    aspect-ratio: 1 / 1; /* Esto fuerza a la imagen a ser un cuadrado perfecto */
+    aspect-ratio: 1 / 1; 
     object-fit: cover; 
     display: block; 
   }
