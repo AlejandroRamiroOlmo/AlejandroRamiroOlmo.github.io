@@ -49,13 +49,11 @@ title: ""
   
   .stats-pill .highlight { color: #00ffcc; font-weight: 800; font-size: 1.1em; }
 
-  /* --- 3. NUEVO EFECTO DE FONDO FLUIDO (AURAS SIN GRID) --- */
+  /* --- 3. EFECTO DE FONDO FLUIDO (AURAS SIN GRID) --- */
   .hero-banner {
     position: relative;
-    /* Fondo base muy oscuro, liso y elegante */
     background-color: #021220;
-    overflow: hidden; /* Para que las luces no se salgan */
-    
+    overflow: hidden; 
     width: 100vw;
     left: 50%;
     right: 50%;
@@ -68,7 +66,6 @@ title: ""
     border-bottom: 1px solid rgba(0, 255, 204, 0.1);
   }
 
-  /* Foco de luz 1: Azul Profundo */
   .hero-banner::before {
     content: "";
     position: absolute;
@@ -79,7 +76,6 @@ title: ""
     z-index: 0;
   }
 
-  /* Foco de luz 2: Cian Tecnológico */
   .hero-banner::after {
     content: "";
     position: absolute;
@@ -90,7 +86,6 @@ title: ""
     z-index: 0;
   }
 
-  /* Animaciones 100% fluidas aceleradas por GPU */
   @keyframes floatAura1 {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(20%, 10%) scale(1.2); }
@@ -101,7 +96,6 @@ title: ""
     100% { transform: translate(-20%, -10%) scale(1.3); }
   }
 
-  /* Contenedor del contenido para que quede por encima de las luces */
   .hero-content {
     position: relative;
     z-index: 1;
@@ -115,10 +109,21 @@ title: ""
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .projects-full-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; }
+  /* GRID: Máximo 3 tarjetas por fila, alineadas a la izquierda */
+  .projects-full-grid { 
+    display: grid; 
+    gap: 25px; /* Espacio entre tarjetas ligeramente reducido */
+    grid-template-columns: repeat(1, 1fr); 
+  }
+  @media (min-width: 768px) {
+    .projects-full-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .projects-full-grid { grid-template-columns: repeat(3, 1fr); }
+  }
   
   .project-full-card {
-    background: #021a30; border: 2px solid #0f4c75; border-radius: 14px;
+    background: #021a30; border: 2px solid #0f4c75; border-radius: 12px;
     overflow: hidden; transition: 0.3s; display: flex; flex-direction: column;
     opacity: 0; 
     animation: cardSlideUp 0.5s ease-out forwards;
@@ -128,9 +133,9 @@ title: ""
   .project-full-card:nth-child(2) { animation-delay: 0.65s; }
   .project-full-card:nth-child(3) { animation-delay: 0.8s; } 
 
-  .project-full-card:hover { border-color: #00ffcc; box-shadow: 0 12px 25px rgba(0,255,204,0.12); transform: translateY(-4px); }
+  .project-full-card:hover { border-color: #00ffcc; box-shadow: 0 10px 20px rgba(0,255,204,0.12); transform: translateY(-4px); }
   
-  /* Imagen cuadrada */
+  /* Imagen estrictamente cuadrada */
   .project-full-img { 
     width: 100%; 
     aspect-ratio: 1 / 1; 
@@ -138,25 +143,38 @@ title: ""
     display: block; 
   }
   
-  .project-full-body { padding: 25px; display: flex; flex-direction: column; flex: 1; }
-  .project-full-body h3 { color: #fff; margin: 0 0 10px 0; border-bottom: none; font-size: 1.25em; }
-  .project-full-body p { color: #bbe1fa; font-size: 0.9em; line-height: 1.6; margin-bottom: 18px; flex: 1; }
+  /* Padding interior reducido para hacerla más compacta */
+  .project-full-body { padding: 20px; display: flex; flex-direction: column; flex: 1; }
+  .project-full-body h3 { color: #fff; margin: 0 0 8px 0; border-bottom: none; font-size: 1.15em; }
   
-  .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+  /* TEXTO LIMITADO A 3 LÍNEAS */
+  .project-full-body p { 
+    color: #bbe1fa; 
+    font-size: 0.85em; 
+    line-height: 1.5; 
+    margin-bottom: 16px; 
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Número máximo de líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
   .project-tag {
     background: transparent; border: 1px solid #00ffcc; color: #00ffcc;
-    padding: 5px 12px; border-radius: 20px; font-size: 0.8em; font-weight: 600;
-    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 10px; border-radius: 20px; font-size: 0.75em; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 5px;
   }
   
   /* --- BOTÓN NEÓN --- */
   .project-full-body .btn-neon { align-self: flex-start; }
   .btn-neon {
-    display: inline-block; padding: 10px 22px; border: 1.5px solid #00ffcc;
+    display: inline-block; padding: 8px 18px; border: 1.5px solid #00ffcc;
     color: #00ffcc !important; text-decoration: none; border-radius: 5px;
-    font-weight: bold; transition: 0.3s; font-size: 0.9em; background: #021a30;
+    font-weight: bold; transition: 0.3s; font-size: 0.85em; background: #021a30;
   }
-  .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 12px rgba(0,255,204,0.5); }
+  .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 10px rgba(0,255,204,0.4); }
 
   @media (max-width: 768px) {
     .animated-title { font-size: 2em; }
@@ -170,7 +188,7 @@ title: ""
   <div class="hero-content">
     <h1 class="animated-title">Conoce mi Trabajo</h1>
     <div class="stats-pill">
-      <span class="highlight">2</span> Proyectos documentados
+      <span class="highlight">3</span> Proyectos documentados
     </div>
   </div>
 </div>
@@ -208,6 +226,22 @@ title: ""
           <span class="project-tag"><i class="fas fa-bolt"></i> KiCad</span>
         </div>
         <a href="/proyectos/estacion-industrial/" class="btn-neon">Ver más &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 (Nueva) -->
+    <div class="project-full-card">
+      <!-- Cambia la ruta de la imagen cuando tengas una nueva -->
+      <img src="/assets/images/placeholder.png" alt="Nuevo Proyecto" class="project-full-img">
+      <div class="project-full-body">
+        <h3>Título del Nuevo Proyecto</h3>
+        <p>Aquí puedes escribir la descripción de tu tercer proyecto. Si escribes mucho texto, el sistema automáticamente lo cortará al llegar a la tercera línea con puntos suspensivos.</p>
+        <div class="project-tags">
+          <span class="project-tag"><i class="fas fa-microchip"></i> Tecnología 1</span>
+          <span class="project-tag"><i class="fas fa-code"></i> Tecnología 2</span>
+        </div>
+        <!-- Cambia el enlace de abajo hacia donde apunte el proyecto -->
+        <a href="#" class="btn-neon">Ver más &rarr;</a>
       </div>
     </div>
 
