@@ -231,7 +231,7 @@ title: ""
           <span class="project-tag"><i class="fas fa-microchip"></i> Arduino</span>
           <span class="project-tag"><i class="fab fa-python"></i> Python</span>
         </div>
-        <a href="/proyectos/maquina-arcade/arcade.html" class="btn-neon">Ver más &rarr;</a>
+        <a href="/proyectos/maquina-arcade/" class="btn-neon">Ver más &rarr;</a>
       </div>
     </div>
 
@@ -245,7 +245,7 @@ title: ""
           <span class="project-tag"><i class="fas fa-industry"></i> PLC Siemens</span>
           <span class="project-tag"><i class="fas fa-code"></i> SCL</span>
         </div>
-        <a href="/proyectos/estacion-industrial/estacion_industrial.html" class="btn-neon">Ver más &rarr;</a>
+        <a href="/proyectos/estacion-industrial/" class="btn-neon">Ver más &rarr;</a>
       </div>
     </div>
 
@@ -260,7 +260,7 @@ title: ""
           <span class="project-tag"><i class="fas fa-gem"></i> Jekyll</span>
           <span class="project-tag"><i class="fab fa-github"></i> GitHub Pages</span>
         </div>
-         <a href="/proyectos/portfolio/portfolio.html" class="btn-neon">Ver más &rarr;</a>
+         <a href="/proyectos/portfolio/" class="btn-neon">Ver más &rarr;</a>
       </div>
     </div>
 
