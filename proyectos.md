@@ -127,13 +127,26 @@ title: ""
     overflow: hidden; transition: 0.3s; display: flex; flex-direction: column;
     opacity: 0; 
     animation: cardSlideUp 0.5s ease-out forwards;
+    position: relative; /* <-- Clave para el enlace expandido a toda la tarjeta */
   }
   
   .project-full-card:nth-child(1) { animation-delay: 0.5s; }
   .project-full-card:nth-child(2) { animation-delay: 0.65s; }
   .project-full-card:nth-child(3) { animation-delay: 0.8s; } 
 
-  .project-full-card:hover { border-color: #00ffcc; box-shadow: 0 10px 20px rgba(0,255,204,0.12); transform: translateY(-4px); }
+  /* Hover de la tarjeta */
+  .project-full-card:hover { 
+    border-color: #00ffcc; 
+    box-shadow: 0 10px 20px rgba(0,255,204,0.12); 
+    transform: translateY(-4px); 
+  }
+
+  /* El botón se ilumina al pasar el ratón por cualquier zona de la tarjeta */
+  .project-full-card:hover .btn-neon {
+    background: #00ffcc; 
+    color: #021a30 !important; 
+    box-shadow: 0 0 10px rgba(0,255,204,0.4);
+  }
   
   /* Imagen estrictamente cuadrada */
   .project-full-img { 
@@ -167,14 +180,22 @@ title: ""
     display: inline-flex; align-items: center; gap: 5px;
   }
   
-  /* --- BOTÓN NEÓN --- */
+  /* --- BOTÓN NEÓN Y ENLACE EXPANDIDO --- */
   .project-full-body .btn-neon { align-self: flex-start; }
   .btn-neon {
     display: inline-block; padding: 8px 18px; border: 1.5px solid #00ffcc;
     color: #00ffcc !important; text-decoration: none; border-radius: 5px;
     font-weight: bold; transition: 0.3s; font-size: 0.85em; background: #021a30;
+    position: static; /* Asegura que la tarjeta completa sea el contenedor del click */
   }
-  .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 10px rgba(0,255,204,0.4); }
+
+  /* Expande el área de click del botón para cubrir toda la tarjeta */
+  .btn-neon::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+  }
 
   @media (max-width: 768px) {
     .animated-title { font-size: 2em; }
@@ -239,7 +260,7 @@ title: ""
           <span class="project-tag"><i class="fas fa-gem"></i> Jekyll</span>
           <span class="project-tag"><i class="fab fa-github"></i> GitHub Pages</span>
         </div>
-        <a href="/" class="btn-neon">Ver más &rarr;</a>
+         <a href="/proyectos/portfolio/" class="btn-neon">Ver más &rarr;</a>
       </div>
     </div>
 
