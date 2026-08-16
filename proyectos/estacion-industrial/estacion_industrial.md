@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "Estación Industrial"
+permalink: /proyectos/estacion_industrial/
 author_profile: false
 ---
 

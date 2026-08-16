@@ -1,6 +1,8 @@
 ---
 layout: single
 title: "Máquina Arcade"
+permalink: /proyectos/maquina-arcade/
+
 author_profile: false
 ---
 
