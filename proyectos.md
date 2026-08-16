@@ -182,7 +182,7 @@ title: ""
 </style>
 
 <!-- ========================================== -->
-<!-- CABECERA CON TÍTULO ANIMADO Y PÍLDORA      -->
+<!-- CABECERA CON TÍTULO ANIMADO-->
 <!-- ========================================== -->
 <div class="hero-banner">
   <div class="hero-content">
@@ -194,7 +194,7 @@ title: ""
 </div>
 
 <!-- ========================================== -->
-<!-- GRID DE PROYECTOS                          -->
+<!-- PROYECTOS                          -->
 <!-- ========================================== -->
 <div class="section-wrapper">
   <div class="projects-full-grid">
@@ -204,7 +204,7 @@ title: ""
       <img src="/assets/images/maquina.png" alt="Máquina Arcade" class="project-full-img">
       <div class="project-full-body">
         <h3>Máquina Arcade</h3>
-        <p>Diseño físico de una máquina Arcade completa, combinando una estructura a medida con un software personalizado y tematizado para la experiencia de juego.</p>
+        <p>Diseño físico de una máquina Arcade completa, combinando una estructura a medida con software personalizado.</p>
         <div class="project-tags">
           <span class="project-tag"><i class="fas fa-cube"></i> SolidWorks</span>
           <span class="project-tag"><i class="fas fa-microchip"></i> Arduino</span>
@@ -219,29 +219,27 @@ title: ""
       <img src="/assets/images/Automatizacion.png" alt="Estación Industrial" class="project-full-img">
       <div class="project-full-body">
         <h3>Estación Industrial</h3>
-        <p>Programación de un PLC Siemens en lenguaje SCL para automatizar un proceso industrial completo, desde la lógica de control hasta la puesta en marcha.</p>
+        <p>Automatización de proceso industrial completo y programación de PLC Siemens con lenguaje SCL en un equipo de trabajo</p>
         <div class="project-tags">
           <span class="project-tag"><i class="fas fa-industry"></i> PLC Siemens</span>
           <span class="project-tag"><i class="fas fa-code"></i> SCL</span>
-          <span class="project-tag"><i class="fas fa-bolt"></i> KiCad</span>
         </div>
         <a href="/proyectos/estacion-industrial/" class="btn-neon">Ver más &rarr;</a>
       </div>
     </div>
 
-    <!-- Tarjeta 3 (Nueva) -->
+    <!-- Tarjeta 3 -->
     <div class="project-full-card">
-      <!-- Cambia la ruta de la imagen cuando tengas una nueva -->
-      <img src="/assets/images/placeholder.png" alt="Nuevo Proyecto" class="project-full-img">
+      <img src="/assets/images/portfolio.png" alt="Mi Portfolio Profesional" class="project-full-img">
       <div class="project-full-body">
-        <h3>Título del Nuevo Proyecto</h3>
-        <p>Aquí puedes escribir la descripción de tu tercer proyecto. Si escribes mucho texto, el sistema automáticamente lo cortará al llegar a la tercera línea con puntos suspensivos.</p>
+        <h3>Mi Portfolio Profesional</h3>
+        <p>Diseño y desarrollo de este espacio web personal.</p>
         <div class="project-tags">
-          <span class="project-tag"><i class="fas fa-microchip"></i> Tecnología 1</span>
-          <span class="project-tag"><i class="fas fa-code"></i> Tecnología 2</span>
+          <span class="project-tag"><i class="fab fa-html5"></i> HTML & CSS</span>
+          <span class="project-tag"><i class="fas fa-gem"></i> Jekyll</span>
+          <span class="project-tag"><i class="fab fa-github"></i> GitHub Pages</span>
         </div>
-        <!-- Cambia el enlace de abajo hacia donde apunte el proyecto -->
-        <a href="#" class="btn-neon">Ver más &rarr;</a>
+        <a href="/" class="btn-neon">Ver más &rarr;</a>
       </div>
     </div>
 
