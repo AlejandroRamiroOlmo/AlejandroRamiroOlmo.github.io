@@ -1,7 +1,6 @@
 ---
 layout: single
 title: "Portfolio"
-permalink: /proyectos/maquina-arcade/
 author_profile: false
 ---
 
