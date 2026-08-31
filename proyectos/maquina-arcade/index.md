@@ -5,17 +5,8 @@ permalink: /proyectos/maquina-arcade/
 author_profile: false
 ---
 
-<!-- ============================================================ -->
-<!-- PLANTILLA DE PROYECTO — instrucciones de uso                 -->
-<!-- Para crear un proyecto nuevo:                                -->
-<!-- 1. Duplica este archivo y cámbiale el nombre (ej. estacion-industrial.md) -->
-<!-- 2. Cambia el "permalink" de arriba a la URL del nuevo proyecto -->
-<!-- 3. Edita solo las zonas marcadas con "CAMBIA AQUÍ" — el resto -->
-<!--    (estilos, estructura) es igual para todos los proyectos    -->
-<!-- ============================================================ -->
-
 <!-- ========================================== -->
-<!-- ESTILOS CSS (no hace falta tocar esto)     -->
+<!-- ESTILOS CSS      -->
 <!-- ========================================== -->
 <style>
   .section-wrapper-narrow { max-width: 900px; margin: 0 auto 60px auto; padding: 0 20px; }
@@ -63,9 +54,9 @@ author_profile: false
     scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; flex: 1;
   }
   .gallery-item {
-    flex: 0 0 auto; width: 340px; height: 190px; border-radius: 10px; overflow: hidden;
+    flex: 0 0 auto; width: 260px; height: 260px; border-radius: 10px; overflow: hidden;
     border: 2px solid #0f4c75; scroll-snap-align: start; transition: 0.3s;
-  }
+}
   .gallery-item:hover { border-color: #00ffcc; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer; transition: transform 0.3s; }
   .gallery-item img:hover { transform: scale(1.03); }
@@ -97,7 +88,7 @@ author_profile: false
   .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 15px #00ffcc; }
 
   @media (max-width: 600px) {
-    .gallery-item { width: 260px; height: 150px; }
+    .gallery-item { width: 190px; height: 190px; }
     .gallery-arrow { width: 36px; height: 36px; font-size: 0.95em; }
     .project-actions { justify-content: center; text-align: center; }
   }
