@@ -60,7 +60,8 @@ author_profile: false
   .gallery-item:hover { border-color: #00ffcc; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer; transition: transform 0.3s; }
   .gallery-item img:hover { transform: scale(1.03); }
-  .gallery-item iframe, .gallery-item video { width: 100%; height: 100%; border: 0; display: block; }
+  .gallery-item iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .gallery-item video { width: 100%; height: 100%; border: 0; display: block; object-fit: cover; }
   .gallery-strip::-webkit-scrollbar { height: 8px; }
   .gallery-strip::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
   .gallery-strip::-webkit-scrollbar-thumb { background: #0f4c75; border-radius: 10px; }
@@ -153,18 +154,26 @@ author_profile: false
       <button class="gallery-arrow" aria-label="Anterior" onclick="scrollGallery(this, -1)"><i class="fas fa-chevron-left"></i></button>
 
       <div class="gallery-strip">
-        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - vista general"></div>
-        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 2"></div>
-        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 3"></div>
-
-        <!-- Opción A: vídeo de YouTube — descomenta y pon tu ID de vídeo -->
+        <!-- 1. Vídeo principal del proyecto funcionando: descomenta y pega tu ID de YouTube -->
         <!--
         <div class="gallery-item">
           <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" title="Vídeo del proyecto" allowfullscreen></iframe>
         </div>
         -->
 
-        <!-- Opción B: vídeo propio subido a /assets/videos/ — descomenta y ajusta la ruta -->
+        <!-- 2. Clips cortos propios (ej. modelo 3D girando) — duplica este bloque por cada clip -->
+        <!-- Sube el .mp4 a /assets/videos/ y ajusta la ruta. Se reproducen solos, en bucle y sin sonido -->
+        <!--
+        <div class="gallery-item">
+          <video src="/assets/videos/modelo-3d.mp4" autoplay loop muted playsinline></video>
+        </div>
+        -->
+
+        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - vista general"></div>
+        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 2"></div>
+        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 3"></div>
+
+        <!-- Alternativa: si el vídeo principal también quieres subirlo como archivo propio en vez de YouTube -->
         <!--
         <div class="gallery-item">
           <video src="/assets/videos/maquina-arcade.mp4" controls></video>
