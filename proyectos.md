@@ -239,7 +239,7 @@ title: ""
       <img src="/assets/images/Automatizacion.png" alt="Estación Industrial" class="project-full-img">
       <div class="project-full-body">
         <h3>Estación Industrial</h3>
-        <p>Automatización de proceso industrial completo y programación de PLC Siemens con lenguaje SCL en un equipo de trabajo</p>
+        <p>Automatización de proceso industrial y programación de PLC Siemens con lenguaje SCL en un equipo de trabajo</p>
         <div class="project-tags">
           <span class="project-tag"><i class="fas fa-industry"></i> PLC Siemens</span>
           <span class="project-tag"><i class="fas fa-code"></i> SCL</span>
