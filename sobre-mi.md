@@ -130,7 +130,7 @@ classes: wide
   <h2>Perfil Profesional</h2>
   <div class="intro-text">
     <p>Soy <strong>Alejandro Ramiro</strong>, estudiante del Doble Grado en Ingeniería. Mi pasión siempre ha sido entender cómo funcionan las cosas en el mundo físico y cómo podemos darles "cerebro" para automatizarlas.</p>
-    <p>Actualmente me encuentro en mi último año, desarrollando mi Trabajo de Fin de Grado y preparándome para dar el salto definitivo a la industria. Busco conectar la mecánica de precisión con el control electrónico, aportando una visión completa que puentea el diseño físico y la lógica de programación.</p>
+    <p>Actualmente me encuentro en mi último año, desarrollando mi Trabajo de Fin de Grado y preparándome para dar el salto definitivo a la industria. Busco conectar la mecánica con el control electrónico, aportando una visión completa que puentea el diseño físico y la lógica de programación.</p>
   </div>
 </div>
 
@@ -185,8 +185,7 @@ classes: wide
       <div class="pcb-pad"></div>
       <h4>2026 - 2027: Último Año e Industria (Actualidad)</h4><span class="pcb-duration">1 año</span>
       <ul>
-        <li>Desarrollo del Trabajo de Fin de Grado (TFG).</li>
-        <li>Consolidación de conocimientos y transición hacia el sector profesional.</li>
+        <li>Desarrollo de dos Trabajos de Fin de Grado (TFGs).</li>
       </ul>
     </div>
 

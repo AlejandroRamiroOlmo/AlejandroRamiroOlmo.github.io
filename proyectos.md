@@ -228,8 +228,7 @@ title: ""
         <p>Diseño físico de una máquina Arcade completa, combinando una estructura a medida con software personalizado.</p>
         <div class="project-tags">
           <span class="project-tag"><i class="fas fa-cube"></i> SolidWorks</span>
-          <span class="project-tag"><i class="fas fa-microchip"></i> Arduino</span>
-          <span class="project-tag"><i class="fab fa-python"></i> Python</span>
+          <span class="project-tag"><i class="fas fa-microchip"></i> C++</span>
         </div>
         <a href="/proyectos/maquina-arcade/" class="btn-neon">Ver más &rarr;</a>
       </div>
