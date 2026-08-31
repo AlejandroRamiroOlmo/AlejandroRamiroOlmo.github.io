@@ -174,32 +174,6 @@ author_profile: false
     </table>
   </div>
 
-  <div class="content-card">
-    <h2>Proceso de Desarrollo</h2>
-    <p>
-      El proyecto arrancó diseñando la temática (Disney Aladdin) y las funcionalidades del programa. Una historia de introducción daría paso al menú principal. Los vídeos, imágenes y sticker usados se programaron en formato .avi, .bmp y .png respectivamente, almacenadas en una tarjeta microSD en la placa de la pantalla. 
-    </p>
-    <p>
-      El software se diseñó como una máquina de estados, controlado por el microcontrolador principal, integrado en la pantalla (ESP32S3). Debido a la falta de GPIOs, un microcontrolador externo se encarga del control de periféricos y se comunica con el principal vía UART.
-    </p>
-    <p>
-      En paralelo se desarrolló la parte electrónica usando ESP32 Wroom externo para gestionar los controles físicos. Tenemos integrado 4 botones de juego, 2 de Pause y Play que dan acceso al menú de pausa durante los juegos, un joystick arcade, un lector de tarjetas RFID y un led emisor IR para control de la tira led.
-    </p>
-     <p>
-      Por último y no menos importante, se diseñó la maqueta en 3D usando Solidworks, con el objetivo puesto en fabricar un mueble que combinase poco volumen pero integrando la disposición de todos los componentes de manera adecuada y accesible para el usuario. Posteriormente se eligió madera de densidad media (DMF) para la construcción y se incluyó decoración como vinilos y poliestireno rígido transparente.
-    </p>
-  </div>
-
-  <!-- ========================================== -->
-  <!-- TARJETA: DIAGRAMA DE FLUJO                 -->
-  <!-- ========================================== -->
-  <div class="content-card">
-    <h2>Diagrama de Flujo</h2>
-    <p>
-      Estructura de la máquina de estados que controla el flujo principal del software, desde el arranque hasta la navegación por los distintos menús y juegos. <em>Haz clic en la imagen para ampliarla.</em>
-    </p>
-    <img src="/assets/images/diagrama_flujo_arcade.png" alt="Diagrama de flujo de la máquina arcade" onclick="abrirModal(this.src)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #d5dce4; margin-top: 15px; cursor: zoom-in; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-  </div>
 
   <div class="content-card">
     <h2>Galería</h2>
@@ -226,6 +200,33 @@ author_profile: false
         <iframe src="https://www.youtube.com/embed/ZXM2ZdQEvQA" title="Máquina Arcade en funcionamiento" allowfullscreen></iframe>
       </div>
     </div>
+  </div>
+
+    <!-- ========================================== -->
+  <!-- TARJETA: DIAGRAMA DE FLUJO                 -->
+  <!-- ========================================== -->
+  <div class="content-card">
+    <h2>Diagrama de Flujo</h2>
+    <p>
+      Estructura de la máquina de estados que controla el flujo principal del software, desde el arranque hasta la navegación por los distintos menús y juegos. <em>Haz clic en la imagen para ampliarla.</em>
+    </p>
+    <img src="/assets/images/diagrama_flujo_arcade.png" alt="Diagrama de flujo de la máquina arcade" onclick="abrirModal(this.src)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #d5dce4; margin-top: 15px; cursor: zoom-in; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+  </div>
+
+    <div class="content-card">
+    <h2>Proceso de Desarrollo</h2>
+    <p>
+      El proyecto arrancó diseñando la temática (Disney Aladdin) y las funcionalidades del programa. Una historia de introducción daría paso al menú principal. Los vídeos, imágenes y sticker usados se programaron en formato .avi, .bmp y .png respectivamente, almacenadas en una tarjeta microSD en la placa de la pantalla. 
+    </p>
+    <p>
+      El software se diseñó como una máquina de estados, controlado por el microcontrolador principal, integrado en la pantalla (ESP32S3). Debido a la falta de GPIOs, un microcontrolador externo se encarga del control de periféricos y se comunica con el principal vía UART.
+    </p>
+    <p>
+      En paralelo se desarrolló la parte electrónica usando ESP32 Wroom externo para gestionar los controles físicos. Tenemos integrado 4 botones de juego, 2 de Pause y Play que dan acceso al menú de pausa durante los juegos, un joystick arcade, un lector de tarjetas RFID y un led emisor IR para control de la tira led.
+    </p>
+     <p>
+      Por último y no menos importante, se diseñó la maqueta en 3D usando Solidworks, con el objetivo puesto en fabricar un mueble que combinase poco volumen pero integrando la disposición de todos los componentes de manera adecuada y accesible para el usuario. Posteriormente se eligió madera de densidad media (DMF) para la construcción y se incluyó decoración como vinilos y poliestireno rígido transparente.
+    </p>
   </div>
 
   <div class="content-card">
