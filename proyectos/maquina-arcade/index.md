@@ -36,21 +36,43 @@ author_profile: false
   .content-card p { color: #495057; font-size: 1.05em; line-height: 1.7; text-align: justify; margin: 0; }
   .content-card p + p { margin-top: 14px; }
 
-  /* --- GALERÍA: TIRA CON SCROLL HORIZONTAL --- */
+  /* --- TABLA DE ESPECIFICACIONES --- */
+  .specs-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .specs-table th, .specs-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #eaeaea; font-size: 0.95em; }
+  .specs-table th { background: #021a30; color: #00ffcc; font-weight: 700; text-transform: uppercase; font-size: 0.78em; letter-spacing: 0.5px; }
+  .specs-table th:first-child { border-top-left-radius: 8px; }
+  .specs-table th:last-child { border-top-right-radius: 8px; }
+  .specs-table td:first-child { font-weight: 600; color: #1d3557; width: 35%; }
+  .specs-table td { color: #495057; }
+  .specs-table tr:last-child td { border-bottom: none; }
+  .specs-table tr:hover td { background: #f8fafb; }
+
+  /* --- GALERÍA: TIRA CON SCROLL HORIZONTAL Y FLECHAS --- */
+  .gallery-wrapper { position: relative; display: flex; align-items: center; gap: 12px; }
   .gallery-strip {
-    display: flex; gap: 16px; overflow-x: auto; padding-bottom: 14px;
-    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    display: flex; gap: 16px; overflow-x: auto; padding-bottom: 14px; scroll-behavior: smooth;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; flex: 1;
   }
-  .gallery-strip img {
-    flex: 0 0 auto; width: 320px; height: 220px; object-fit: cover;
-    border-radius: 10px; border: 2px solid #0f4c75; scroll-snap-align: start;
-    transition: 0.3s; cursor: pointer;
+  .gallery-item {
+    flex: 0 0 auto; width: 340px; height: 190px; border-radius: 10px; overflow: hidden;
+    border: 2px solid #0f4c75; scroll-snap-align: start; transition: 0.3s;
   }
-  .gallery-strip img:hover { border-color: #00ffcc; transform: scale(1.02); box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+  .gallery-item:hover { border-color: #00ffcc; box-shadow: 0 10px 20px rgba(0,0,0,0.15); }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; cursor: pointer; transition: transform 0.3s; }
+  .gallery-item img:hover { transform: scale(1.03); }
+  .gallery-item iframe, .gallery-item video { width: 100%; height: 100%; border: 0; display: block; }
   .gallery-strip::-webkit-scrollbar { height: 8px; }
   .gallery-strip::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
   .gallery-strip::-webkit-scrollbar-thumb { background: #0f4c75; border-radius: 10px; }
   .gallery-strip::-webkit-scrollbar-thumb:hover { background: #00ffcc; }
+
+  .gallery-arrow {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+    background: #021a30; border: 2px solid #0f4c75; color: #00ffcc;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: 0.3s; font-size: 1.1em;
+  }
+  .gallery-arrow:hover { border-color: #00ffcc; box-shadow: 0 0 12px rgba(0,255,204,0.4); }
 
   /* --- ACCIONES FINALES --- */
   .project-actions { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 10px; }
@@ -65,7 +87,8 @@ author_profile: false
   .btn-neon:hover { background: #00ffcc; color: #021a30 !important; box-shadow: 0 0 15px #00ffcc; }
 
   @media (max-width: 600px) {
-    .gallery-strip img { width: 260px; height: 180px; }
+    .gallery-item { width: 260px; height: 150px; }
+    .gallery-arrow { width: 36px; height: 36px; font-size: 0.95em; }
     .project-actions { justify-content: center; text-align: center; }
   }
 </style>
@@ -97,6 +120,23 @@ author_profile: false
   </div>
 
   <div class="content-card">
+    <h2>Especificaciones Técnicas</h2>
+    <!-- CAMBIA AQUÍ: ajusta filas y datos a tu proyecto real; añade o quita filas según necesites -->
+    <table class="specs-table">
+      <thead>
+        <tr><th>Característica</th><th>Detalle</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Estructura</td><td>Mueble de madera a medida, diseño en SolidWorks</td></tr>
+        <tr><td>Control</td><td>Arduino + botonera arcade y joystick</td></tr>
+        <tr><td>Software</td><td>Python, interfaz de juego tematizada</td></tr>
+        <tr><td>Pantalla</td><td>[CAMBIA AQUÍ: pulgadas / resolución]</td></tr>
+        <tr><td>Tiempo de desarrollo</td><td>[CAMBIA AQUÍ: ej. 3 meses]</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="content-card">
     <h2>Proceso de Desarrollo</h2>
     <p>
       El proyecto arrancó con el modelado 3D de la estructura en SolidWorks, definiendo las dimensiones ergonómicas del mueble y la disposición de los componentes internos (pantalla, altavoces, botonera).
@@ -108,12 +148,43 @@ author_profile: false
 
   <div class="content-card">
     <h2>Galería</h2>
-    <!-- CAMBIA AQUÍ: añade tantas <img> como fotos quieras, la tira se desplaza sola -->
-    <div class="gallery-strip">
-      <img src="/assets/images/maquina.png" alt="Máquina Arcade - vista general">
-      <img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 2">
-      <img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 3">
+    <!-- CAMBIA AQUÍ: añade tantos <div class="gallery-item"> como fotos/vídeos quieras -->
+    <div class="gallery-wrapper">
+      <button class="gallery-arrow" aria-label="Anterior" onclick="scrollGallery(this, -1)"><i class="fas fa-chevron-left"></i></button>
+
+      <div class="gallery-strip">
+        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - vista general"></div>
+        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 2"></div>
+        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 3"></div>
+
+        <!-- Opción A: vídeo de YouTube — descomenta y pon tu ID de vídeo -->
+        <!--
+        <div class="gallery-item">
+          <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" title="Vídeo del proyecto" allowfullscreen></iframe>
+        </div>
+        -->
+
+        <!-- Opción B: vídeo propio subido a /assets/videos/ — descomenta y ajusta la ruta -->
+        <!--
+        <div class="gallery-item">
+          <video src="/assets/videos/maquina-arcade.mp4" controls></video>
+        </div>
+        -->
+      </div>
+
+      <button class="gallery-arrow" aria-label="Siguiente" onclick="scrollGallery(this, 1)"><i class="fas fa-chevron-right"></i></button>
     </div>
+  </div>
+
+  <div class="content-card">
+    <h2>Resultado y Aprendizajes</h2>
+    <!-- CAMBIA AQUÍ: cuenta si funciona, cómo fue la puesta en marcha, y qué mejorarías -->
+    <p>
+      <strong>Resultado:</strong> [CAMBIA AQUÍ: describe el estado final — funciona correctamente, se probó con usuarios, quedó pendiente de X, etc.]
+    </p>
+    <p>
+      <strong>Aprendizajes:</strong> [CAMBIA AQUÍ: qué aprendiste técnicamente, qué harías distinto si repitieras el proyecto]
+    </p>
   </div>
 
   <!-- CAMBIA AQUÍ: el enlace al repositorio real del proyecto -->
@@ -123,3 +194,12 @@ author_profile: false
   </div>
 
 </div>
+
+<script>
+  function scrollGallery(btn, direction) {
+    const wrapper = btn.closest('.gallery-wrapper');
+    const strip = wrapper.querySelector('.gallery-strip');
+    const amount = strip.clientWidth * 0.85;
+    strip.scrollBy({ left: direction * amount, behavior: 'smooth' });
+  }
+</script>
