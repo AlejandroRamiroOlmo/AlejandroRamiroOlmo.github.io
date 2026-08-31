@@ -47,6 +47,15 @@ author_profile: false
   .specs-table tr:last-child td { border-bottom: none; }
   .specs-table tr:hover td { background: #f8fafb; }
 
+  /* --- VÍDEO PRINCIPAL (fuera de la galería, formato Shorts vertical) --- */
+  .video-feature-wrapper { max-width: 380px; margin: 0 auto; }
+  .video-feature-frame {
+    position: relative; width: 100%; aspect-ratio: 9 / 16;
+    border-radius: 12px; overflow: hidden; border: 2px solid #0f4c75;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  .video-feature-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
   /* --- GALERÍA: TIRA CON SCROLL HORIZONTAL Y FLECHAS --- */
   .gallery-wrapper { position: relative; display: flex; align-items: center; gap: 12px; }
   .gallery-strip {
@@ -114,6 +123,15 @@ author_profile: false
 <div class="section-wrapper-narrow">
 
   <div class="content-card">
+    <h2>Vídeo del Proyecto</h2>
+    <div class="video-feature-wrapper">
+      <div class="video-feature-frame">
+        <iframe src="https://www.youtube.com/embed/ZXM2ZdQEvQA" title="Máquina Arcade en funcionamiento" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-card">
     <h2>Objetivo</h2>
     <p>
       Diseñar y construir una máquina Arcade completa desde cero, integrando una estructura física a medida con un software de juego personalizado y tematizado, pensada para ofrecer una experiencia de usuario cuidada tanto en el hardware como en el software.
@@ -154,31 +172,14 @@ author_profile: false
       <button class="gallery-arrow" aria-label="Anterior" onclick="scrollGallery(this, -1)"><i class="fas fa-chevron-left"></i></button>
 
       <div class="gallery-strip">
-        <!-- 1. Vídeo principal del proyecto funcionando: descomenta y pega tu ID de YouTube -->
-        <!--
+        <!-- Clip corto en bucle (ej. modelo 3D girando). Duplica este bloque por cada clip nuevo que subas a /assets/videos/ -->
         <div class="gallery-item">
-          <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" title="Vídeo del proyecto" allowfullscreen></iframe>
+          <video src="/assets/videos/Maquina_Arcade_web.mp4" autoplay loop muted playsinline></video>
         </div>
-        -->
-
-        <!-- 2. Clips cortos propios (ej. modelo 3D girando) — duplica este bloque por cada clip -->
-        <!-- Sube el .mp4 a /assets/videos/ y ajusta la ruta. Se reproducen solos, en bucle y sin sonido -->
-        <!--
-        <div class="gallery-item">
-          <video src="/assets/videos/modelo-3d.mp4" autoplay loop muted playsinline></video>
-        </div>
-        -->
 
         <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - vista general"></div>
         <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 2"></div>
         <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 3"></div>
-
-        <!-- Alternativa: si el vídeo principal también quieres subirlo como archivo propio en vez de YouTube -->
-        <!--
-        <div class="gallery-item">
-          <video src="/assets/videos/maquina-arcade.mp4" controls></video>
-        </div>
-        -->
       </div>
 
       <button class="gallery-arrow" aria-label="Siguiente" onclick="scrollGallery(this, 1)"><i class="fas fa-chevron-right"></i></button>
