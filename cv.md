@@ -145,13 +145,14 @@ author_profile: true
     ¿Necesitas una copia física o un documento formal para procesos de selección? Puedes descargar mi currículum completo directamente en formato PDF.
   </p>
 
-  <!-- Enlace de descarga -->
+ <!-- Enlace de descarga  -->
   <a href="/assets/pdf/cv-alejandro-ramiro.pdf" class="btn-download-neon" download>
     <i class="fas fa-download"></i> Descargar CV en PDF
   </a>
 
+  <!-- Enlace para abrir en pestaña nueva (Corregido) -->
   <div class="cv-secondary-action">
-    <a href="/assets/pdf/cv-alejandro-ramiro.pdf" target="_blank">
+    <a href="/assets/pdf/cv-alejandro-ramiro.pdf" target="_blank" type="application/pdf" rel="noopener noreferrer">
       <i class="fas fa-external-link-alt" style="font-size: 0.8em; margin-right: 4px;"></i> Abrir documento en una nueva pestaña
     </a>
   </div>
