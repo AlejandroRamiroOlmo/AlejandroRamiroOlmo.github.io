@@ -123,15 +123,6 @@ author_profile: false
 <div class="section-wrapper-narrow">
 
   <div class="content-card">
-    <h2>Vídeo del Proyecto</h2>
-    <div class="video-feature-wrapper">
-      <div class="video-feature-frame">
-        <iframe src="https://www.youtube.com/embed/ZXM2ZdQEvQA" title="Máquina Arcade en funcionamiento" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-
-  <div class="content-card">
     <h2>Objetivo</h2>
     <p>
       Diseñar y construir una máquina Arcade completa desde cero, integrando una estructura física a medida con un software de juego personalizado y tematizado, pensada para ofrecer una experiencia de usuario cuidada tanto en el hardware como en el software.
@@ -183,6 +174,15 @@ author_profile: false
       </div>
 
       <button class="gallery-arrow" aria-label="Siguiente" onclick="scrollGallery(this, 1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <div class="content-card">
+    <h2>Vídeo del Proyecto</h2>
+    <div class="video-feature-wrapper">
+      <div class="video-feature-frame">
+        <iframe src="https://www.youtube.com/embed/ZXM2ZdQEvQA" title="Máquina Arcade en funcionamiento" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 
