@@ -239,7 +239,7 @@ author_profile: false
   </div>
 
   <div class="project-actions">
-    <a href="https://github.com/AlejandroRamiroOlmo" class="btn-neon" target="_blank" rel="noopener">Ver código en GitHub &rarr;</a>
+    <a href="https://github.com/AlejandroRamiroOlmo/Aladdin-Arcade-JC4827W543 class="btn-neon" target="_blank" rel="noopener">Ver código en GitHub &rarr;</a>
     <a href="/proyectos/" class="back-link">&larr; Volver a Proyectos</a>
   </div>
 
