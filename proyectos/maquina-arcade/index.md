@@ -183,9 +183,9 @@ author_profile: false
         <div class="gallery-item">
           <video src="/assets/videos/Maquina_Arcade_web.mp4" autoplay loop muted playsinline></video>
         </div>
-        <div class="gallery-item"><img src="/assets/images/maqueta_madera.png" alt="Máquina Arcade - vista general" onclick="abrirModal(this.src)"></div>
-        <div class="gallery-item"><img src="/assets/images/collage.png" alt="collage fotos mapa" onclick="abrirModal(this.src)"></div>
-        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle general" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/maqueta_madera.jpeg" alt="Máquina Arcade - vista general" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/collage.jpeg" alt="collage fotos mapa" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/maquina.jpeg" alt="Máquina Arcade - detalle general" onclick="abrirModal(this.src)"></div>
       </div>
 
       <button class="gallery-arrow" aria-label="Siguiente" onclick="scrollGallery(this, 1)"><i class="fas fa-chevron-right"></i></button>
@@ -209,7 +209,7 @@ author_profile: false
     <p>
       Estructura de la máquina de estados que controla el flujo principal del software, desde el arranque hasta la navegación por los distintos menús y juegos. <em>Haz clic en la imagen para ampliarla.</em>
     </p>
-    <img src="/assets/images/diagrama_flujo_arcade.png" alt="Diagrama de flujo de la máquina arcade" onclick="abrirModal(this.src)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #d5dce4; margin-top: 15px; cursor: zoom-in; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+    <img src="/assets/images/diagrama_flujo_arcade.jpeg" alt="Diagrama de flujo de la máquina arcade" onclick="abrirModal(this.src)" style="width: 100%; height: auto; border-radius: 8px; border: 1px solid #d5dce4; margin-top: 15px; cursor: zoom-in; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
   </div>
 
     <div class="content-card">
