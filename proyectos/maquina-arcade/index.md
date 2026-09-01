@@ -184,9 +184,9 @@ author_profile: false
         <div class="gallery-item">
           <video src="/assets/videos/Maquina_Arcade_web.mp4" autoplay loop muted playsinline></video>
         </div>
-        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - vista general" onclick="abrirModal(this.src)"></div>
-        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 2" onclick="abrirModal(this.src)"></div>
-        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle 3" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/maqueta_madera.png" alt="Máquina Arcade - vista general" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/collage.png" alt="collage fotos mapa" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/maquina.png" alt="Máquina Arcade - detalle general" onclick="abrirModal(this.src)"></div>
       </div>
 
       <button class="gallery-arrow" aria-label="Siguiente" onclick="scrollGallery(this, 1)"><i class="fas fa-chevron-right"></i></button>
