@@ -140,6 +140,8 @@ author_profile: false
     <h1 style="color: #ffffff; border-bottom: none; margin: 0;">Máquina Arcade</h1>
     <div class="project-hero-tags">
       <span class="project-tag">Proyecto Personal</span>
+
+    </div>
   </div>
 </div>
 
