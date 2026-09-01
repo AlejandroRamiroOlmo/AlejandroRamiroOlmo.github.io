@@ -126,7 +126,7 @@ author_profile: false
   <div class="content-card">
     <h2>Objetivo</h2>
     <p>
-      El proyecto consistía en automatizar una estación de clasificación de piezas simulada. El sistema debía ser capaz de detectar distintos tipos de materiales mediante el uso de sensores inductivos y ópticos, para posteriormente clasificarlos de forma automatizada empleando actuadores neumáticos.
+      El proyecto consistía en automatizar una estación de clasificación de piezas. El sistema debía ser capaz de detectar distintos tipos de materiales mediante el uso de sensores inductivos y ópticos, para posteriormente clasificarlos de forma automatizada según la elección del usuario, empleando actuadores neumáticos.
     </p>
   </div>
 
@@ -139,7 +139,7 @@ author_profile: false
       <tbody>
         <tr><td>Hardware</td><td>PLC Siemens S7-1200</td></tr>
         <tr><td>Lenguaje de Programación</td><td>SCL (Structured Control Language)</td></tr>
-        <tr><td>Detección</td><td>Sensores ópticos (presencia) e inductivos (material)</td></tr>
+        <tr><td>Detección</td><td>Sensores ópticos (presencia y color) e inductivos (material)</td></tr>
         <tr><td>Actuadores</td><td>Electroválvulas de empuje neumáticas</td></tr>
       </tbody>
     </table>
@@ -148,11 +148,11 @@ author_profile: false
   <div class="content-card">
     <h2>Desarrollo y Solución Técnica</h2>
     <p>
-      En lugar de utilizar el clásico lenguaje de contactos (Ladder), se optó por programar la lógica en <strong>SCL (Structured Control Language)</strong> debido a la complejidad matemática requerida para el proceso de clasificación. Toda la programación se estructuró en bloques lógicos independientes (FBs) para mantener un código modular y escalable.
+      En lugar de utilizar el clásico lenguaje de contactos (Ladder), se optó por programar la lógica en <strong>SCL (Structured Control Language)</strong> como parte del proyecto académico. 
     </p>
 
     <h3 style="color: #1d3557; margin-top: 25px;">Fragmento de Lógica (SCL)</h3>
-    <p>Ejemplo de la lógica implementada para el control del temporizador de clasificación (los detalles completos de E/S están disponibles en la documentación técnica):</p>
+    <p>Ejemplo de la lógica implementada para el control de un temporizador:</p>
     <div class="code-block">
 <pre><code>IF "S_Pieza" AND NOT "S_Metal" THEN
     "T_Clasificacion".TON(IN := TRUE, PT := T#2S);
@@ -164,20 +164,35 @@ ELSE
     "Cil_Avance" := FALSE;
 END_IF;</code></pre>
     </div>
+
+    <!-- NUEVO APARTADO: PRESENTACIÓN EXPLICATIVA -->
+    <div style="margin-top: 35px; padding-top: 25px; border-top: 1px solid #eaeaea;">
+      <h3 style="color: #1d3557; margin-top: 0; font-size: 1.1em;">Exposición y Conceptos Básicos</h3>
+      <p>
+        Para la presentación pública de este proyecto, elaboramos un material de apoyo enfocado en explicar qué es el lenguaje SCL y sus ventajas frente a otros lenguajes de programación de autómatas.
+      </p>
+      <!-- Actualiza la ruta del href con la de tu presentación -->
+      <div style="margin-top: 15px;">
+        <a href="/assets/pdf/Presentación_SCL.pdf" target="_blank" class="btn-neon" rel="noopener">
+          <i class="fas fa-file-powerpoint" style="margin-right: 8px;"></i> Ver Presentación sobre SCL
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- SECCIÓN DE GALERÍA -->
   <div class="content-card">
     <h2>Galería de Capturas</h2>
-    <p><em>Imágenes de la programación en TIA Portal y esquemas del proyecto. Haz clic para ampliar.</em></p>
+    <p><em>Imágenes del proyecto. Haz clic para ampliar.</em></p>
     <div class="gallery-wrapper">
       <button class="gallery-arrow" aria-label="Anterior" onclick="scrollGallery(this, -1)"><i class="fas fa-chevron-left"></i></button>
 
       <div class="gallery-strip">
         <!-- Sustituye estas rutas por las tuyas -->
-        <div class="gallery-item"><img src="/assets/images/placeholder_tia1.png" alt="Captura TIA Portal 1" onclick="abrirModal(this.src)"></div>
-        <div class="gallery-item"><img src="/assets/images/placeholder_tia2.png" alt="Esquema eléctrico" onclick="abrirModal(this.src)"></div>
-        <div class="gallery-item"><img src="/assets/images/placeholder_tia3.png" alt="Bloques de programa" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/general.jpeg" alt="Visión general" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/tipos_piezas.jpeg" alt="Tipos de piezas" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/encoder.jpeg" alt="Encoder altura piezas" onclick="abrirModal(this.src)"></div>
+        <div class="gallery-item"><img src="/assets/images/Botonera.jpeg" alt="Botones de la estación" onclick="abrirModal(this.src)"></div>
       </div>
 
       <button class="gallery-arrow" aria-label="Siguiente" onclick="scrollGallery(this, 1)"><i class="fas fa-chevron-right"></i></button>
@@ -186,20 +201,14 @@ END_IF;</code></pre>
 
   <!-- TARJETA FINAL: DESCARGA DE MANUAL PDF -->
   <div class="content-card" style="text-align: center;">
-    <h2>Documentación del Proyecto</h2>
+    <h2>Documentación Completa</h2>
     <p style="text-align: center; margin-bottom: 25px;">
-      Si quieres profundizar en los detalles técnicos, mapas de Entradas/Salidas (E/S), configuración de hardware y bloques lógicos del proyecto, puedes consultar el manual de software completo.
+      Si quieres profundizar en los detalles técnicos, mapas de Entradas/Salidas (E/S), configuración de hardware... Puedes consultar el manual de software completo.
     </p>
     <!-- Actualiza el href con la ruta real de tu PDF -->
-    <a href="/assets/docs/manual_estacion_industrial.pdf" target="_blank" class="btn-neon" rel="noopener">
+    <a href="/assets/pdf/manual_estacion_industrial.pdf" target="_blank" class="btn-neon" rel="noopener">
       <i class="fas fa-file-pdf" style="margin-right: 8px;"></i> Ver Manual de Software (PDF)
     </a>
-  </div>
-
-  <div class="project-actions">
-    <!-- Puedes dejar este botón o quitarlo si el código no está en GitHub -->
-    <a href="https://github.com/TuUsuario" class="btn-neon" target="_blank" rel="noopener">Ver repositorio &rarr;</a>
-    <a href="/proyectos/" class="back-link">&larr; Volver a Proyectos</a>
   </div>
 
 </div>
