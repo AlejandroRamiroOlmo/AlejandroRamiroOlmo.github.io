@@ -139,10 +139,7 @@ author_profile: false
   <div style="max-width: 900px; margin: 0 auto; text-align: center;">
     <h1 style="color: #ffffff; border-bottom: none; margin: 0;">Máquina Arcade</h1>
     <div class="project-hero-tags">
-      <span class="project-tag">Diseño Mecánico</span>
-      <span class="project-tag">Electrónica</span>
-      <span class="project-tag">Software</span>
-    </div>
+      <span class="project-tag">Proyecto Personal</span>
   </div>
 </div>
 
