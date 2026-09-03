@@ -98,7 +98,7 @@ author_profile: false
   </a>
 
   <!-- 3. LinkedIn -->
-  <a href="https://www.linkedin.com/in/TU-ENLACE-AQUI" class="contact-link" target="_blank">
+  <a href="https://www.linkedin.com/in/alejandro-ramiro-olmo-141b73432/" class="contact-link" target="_blank">
     <i class="fab fa-linkedin"></i>
     <span>Conecta conmigo en LinkedIn</span>
   </a>
